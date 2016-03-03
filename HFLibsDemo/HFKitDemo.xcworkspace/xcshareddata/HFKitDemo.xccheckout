@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>669FCFFB-7675-469E-8ECA-3BF9B74A8189</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HFKitDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>920B122F4D0E1A65FA415189F4D3E016C711C7B5</key>
+		<string>https://github.com/helfyz/HFKit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HFKitDemo/HFKitDemo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>920B122F4D0E1A65FA415189F4D3E016C711C7B5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/helfyz/HFKit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>920B122F4D0E1A65FA415189F4D3E016C711C7B5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>920B122F4D0E1A65FA415189F4D3E016C711C7B5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HFKit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
