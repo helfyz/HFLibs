@@ -34,7 +34,7 @@ ss.dependency 'HFKit/UIViewAdditions'
 end
 
 #ss.dependency 'HFKit/UIViewAdditions'
-ss.dependency 'HFKit/HFViews'
+ss.dependency 'HFLibs/HFViews'
 
 end
 
