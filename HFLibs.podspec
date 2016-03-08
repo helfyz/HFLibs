@@ -37,5 +37,3 @@ end
 ss.dependency 'HFLibs/HFViews'
 
 end
-
-end
