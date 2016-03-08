@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface HFCollectionSectionObj : NSObject
 @property (nonatomic,strong) NSMutableArray *cellObjs;
 @property (nonatomic,strong) id valueData;
