@@ -25,8 +25,8 @@ s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 end
 
 s.subspec 'HFViews' do |ss|
-ss.source_files        = "HFLibs/{HFViews,UIViewController+H}/**/*.{h,m}"
-ss.public_header_files = "HFLibs/{HFViews,UIViewController}/**/*.h"
+ss.source_files        = "HFLibs/{HFViews,UIViewController+HF}/**/*.{h,m}"
+ss.public_header_files = "HFLibs/{HFViews,UIViewController+HF}/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 ss.dependency 'HFLibs/UIViewAdditions'
  s.dependency "Masonry", '~> 0.6.1'
