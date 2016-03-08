@@ -28,7 +28,7 @@ s.subspec 'HFViews' do |ss|
 ss.source_files        = "HFLibs/{HFViews,UIViewController+H}/**/*.{h,m}"
 ss.public_header_files = "HFLibs/{HFViews,UIViewController}/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
-ss.dependency 'HFKit/UIViewAdditions'
+ss.dependency 'HFLibs/UIViewAdditions'
  s.dependency "Masonry", '~> 0.6.1'
  s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
 end
