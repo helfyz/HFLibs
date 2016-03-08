@@ -32,8 +32,4 @@ ss.dependency 'HFLibs/UIViewAdditions'
  s.dependency "Masonry", '~> 0.6.1'
  s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
 end
-
-#ss.dependency 'HFKit/UIViewAdditions'
-ss.dependency 'HFLibs/HFViews'
-
 end
