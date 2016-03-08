@@ -19,17 +19,17 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
 
 s.subspec 'UIViewAdditions' do |ss|
-ss.source_files        = "HFLibs/UIViewAdditions/**/*.{h,m}"
-ss.public_header_files = "HFLibs/UIViewAdditions/**/*.h"
+ss.source_files        = "HFLibs/{UIViewAdditions,UIViewController+HF}/*.{h,m}"
+ss.public_header_files = "HFLibs/{UIViewAdditions,UIViewController+HF}/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
+s.dependency "Masonry", '~> 0.6.1'
+s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
 end
 
 s.subspec 'HFViews' do |ss|
-ss.source_files        = "HFLibs/{HFViews,UIViewController+HF}/**/*.{h,m}"
-ss.public_header_files = "HFLibs/{HFViews,UIViewController+HF}/**/*.h"
+ss.source_files        = "HFLibs/HFViews/**/*.{h,m}"
+ss.public_header_files = "HFLibs/HFViews/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 ss.dependency 'HFLibs/UIViewAdditions'
- s.dependency "Masonry", '~> 0.6.1'
- s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
 end
 end

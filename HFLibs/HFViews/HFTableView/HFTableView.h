@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "HFTableCellObj.h"
+#import "HFTableSectionObj.h"
+#import "HFTableViewCell.h"
 #import "HFFormTableCellObj.h"
+#import "HFCustomTableCellObj.h"
+#import "HFCustomTableViewCell.h"
 @protocol HFTableViewDelegate <NSObject>
 
 //如果用户需要对cell进行配置

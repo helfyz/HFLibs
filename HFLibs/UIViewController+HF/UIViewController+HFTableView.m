@@ -7,13 +7,7 @@
 //
 
 #import "UIViewController+HFTableView.h"
-#import "HFTableCellObj.h"
-#import "HFTableSectionObj.h"
-#import "HFTableViewCell.h"
-#import "HFFormTableCellObj.h"
-#import "HFCustomTableCellObj.h"
-#import "HFCustomTableViewCell.h"
-#import "HFTableView.h"
+#import "HFLibs.h"
 #import <objc/runtime.h>
 @implementation UIViewController (HFTableView)
 
