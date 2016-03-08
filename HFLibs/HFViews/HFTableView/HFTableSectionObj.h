@@ -13,6 +13,8 @@
 @property (nonatomic,strong) NSMutableArray *cellObjs;
 
 
+@property (nonatomic,copy)  NSString *sectionKey;
+
 @property (nonatomic,copy)  NSString *title; //默认nil
 @property (nonatomic,assign)  float headHeigth;  //默认10
 @property (nonatomic,assign)  float footerHeigth;  //默认10

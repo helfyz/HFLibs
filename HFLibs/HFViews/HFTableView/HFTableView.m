@@ -13,7 +13,7 @@
 #import "HFFormTableCellObj.h"
 #import "HFCustomTableCellObj.h"
 #import "HFCustomTableViewCell.h"
-#import  <UITableView+FDTemplateLayoutCell.h>
+#import "UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h"
 
 @interface HFTableView()
 @property (nonatomic,strong) id<UITableViewDelegate,HFTableViewDelegate> customDelegate;
@@ -385,8 +385,8 @@
     
     if(self.isSectionData)
     {
-        for (NSArray *array in self.dataSourceObjs) {
-            for (HFTableCellObj *subObj  in array) {
+        for (HFTableSectionObj *sectionObj in self.dataSourceObjs) {
+            for (HFTableCellObj *subObj  in sectionObj.cellObjs) {
                 if([subObj isKindOfClass:[HFFormTableCellObj class]])
                 {
                     if([((HFFormTableCellObj *)subObj).objKey isEqualToString:objKey])
@@ -414,7 +414,23 @@
     return cellObj;
 }
 
-
+-(HFTableSectionObj *)sectionObjForKey:(NSString *)sectionKey
+{
+    
+    if(self.isSectionData && sectionKey.length > 0)
+    {
+        for (HFTableSectionObj *sectionObj in self.dataSourceObjs) {
+            
+            if([sectionObj.sectionKey isEqualToString:sectionKey])
+            {
+                return sectionObj;
+            }
+            
+        }
+    }
+    
+    return nil;
+}
 
 
 #pragma mark -- 事件监听

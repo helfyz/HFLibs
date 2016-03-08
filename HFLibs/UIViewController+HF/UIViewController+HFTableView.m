@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+HFTableView.h"
-#import "HFLibs.h"
+#import "HFTableView.h"
 #import <objc/runtime.h>
 @implementation UIViewController (HFTableView)
 
