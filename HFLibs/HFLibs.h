@@ -21,10 +21,7 @@
 #import "UIView+CGRect.h"
 
 
-#import "HFCollectionSectionObj.h"
-#import "HFCollectionCellObj.h"
-#import "HFCollectionViewCell.h"
-#import "HFCollectionReusableView.h"
+
 
 
 #import "HFTableView.h"

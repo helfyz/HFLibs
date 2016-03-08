@@ -7,7 +7,10 @@
 //
 
 #import "UIViewController+HFCollectionView.h"
-#import "HFLibs.h"
+#import "HFCollectionSectionObj.h"
+#import "HFCollectionCellObj.h"
+#import "HFCollectionViewCell.h"
+#import "HFCollectionReusableView.h"
 #import <objc/runtime.h>
 @implementation UIViewController(HFCollectionView)
 static char HFCollectionView;
