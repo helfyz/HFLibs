@@ -20,7 +20,7 @@
 
 @end
 
-@interface HFTableView : UITableView
+@interface HFTableView : UITableView <UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)  NSMutableArray *dataSourceObjs;
 // push 使用
 @property (assign,nonatomic) UIViewController *viewController;
@@ -50,7 +50,7 @@
 //HFFormTableCellObj 才会有key
 -(HFFormTableCellObj *)cellObjForObjKey:(NSString *)objKey;
 
-
+-(HFTableSectionObj *)sectionObjForKey:(NSString *)sectionKey;
 
 #pragma mark -- 事件监听
 -(void)openKeyboardObserver;

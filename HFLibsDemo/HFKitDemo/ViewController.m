@@ -35,6 +35,11 @@
 
 -(void)setupData
 {
+    HFTableSectionObj *sectionObj = [[HFTableSectionObj alloc] init];
+    sectionObj.headHeigth = 30;
+    sectionObj.title = @"123";
+    
+    [self.hft_tableView setCellObjsForObjs:@[sectionObj] isAddmore:NO];
     
 }
 

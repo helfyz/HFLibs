@@ -259,7 +259,14 @@
     
     return nil;
 }
-
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (self. isSectionData) {
+        HFTableSectionObj *sectionObj = self.dataSourceObjs[section];
+        return sectionObj.headView;
+    }
+    return nil;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self. isSectionData) {
