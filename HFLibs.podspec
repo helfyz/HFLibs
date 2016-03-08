@@ -29,6 +29,7 @@ ss.source_files        = "HFLibs/HFViews/**/*.{h,m}"
 ss.public_header_files = "HFLibs/HFViews/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 ss.dependency 'HFLibs/UIViewAdditions'
+
 s.dependency "Masonry", '~> 0.6.1'
 s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
 
