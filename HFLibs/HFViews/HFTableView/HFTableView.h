@@ -44,12 +44,27 @@
  */
 -(void)setCellObjsForObjs:(NSArray *)cellObjs  isAddmore:(BOOL)addMore;
 
+/**
+ *  重新加载一个section
+ *
+ *  @param section 的序号 或者 key
+ */
+-(void)reloadSectionForSectionIndex:(NSUInteger )sectionIndex withRowAnimation:(UITableViewRowAnimation)animation;
+-(void)reloadSectionForSectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation;
 
+/**
+ *  替换一个section
+ *
+ *  @param sectionObj   新的sectionObj
+ *  @param sectionIndex section 的序号
+ *   @param sectionKey section的Key
+ */
+-(void)replaceSection:(HFTableSectionObj *)sectionObj sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation;
+-(void)replaceSection:(HFTableSectionObj *)sectionObj sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation;
 
 -(HFTableCellObj *)cellObjForIndexPath:(NSIndexPath *)indexPath;
 //HFFormTableCellObj 才会有key
 -(HFFormTableCellObj *)cellObjForObjKey:(NSString *)objKey;
-
 -(HFTableSectionObj *)sectionObjForKey:(NSString *)sectionKey;
 
 #pragma mark -- 事件监听

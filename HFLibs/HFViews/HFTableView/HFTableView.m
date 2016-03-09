@@ -83,35 +83,30 @@
     if (self.isSectionData) {
         for (HFTableSectionObj *sectionObj in self.dataSourceObjs) {
             for (HFTableCellObj *cellObj in sectionObj.cellObjs) {
-                
-                if(cellObj.useXib)
-                {
-                    UINib *nib = [UINib nibWithNibName:cellObj.tablViewCellClassName bundle:nil];
-                    [self registerNib:nib forCellReuseIdentifier:cellObj.cellIdentifier];
-                }
-                else{
-                    [self registerClass:NSClassFromString(cellObj.tablViewCellClassName) forCellReuseIdentifier:cellObj.cellIdentifier];
-                }
+                [self registerCellObj:cellObj];
             }
         }
     }
     else{
         for (HFTableCellObj *cellObj in self.dataSourceObjs) {
-            
-            if(cellObj.useXib)
-            {
-                UINib *nib = [UINib nibWithNibName:cellObj.tablViewCellClassName bundle:nil];
-                [self registerNib:nib forCellReuseIdentifier:cellObj.cellIdentifier];
-                
-            }
-            else
-            {
-                [self registerClass:NSClassFromString(cellObj.tablViewCellClassName) forCellReuseIdentifier:cellObj.cellIdentifier];
-            }
+            [self registerCellObj:cellObj];
         }
     }
     
+}
+
+-(void)registerCellObj:(HFTableCellObj *)cellObj
+{
     
+    if(cellObj.useXib)
+    {
+        UINib *nib = [UINib nibWithNibName:cellObj.tablViewCellClassName bundle:nil];
+        [self registerNib:nib forCellReuseIdentifier:cellObj.cellIdentifier];
+    }
+    else
+    {
+        [self registerClass:NSClassFromString(cellObj.tablViewCellClassName) forCellReuseIdentifier:cellObj.cellIdentifier];
+    }
 }
 
 -(void)setDelegate:(id<UITableViewDelegate>)delegate
@@ -359,6 +354,59 @@
   
     
     
+}
+
+
+#pragma mark --
+-(void)reloadSectionForSectionIndex:(NSUInteger )sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(self.isSectionData && sectionIndex < self.dataSourceObjs.count)
+    {
+        HFTableSectionObj *sectionObj = self.dataSourceObjs[sectionIndex];
+        for (HFTableCellObj *cellObj in sectionObj.cellObjs) {
+            [self registerCellObj:cellObj];
+        }
+        [self reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:animation];
+
+    }
+}
+-(void)reloadSectionForSectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(self.isSectionData && sectionKey.length > 0)
+    {
+        HFTableSectionObj *sectionObj = [self sectionObjForKey:sectionKey];
+        for (HFTableCellObj *cellObj in sectionObj.cellObjs) {
+            [self registerCellObj:cellObj];
+        }
+        [self reloadSections:[NSIndexSet indexSetWithIndex:[self.dataSourceObjs indexOfObject:sectionObj]] withRowAnimation:animation];
+  
+    }
+}
+-(void)replaceSection:(HFTableSectionObj *)sectionObj sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(self.isSectionData && sectionIndex < self.dataSourceObjs.count)
+    {
+        HFTableSectionObj *oldSectionObj = self.dataSourceObjs[sectionIndex];
+        if(oldSectionObj)
+        {
+            NSInteger sectionIndex = [self.dataSourceObjs indexOfObject:sectionObj];
+            [self.dataSourceObjs replaceObjectAtIndex:sectionIndex withObject:sectionObj];
+            [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
+        }
+    }
+}
+-(void)replaceSection:(HFTableSectionObj *)sectionObj sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(self.isSectionData && sectionKey.length > 0)
+    {
+        HFTableSectionObj *oldSectionObj = [self sectionObjForKey:sectionKey];
+        if(oldSectionObj)
+        {
+            NSInteger sectionIndex = [self.dataSourceObjs indexOfObject:sectionObj];
+            [self.dataSourceObjs replaceObjectAtIndex:sectionIndex withObject:sectionObj];
+            [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
+        }
+    }
 }
 
 #pragma mark 数据提取
