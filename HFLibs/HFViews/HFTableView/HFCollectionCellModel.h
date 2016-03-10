@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface HFCollectionCellObj : NSObject
+@interface HFCollectionCellModel : NSObject
 @property (nonatomic,strong) NSString *reuseIdentifier;
 @property (nonatomic,strong) NSString *cellClassName;
 

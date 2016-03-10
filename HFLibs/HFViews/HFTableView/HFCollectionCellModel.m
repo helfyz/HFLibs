@@ -6,9 +6,9 @@
 //  Copyright © 2016年 charles. All rights reserved.
 //
 
-#import "HFCollectionCellObj.h"
+#import "HFCollectionCellModel.h"
 
-@implementation HFCollectionCellObj
+@implementation HFCollectionCellModel
 
 
 -(id)init

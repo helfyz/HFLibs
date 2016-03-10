@@ -7,8 +7,8 @@
 //
 
 #import "UIViewController+HFCollectionView.h"
-#import "HFCollectionSectionObj.h"
-#import "HFCollectionCellObj.h"
+#import "HFCollectionSectionModel.h"
+#import "HFCollectionCellModel.h"
 #import "HFCollectionViewCell.h"
 #import "HFCollectionReusableView.h"
 #import <objc/runtime.h>
@@ -76,22 +76,22 @@ static char HFItemSize;
     self.hfc_dataSourceObjs = [NSMutableArray array];
 }
 //设置完成之后需要对Cell的Obj提取设置一些东西
--(void)hfc_registerCellClassForCellObjs
+-(void)hfc_registerCellClassForcellModels
 {
     if (self.hfc_isSectionData) {
-        for (HFCollectionSectionObj *sectionObj in self.hfc_dataSourceObjs) {
+        for (HFCollectionSectionModel *sectionObj in self.hfc_dataSourceObjs) {
             
             
             [self.hfc_collectionView registerClass:NSClassFromString(sectionObj.reusableClassName) forSupplementaryViewOfKind:sectionObj.kind withReuseIdentifier:sectionObj.reuseIdentifier];
             
-            for (HFCollectionCellObj *cellObj in sectionObj.cellObjs) {
-                [self.hfc_collectionView registerClass:NSClassFromString(cellObj.cellClassName) forCellWithReuseIdentifier:cellObj.reuseIdentifier];
+            for (HFCollectionCellModel *cellModel in sectionObj.cellModels) {
+                [self.hfc_collectionView registerClass:NSClassFromString(cellModel.cellClassName) forCellWithReuseIdentifier:cellModel.reuseIdentifier];
             }
         }
     }
     else{
-        for (HFCollectionCellObj *cellObj in self.hfc_dataSourceObjs) {
-            [self.hfc_collectionView registerClass:NSClassFromString(cellObj.cellClassName) forCellWithReuseIdentifier:cellObj.reuseIdentifier];
+        for (HFCollectionCellModel *cellModel in self.hfc_dataSourceObjs) {
+            [self.hfc_collectionView registerClass:NSClassFromString(cellModel.cellClassName) forCellWithReuseIdentifier:cellModel.reuseIdentifier];
         }
     }
     
@@ -99,15 +99,15 @@ static char HFItemSize;
 }
 
 /**
- *  把数据转化成符合格式的cellObj。
- *  如果数据中对应多种cell 样式，需按需求设置对应的cellClassName 再使用setCellObjsForObjs: isAddmore:
+ *  把数据转化成符合格式的cellModel。
+ *  如果数据中对应多种cell 样式，需按需求设置对应的cellClassName 再使用setcellModelsForObjs: isAddmore:
  *  @param dataSource  数据原型
  *  @param className  cell 的className
  *  @param addMore    yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)hfc_setCellObjsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore
+-(void)hfc_setCellModelsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore
 {
-    NSMutableArray *cellObjs = [NSMutableArray array];
+    NSMutableArray *cellModels = [NSMutableArray array];
     [self.hfc_collectionView registerClass:NSClassFromString(className)  forCellWithReuseIdentifier:className];
     
     
@@ -125,29 +125,29 @@ static char HFItemSize;
     if(isSection == NO)
     {
         for (id subObj in dataSource) {
-            HFCollectionCellObj *cellObj = [[HFCollectionCellObj alloc] init];
-            cellObj.valueData = subObj;
-            cellObj.reuseIdentifier = className;
-//            cellObj.cellAction = @selector(tableViewDidSelectCellObj:);
-            [cellObjs addObject:cellObj];
+            HFCollectionCellModel *cellModel = [[HFCollectionCellModel alloc] init];
+            cellModel.valueData = subObj;
+            cellModel.reuseIdentifier = className;
+//            cellModel.cellAction = @selector(tableViewDidSelectcellModel:);
+            [cellModels addObject:cellModel];
         }
         
     }
     else{
         for (NSArray *sectionArray in dataSource) {
-            HFCollectionSectionObj *sectionObj = [[HFCollectionSectionObj alloc] init];
-            NSMutableArray *subCellObjs = [NSMutableArray array];
+            HFCollectionSectionModel *sectionObj = [[HFCollectionSectionModel alloc] init];
+            NSMutableArray *subcellModels = [NSMutableArray array];
             
             for (id subObj in sectionArray) {
-                HFCollectionCellObj *cellObj = [[HFCollectionCellObj alloc] init];
-                cellObj.valueData = subObj;
-                cellObj.reuseIdentifier = className;
-//                cellObj.cellAction = @selector(tableViewDidSelectCellObj:);
-                [subCellObjs addObject:cellObj];
+                HFCollectionCellModel *cellModel = [[HFCollectionCellModel alloc] init];
+                cellModel.valueData = subObj;
+                cellModel.reuseIdentifier = className;
+//                cellModel.cellAction = @selector(tableViewDidSelectcellModel:);
+                [subcellModels addObject:cellModel];
                 
             }
-            sectionObj.cellObjs = subCellObjs;
-            [cellObjs addObject:sectionObj];
+            sectionObj.cellModels = subcellModels;
+            [cellModels addObject:sectionObj];
         }
         
     }
@@ -157,11 +157,11 @@ static char HFItemSize;
         {
             [self hfc_setupData];
         }
-        [self.hfc_dataSourceObjs addObjectsFromArray:cellObjs];
+        [self.hfc_dataSourceObjs addObjectsFromArray:cellModels];
     }
     else
     {
-        self.hfc_dataSourceObjs = cellObjs;
+        self.hfc_dataSourceObjs = cellModels;
     }
     //
     //这种设置方式不需要再提取注册cell
@@ -170,12 +170,12 @@ static char HFItemSize;
 }
 
 /**
- *  自己转换成cellObj后进行设置
+ *  自己转换成cellModel后进行设置
  *
- *  @param cellObj cellObj
+ *  @param cellModel cellModel
  *  @param addMore yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)hfc_setCellObjsForObjs:(NSMutableArray *)cellObjs  isAddmore:(BOOL)addMore
+-(void)hfc_setCellModelsForObjs:(NSMutableArray *)cellModels  isAddmore:(BOOL)addMore
 {
     if(addMore)
     {
@@ -183,14 +183,14 @@ static char HFItemSize;
         {
             [self hfc_setupData];
         }
-        [self.hfc_dataSourceObjs addObjectsFromArray:cellObjs];
+        [self.hfc_dataSourceObjs addObjectsFromArray:cellModels];
     }
     else
     {
-        self.hfc_dataSourceObjs = cellObjs;
+        self.hfc_dataSourceObjs = cellModels;
     }
     
-    [self hfc_registerCellClassForCellObjs];
+    [self hfc_registerCellClassForcellModels];
     [self hfc_reloadData];
 }
 
@@ -222,23 +222,23 @@ static char HFItemSize;
 {
     if(self.hfc_dataSourceObjs.count >0)
     {
-        if([[self.hfc_dataSourceObjs firstObject] isKindOfClass:[HFCollectionSectionObj class]])
+        if([[self.hfc_dataSourceObjs firstObject] isKindOfClass:[HFCollectionSectionModel class]])
         {
             return YES;
         }
     }
     return NO;
 }
--(HFCollectionCellObj *)hfc_cellObjForIndexPath:(NSIndexPath *)indexPath
+-(HFCollectionCellModel *)hfc_cellModelForIndexPath:(NSIndexPath *)indexPath
 {
-    HFCollectionCellObj *cellObj = nil;
+    HFCollectionCellModel *cellModel = nil;
     if (self.hfc_isSectionData) {
-        cellObj = ((HFCollectionSectionObj *)self.hfc_dataSourceObjs[indexPath.section]).cellObjs[indexPath.row];
+        cellModel = ((HFCollectionSectionModel *)self.hfc_dataSourceObjs[indexPath.section]).cellModels[indexPath.row];
     }
     else{
-        cellObj =self.hfc_dataSourceObjs[indexPath.row];
+        cellModel =self.hfc_dataSourceObjs[indexPath.row];
     }
-    return cellObj;
+    return cellModel;
 }
 #pragma mark - UICollectionViewDelegate
 //定义每个UICollectionView 的大小
@@ -246,21 +246,21 @@ static char HFItemSize;
 {
 //
   
-    HFCollectionCellObj *cellObj = [self hfc_cellObjForIndexPath:indexPath];
+    HFCollectionCellModel *cellModel = [self hfc_cellModelForIndexPath:indexPath];
     
-    if(CGSizeEqualToSize(cellObj.itemSize, CGSizeZero))
+    if(CGSizeEqualToSize(cellModel.itemSize, CGSizeZero))
     {
         return self.hft_itemSize;
     }
     
-    return cellObj.itemSize;
+    return cellModel.itemSize;
 }
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     if([self hfc_isSectionData])
     {
-        HFCollectionSectionObj *sectionObj = self.hfc_dataSourceObjs[section];
+        HFCollectionSectionModel *sectionObj = self.hfc_dataSourceObjs[section];
         return sectionObj.edgeInsets;
     }
     return UIEdgeInsetsZero;
@@ -279,7 +279,7 @@ static char HFItemSize;
 {
     if([self hfc_isSectionData])
     {
-        return  ((HFCollectionSectionObj *)self.hfc_dataSourceObjs[section]).cellObjs.count;
+        return  ((HFCollectionSectionModel *)self.hfc_dataSourceObjs[section]).cellModels.count;
     }
     else{
         return self.hfc_dataSourceObjs.count;
@@ -290,7 +290,7 @@ static char HFItemSize;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if([self hfc_isSectionData])
     {
-        HFCollectionSectionObj *sectionObj = self.hfc_dataSourceObjs[section];
+        HFCollectionSectionModel *sectionObj = self.hfc_dataSourceObjs[section];
         return  sectionObj.headerSize;
     }
     return CGSizeZero;
@@ -299,11 +299,11 @@ static char HFItemSize;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)sender cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    HFCollectionCellObj *cellObj = [self hfc_cellObjForIndexPath:indexPath];
+    HFCollectionCellModel *cellModel = [self hfc_cellModelForIndexPath:indexPath];
 
-    HFCollectionViewCell *cell = [sender dequeueReusableCellWithReuseIdentifier:cellObj.reuseIdentifier forIndexPath:indexPath];
+    HFCollectionViewCell *cell = [sender dequeueReusableCellWithReuseIdentifier:cellModel.reuseIdentifier forIndexPath:indexPath];
     
-    [cell bindData:cellObj];
+    [cell bindData:cellModel];
     return cell;
 }
 
@@ -314,7 +314,7 @@ static char HFItemSize;
  
     if([self hfc_isSectionData])
     {
-        HFCollectionSectionObj *sectionObj = self.hfc_dataSourceObjs[indexPath.section];
+        HFCollectionSectionModel *sectionObj = self.hfc_dataSourceObjs[indexPath.section];
         HFCollectionReusableView *reusableView= [sender dequeueReusableSupplementaryViewOfKind:sectionObj.kind withReuseIdentifier:sectionObj.reuseIdentifier forIndexPath:indexPath];
         [reusableView bindData:sectionObj];
         

@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface HFCollectionSectionObj : NSObject
-@property (nonatomic,strong) NSMutableArray *cellObjs;
+@interface HFCollectionSectionModel : NSObject
+@property (nonatomic,strong) NSMutableArray *cellModels;
 @property (nonatomic,strong) id valueData;
 @property (nonatomic,strong) NSString *reuseIdentifier;
 @property (nonatomic,strong) NSString *reusableClassName;

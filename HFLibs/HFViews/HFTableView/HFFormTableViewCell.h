@@ -7,7 +7,7 @@
 //
 
 #import "HFTableViewCell.h"
-#import "HFFormTableCellObj.h"
+#import "HFFormTableCellModel.h"
 
 @interface HFFormTableViewCell : HFTableViewCell
 

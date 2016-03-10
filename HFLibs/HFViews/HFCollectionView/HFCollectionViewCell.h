@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFCollectionCellObj.h"
+#import "HFCollectionCellModel.h"
 @interface HFCollectionViewCell : UICollectionViewCell
-@property (nonatomic,readonly) HFCollectionCellObj*cellObj;
+@property (nonatomic,readonly) HFCollectionCellModel*cellObj;
 
 
 //重载该函数来设置你的UI
 -(void)setupView;
 
--(void)bindData:(HFCollectionCellObj *)cellObj;
+-(void)bindData:(HFCollectionCellModel *)cellObj;
 
 @end

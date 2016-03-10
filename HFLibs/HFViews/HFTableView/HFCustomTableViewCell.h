@@ -7,6 +7,6 @@
 //
 
 #import "HFTableViewCell.h"
-#import "HFCustomTableCellObj.h"
+#import "HFCustomTableCellModel.h"
 @interface HFCustomTableViewCell : HFTableViewCell
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFTableCellObj.h"
-#import "HFTableSectionObj.h"
+#import "HFTableCellModel.h"
+#import "HFTableSectionModel.h"
 #import "HFTableViewCell.h"
-#import "HFFormTableCellObj.h"
-#import "HFCustomTableCellObj.h"
+#import "HFFormTableCellModel.h"
+#import "HFCustomTableCellModel.h"
 #import "HFCustomTableViewCell.h"
 @protocol HFTableViewDelegate <NSObject>
 
@@ -35,14 +35,14 @@
  *  @param className  cell 的className
  *  @param addMore    yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)setCellObjsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore;
+-(void)setCellModelsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore;
 /**
  *  自己转换成cellObj后进行设置
  *
  *  @param cellObj cellObj
  *  @param addMore yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)setCellObjsForObjs:(NSArray *)cellObjs  isAddmore:(BOOL)addMore;
+-(void)setCellModelsForObjs:(NSArray *)cellObjs  isAddmore:(BOOL)addMore;
 
 /**
  *  重新加载一个section
@@ -59,13 +59,13 @@
  *  @param sectionIndex section 的序号
  *   @param sectionKey section的Key
  */
--(void)replaceSection:(HFTableSectionObj *)sectionObj sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation;
--(void)replaceSection:(HFTableSectionObj *)sectionObj sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation;
+-(void)replaceSection:(HFTableSectionModel *)sectionObj sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation;
+-(void)replaceSection:(HFTableSectionModel *)sectionObj sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation;
 
--(HFTableCellObj *)cellObjForIndexPath:(NSIndexPath *)indexPath;
+-(HFTableCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath;
 //HFFormTableCellObj 才会有key
--(HFFormTableCellObj *)cellObjForObjKey:(NSString *)objKey;
--(HFTableSectionObj *)sectionObjForKey:(NSString *)sectionKey;
+-(HFFormTableCellModel *)cellModelForObjKey:(NSString *)objKey;
+-(HFTableSectionModel *)sectionObjForKey:(NSString *)sectionKey;
 
 #pragma mark -- 事件监听
 -(void)openKeyboardObserver;

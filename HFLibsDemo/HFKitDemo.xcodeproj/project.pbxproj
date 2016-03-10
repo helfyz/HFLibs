@@ -12,14 +12,14 @@
 		A89CFE9A1C8E82E800679535 /* HFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE6E1C8E82E800679535 /* HFCollectionReusableView.m */; };
 		A89CFE9B1C8E82E800679535 /* HFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE701C8E82E800679535 /* HFCollectionViewCell.m */; };
 		A89CFE9C1C8E82E800679535 /* HFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE731C8E82E800679535 /* HFLabel.m */; };
-		A89CFE9D1C8E82E800679535 /* HFCollectionCellObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE761C8E82E800679535 /* HFCollectionCellObj.m */; };
-		A89CFE9E1C8E82E800679535 /* HFCollectionSectionObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE781C8E82E800679535 /* HFCollectionSectionObj.m */; };
-		A89CFE9F1C8E82E800679535 /* HFCustomTableCellObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE7A1C8E82E800679535 /* HFCustomTableCellObj.m */; };
+		A89CFE9D1C8E82E800679535 /* HFCollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE761C8E82E800679535 /* HFCollectionCellModel.m */; };
+		A89CFE9E1C8E82E800679535 /* HFCollectionSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE781C8E82E800679535 /* HFCollectionSectionModel.m */; };
+		A89CFE9F1C8E82E800679535 /* HFCustomTableCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE7A1C8E82E800679535 /* HFCustomTableCellModel.m */; };
 		A89CFEA01C8E82E800679535 /* HFCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE7C1C8E82E800679535 /* HFCustomTableViewCell.m */; };
-		A89CFEA11C8E82E800679535 /* HFFormTableCellObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE7E1C8E82E800679535 /* HFFormTableCellObj.m */; };
+		A89CFEA11C8E82E800679535 /* HFFormTableCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE7E1C8E82E800679535 /* HFFormTableCellModel.m */; };
 		A89CFEA21C8E82E800679535 /* HFFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE801C8E82E800679535 /* HFFormTableViewCell.m */; };
-		A89CFEA31C8E82E800679535 /* HFTableCellObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE821C8E82E800679535 /* HFTableCellObj.m */; };
-		A89CFEA41C8E82E800679535 /* HFTableSectionObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE841C8E82E800679535 /* HFTableSectionObj.m */; };
+		A89CFEA31C8E82E800679535 /* HFTableCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE821C8E82E800679535 /* HFTableCellModel.m */; };
+		A89CFEA41C8E82E800679535 /* HFTableSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE841C8E82E800679535 /* HFTableSectionModel.m */; };
 		A89CFEA51C8E82E800679535 /* HFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE861C8E82E800679535 /* HFTableView.m */; };
 		A89CFEA61C8E82E800679535 /* HFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE881C8E82E800679535 /* HFTableViewCell.m */; };
 		A89CFEA71C8E82E800679535 /* HFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A89CFE8B1C8E82E800679535 /* HFTextField.m */; };
@@ -58,22 +58,22 @@
 		A89CFE701C8E82E800679535 /* HFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCollectionViewCell.m; sourceTree = "<group>"; };
 		A89CFE721C8E82E800679535 /* HFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLabel.h; sourceTree = "<group>"; };
 		A89CFE731C8E82E800679535 /* HFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLabel.m; sourceTree = "<group>"; };
-		A89CFE751C8E82E800679535 /* HFCollectionCellObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCollectionCellObj.h; sourceTree = "<group>"; };
-		A89CFE761C8E82E800679535 /* HFCollectionCellObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCollectionCellObj.m; sourceTree = "<group>"; };
-		A89CFE771C8E82E800679535 /* HFCollectionSectionObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCollectionSectionObj.h; sourceTree = "<group>"; };
-		A89CFE781C8E82E800679535 /* HFCollectionSectionObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCollectionSectionObj.m; sourceTree = "<group>"; };
-		A89CFE791C8E82E800679535 /* HFCustomTableCellObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCustomTableCellObj.h; sourceTree = "<group>"; };
-		A89CFE7A1C8E82E800679535 /* HFCustomTableCellObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCustomTableCellObj.m; sourceTree = "<group>"; };
+		A89CFE751C8E82E800679535 /* HFCollectionCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCollectionCellModel.h; sourceTree = "<group>"; };
+		A89CFE761C8E82E800679535 /* HFCollectionCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCollectionCellModel.m; sourceTree = "<group>"; };
+		A89CFE771C8E82E800679535 /* HFCollectionSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCollectionSectionModel.h; sourceTree = "<group>"; };
+		A89CFE781C8E82E800679535 /* HFCollectionSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCollectionSectionModel.m; sourceTree = "<group>"; };
+		A89CFE791C8E82E800679535 /* HFCustomTableCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCustomTableCellModel.h; sourceTree = "<group>"; };
+		A89CFE7A1C8E82E800679535 /* HFCustomTableCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCustomTableCellModel.m; sourceTree = "<group>"; };
 		A89CFE7B1C8E82E800679535 /* HFCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCustomTableViewCell.h; sourceTree = "<group>"; };
 		A89CFE7C1C8E82E800679535 /* HFCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCustomTableViewCell.m; sourceTree = "<group>"; };
-		A89CFE7D1C8E82E800679535 /* HFFormTableCellObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFormTableCellObj.h; sourceTree = "<group>"; };
-		A89CFE7E1C8E82E800679535 /* HFFormTableCellObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFormTableCellObj.m; sourceTree = "<group>"; };
+		A89CFE7D1C8E82E800679535 /* HFFormTableCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFormTableCellModel.h; sourceTree = "<group>"; };
+		A89CFE7E1C8E82E800679535 /* HFFormTableCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFormTableCellModel.m; sourceTree = "<group>"; };
 		A89CFE7F1C8E82E800679535 /* HFFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFormTableViewCell.h; sourceTree = "<group>"; };
 		A89CFE801C8E82E800679535 /* HFFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFormTableViewCell.m; sourceTree = "<group>"; };
-		A89CFE811C8E82E800679535 /* HFTableCellObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableCellObj.h; sourceTree = "<group>"; };
-		A89CFE821C8E82E800679535 /* HFTableCellObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableCellObj.m; sourceTree = "<group>"; };
-		A89CFE831C8E82E800679535 /* HFTableSectionObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableSectionObj.h; sourceTree = "<group>"; };
-		A89CFE841C8E82E800679535 /* HFTableSectionObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableSectionObj.m; sourceTree = "<group>"; };
+		A89CFE811C8E82E800679535 /* HFTableCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableCellModel.h; sourceTree = "<group>"; };
+		A89CFE821C8E82E800679535 /* HFTableCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableCellModel.m; sourceTree = "<group>"; };
+		A89CFE831C8E82E800679535 /* HFTableSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableSectionModel.h; sourceTree = "<group>"; };
+		A89CFE841C8E82E800679535 /* HFTableSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableSectionModel.m; sourceTree = "<group>"; };
 		A89CFE851C8E82E800679535 /* HFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableView.h; sourceTree = "<group>"; };
 		A89CFE861C8E82E800679535 /* HFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableView.m; sourceTree = "<group>"; };
 		A89CFE871C8E82E800679535 /* HFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCell.h; sourceTree = "<group>"; };
@@ -200,22 +200,22 @@
 		A89CFE741C8E82E800679535 /* HFTableView */ = {
 			isa = PBXGroup;
 			children = (
-				A89CFE751C8E82E800679535 /* HFCollectionCellObj.h */,
-				A89CFE761C8E82E800679535 /* HFCollectionCellObj.m */,
-				A89CFE771C8E82E800679535 /* HFCollectionSectionObj.h */,
-				A89CFE781C8E82E800679535 /* HFCollectionSectionObj.m */,
-				A89CFE791C8E82E800679535 /* HFCustomTableCellObj.h */,
-				A89CFE7A1C8E82E800679535 /* HFCustomTableCellObj.m */,
+				A89CFE751C8E82E800679535 /* HFCollectionCellModel.h */,
+				A89CFE761C8E82E800679535 /* HFCollectionCellModel.m */,
+				A89CFE771C8E82E800679535 /* HFCollectionSectionModel.h */,
+				A89CFE781C8E82E800679535 /* HFCollectionSectionModel.m */,
+				A89CFE791C8E82E800679535 /* HFCustomTableCellModel.h */,
+				A89CFE7A1C8E82E800679535 /* HFCustomTableCellModel.m */,
 				A89CFE7B1C8E82E800679535 /* HFCustomTableViewCell.h */,
 				A89CFE7C1C8E82E800679535 /* HFCustomTableViewCell.m */,
-				A89CFE7D1C8E82E800679535 /* HFFormTableCellObj.h */,
-				A89CFE7E1C8E82E800679535 /* HFFormTableCellObj.m */,
+				A89CFE7D1C8E82E800679535 /* HFFormTableCellModel.h */,
+				A89CFE7E1C8E82E800679535 /* HFFormTableCellModel.m */,
 				A89CFE7F1C8E82E800679535 /* HFFormTableViewCell.h */,
 				A89CFE801C8E82E800679535 /* HFFormTableViewCell.m */,
-				A89CFE811C8E82E800679535 /* HFTableCellObj.h */,
-				A89CFE821C8E82E800679535 /* HFTableCellObj.m */,
-				A89CFE831C8E82E800679535 /* HFTableSectionObj.h */,
-				A89CFE841C8E82E800679535 /* HFTableSectionObj.m */,
+				A89CFE811C8E82E800679535 /* HFTableCellModel.h */,
+				A89CFE821C8E82E800679535 /* HFTableCellModel.m */,
+				A89CFE831C8E82E800679535 /* HFTableSectionModel.h */,
+				A89CFE841C8E82E800679535 /* HFTableSectionModel.m */,
 				A89CFE851C8E82E800679535 /* HFTableView.h */,
 				A89CFE861C8E82E800679535 /* HFTableView.m */,
 				A89CFE871C8E82E800679535 /* HFTableViewCell.h */,
@@ -477,15 +477,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A89CFEA11C8E82E800679535 /* HFFormTableCellObj.m in Sources */,
+				A89CFEA11C8E82E800679535 /* HFFormTableCellModel.m in Sources */,
 				A89CFEA81C8E82E800679535 /* HFTextView.m in Sources */,
 				A89CFEAA1C8E82E800679535 /* UIView+UserInfo.m in Sources */,
 				A8BDB54C1B8198190002F60F /* ViewController.m in Sources */,
 				A89CFE9C1C8E82E800679535 /* HFLabel.m in Sources */,
-				A89CFEA41C8E82E800679535 /* HFTableSectionObj.m in Sources */,
+				A89CFEA41C8E82E800679535 /* HFTableSectionModel.m in Sources */,
 				A89CFEA61C8E82E800679535 /* HFTableViewCell.m in Sources */,
 				A89CFEA91C8E82E800679535 /* UIView+CGRect.m in Sources */,
-				A89CFE9E1C8E82E800679535 /* HFCollectionSectionObj.m in Sources */,
+				A89CFE9E1C8E82E800679535 /* HFCollectionSectionModel.m in Sources */,
 				A8BDB5491B8198190002F60F /* AppDelegate.m in Sources */,
 				A89CFEA01C8E82E800679535 /* HFCustomTableViewCell.m in Sources */,
 				A8BDB5461B8198190002F60F /* main.m in Sources */,
@@ -493,12 +493,12 @@
 				A89CFE991C8E82E800679535 /* HFButton.m in Sources */,
 				A89CFEA51C8E82E800679535 /* HFTableView.m in Sources */,
 				A89CFEA21C8E82E800679535 /* HFFormTableViewCell.m in Sources */,
-				A89CFE9D1C8E82E800679535 /* HFCollectionCellObj.m in Sources */,
+				A89CFE9D1C8E82E800679535 /* HFCollectionCellModel.m in Sources */,
 				A89CFEAC1C8E82E800679535 /* UIViewController+HFTableView.m in Sources */,
-				A89CFEA31C8E82E800679535 /* HFTableCellObj.m in Sources */,
+				A89CFEA31C8E82E800679535 /* HFTableCellModel.m in Sources */,
 				A89CFE9B1C8E82E800679535 /* HFCollectionViewCell.m in Sources */,
 				A89CFE9A1C8E82E800679535 /* HFCollectionReusableView.m in Sources */,
-				A89CFE9F1C8E82E800679535 /* HFCustomTableCellObj.m in Sources */,
+				A89CFE9F1C8E82E800679535 /* HFCustomTableCellModel.m in Sources */,
 				A89CFEAB1C8E82E800679535 /* UIViewController+HFCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,15 +6,15 @@
 //  Copyright © 2016年 charles. All rights reserved.
 //
 
-#import "HFCollectionSectionObj.h"
+#import "HFCollectionSectionModel.h"
 
-@implementation HFCollectionSectionObj
+@implementation HFCollectionSectionModel
 -(id)init
 {
     self = [super init];
     if(self)
     {
-        self.cellObjs = [NSMutableArray array];
+        self.cellModels = [NSMutableArray array];
         self.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         self.kind = UICollectionElementKindSectionHeader;
 //        self.reuseIdentifier = @"HFCollectionReusableView";

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFTableCellObj.h"
+#import "HFTableCellModel.h"
 
 typedef NS_ENUM(NSInteger,HFFormAccessoryMode) {
     HFFormAccessoryModeNone=0,   //没有Accessory
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger,HFFormAccessoryMode) {
     HFFormAccessoryModeLine,
 };
 
-@interface HFFormTableCellObj : HFTableCellObj
+@interface HFFormTableCellModel : HFTableCellModel
 @property (nonatomic,readonly) HFFormAccessoryMode accessoryMode;
 
 
@@ -47,8 +47,8 @@ typedef NS_ENUM(NSInteger,HFFormAccessoryMode) {
 
 //for 数据提交
 @property (nonatomic,assign) BOOL isRequired;       //必填项 不设置regex 只判断不能为空 默认NO
-@property (nonatomic,strong) NSString *objName;
-@property (nonatomic,strong) NSString *objKey;
+@property (nonatomic,strong) NSString *modelName;
+@property (nonatomic,strong) NSString *modelKey;
 @property (nonatomic,strong) NSString *regex;       //判断值正则。。
 
 

@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFCollectionSectionObj.h"
+#import "HFCollectionSectionModel.h"
 @interface HFCollectionReusableView : UICollectionReusableView
-@property (nonatomic,readonly) HFCollectionSectionObj*sectionObj;
+@property (nonatomic,readonly) HFCollectionSectionModel*sectionObj;
 
 
 //重载该函数来设置你的UI
 -(void)setupView;
 
--(void)bindData:(HFCollectionSectionObj *)sectionObj;
+-(void)bindData:(HFCollectionSectionModel *)sectionObj;
 
 @end

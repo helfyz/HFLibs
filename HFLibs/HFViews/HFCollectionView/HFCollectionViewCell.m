@@ -25,7 +25,7 @@
 {
 }
 
--(void)bindData:(HFCollectionCellObj *)cellObj
+-(void)bindData:(HFCollectionCellModel *)cellObj
 {
     _cellObj = cellObj;
 }

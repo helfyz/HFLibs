@@ -27,7 +27,7 @@
     
 }
 
--(void)bindData:(HFFormTableCellObj *)cellObj
+-(void)bindData:(HFFormTableCellModel *)cellObj
 {
     [super bindData:cellObj];
     self.titleLabel.font = cellObj.titleFont;

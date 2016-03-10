@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HFTableView.h"
 
-@class HFTableCellObj,HFFormTableCellObj,HFCustomTableCellObj;
+@class HFTableCellModel,HFFormTableCellModel,HFCustomTableCellModel;
 @interface UIViewController (HFTableView)
 
 @property (nonatomic, strong) HFTableView *hft_tableView;

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFTableSectionObj.h"
+#import "HFTableSectionModel.h"
 
-@implementation HFTableSectionObj
+@implementation HFTableSectionModel
 
 -(id)init
 {
     self = [super init];
     if(self)
     {
-        self.cellObjs = [NSMutableArray array];
+        self.cellModels = [NSMutableArray array];
         self.headHeigth = 10;
         self.footerHeigth = 10;
     }

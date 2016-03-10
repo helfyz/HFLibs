@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFTableCellObj.h"
+#import "HFTableCellModel.h"
 @interface HFTableViewCell : UITableViewCell
-@property (nonatomic,readonly) HFTableCellObj*cellObj;
+@property (nonatomic,readonly) HFTableCellModel*cellObj;
 
 
 //重载该函数来设置你的UI
 -(void)setupView;
 
--(void)bindData:(HFTableCellObj *)cellObj;
+-(void)bindData:(HFTableCellModel *)cellObj;
 
 @end

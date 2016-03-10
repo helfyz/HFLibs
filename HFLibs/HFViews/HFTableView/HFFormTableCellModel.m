@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFFormTableCellObj.h"
+#import "HFFormTableCellModel.h"
 #import "HFButton.h"
 #import "HFTextView.h"
 #import "HFTextField.h"
 #import "HFLabel.h"
 
-@implementation HFFormTableCellObj
+@implementation HFFormTableCellModel
 @synthesize cellIdentifier = _cellIdentifier;
 @synthesize valueData = _valueData;
 
@@ -380,7 +380,7 @@
         {
             if(formValueStr==nil || formValueStr.length<1)
             {
-                errorStr = [NSString stringWithFormat:@"请输入%@",self.objName];
+                errorStr = [NSString stringWithFormat:@"请输入%@",self.modelName];
             }
             else
             {
@@ -389,7 +389,7 @@
                     NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.regex];
                     if(![regexPredicate evaluateWithObject:self.formValueStr])
                     {
-                        errorStr = [NSString stringWithFormat:@"请输入正确的%@",self.objName];
+                        errorStr = [NSString stringWithFormat:@"请输入正确的%@",self.modelName];
                     }
                 }
             }
@@ -397,7 +397,7 @@
         else {
             if(formValueStr==nil || formValueStr.length<1)
             {
-                errorStr = [NSString stringWithFormat:@"请选择%@",self.objName];
+                errorStr = [NSString stringWithFormat:@"请选择%@",self.modelName];
             }
             
         }
@@ -409,7 +409,7 @@
             NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.regex];
             if(![regexPredicate evaluateWithObject:formValueStr])
             {
-                errorStr = [NSString stringWithFormat:@"请输入正确的%@",self.objName];
+                errorStr = [NSString stringWithFormat:@"请输入正确的%@",self.modelName];
             }
         }
     }

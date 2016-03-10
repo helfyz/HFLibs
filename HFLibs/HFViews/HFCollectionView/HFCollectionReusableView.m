@@ -25,7 +25,7 @@
 
 }
 
--(void)bindData:(HFCollectionSectionObj *)sectionObj
+-(void)bindData:(HFCollectionSectionModel *)sectionObj
 {
     _sectionObj = sectionObj;
 }

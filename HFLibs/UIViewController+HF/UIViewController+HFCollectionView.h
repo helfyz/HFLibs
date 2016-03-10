@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HFCollectionCellObj;
+@class HFCollectionCellModel;
 @interface UIViewController(HFCollectionView)
 
 
@@ -27,16 +27,16 @@
  *  @param className  cell 的className
  *  @param addMore    yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)hfc_setCellObjsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore;
+-(void)hfc_setCellModelsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className  isAddmore:(BOOL)addMore;
 /**
  *  自己转换成cellObj后进行设置
  *
  *  @param cellObj cellObj
  *  @param addMore yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void)hfc_setCellObjsForObjs:(NSArray *)cellObjs  isAddmore:(BOOL)addMore;
+-(void)hfc_setCellModelsForObjs:(NSArray *)cellModels  isAddmore:(BOOL)addMore;
 -(void)hfc_setupCollectionForViewLayout:(UICollectionViewFlowLayout *)flowLayout;
 -(void)hfc_setupCollectionView;
 
--(HFCollectionCellObj *)hfc_cellObjForIndexPath:(NSIndexPath *)indexPath;
+-(HFCollectionCellModel *)hfc_cellModelForIndexPath:(NSIndexPath *)indexPath;
 @end

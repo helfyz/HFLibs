@@ -17,7 +17,7 @@
 {
 }
 
--(void)bindData:(HFCustomTableCellObj *)cellObj
+-(void)bindData:(HFCustomTableCellModel *)cellObj
 {
     [super bindData:cellObj];
 }
