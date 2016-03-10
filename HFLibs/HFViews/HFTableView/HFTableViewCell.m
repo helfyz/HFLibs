@@ -36,9 +36,9 @@
     
 }
 
--(void)bindData:(HFTableCellModel *)cellObj
+-(void)bindData:(HFTableCellModel *)cellModel
 {
-    _cellObj = cellObj;
+    _cellModel = cellModel;
 }
 
 

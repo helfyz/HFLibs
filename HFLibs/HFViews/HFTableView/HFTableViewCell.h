@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HFTableCellModel.h"
 @interface HFTableViewCell : UITableViewCell
-@property (nonatomic,readonly) HFTableCellModel*cellObj;
+@property (nonatomic,readonly) HFTableCellModel*cellModel;
 
 
 //重载该函数来设置你的UI
 -(void)setupView;
 
--(void)bindData:(HFTableCellModel *)cellObj;
+-(void)bindData:(HFTableCellModel *)cellModel;
 
 @end
