@@ -32,7 +32,7 @@ static char HFItemSize;
     return  objc_getAssociatedObject(self, &HFCollectionView);
 }
 
--(void)sethfc_dataSourceModels:(NSMutableArray *)hfc_dataSourceModels
+-(void)setHfc_dataSourceModels:(NSMutableArray *)hfc_dataSourceModels
 {
     [self willChangeValueForKey:@"dataSourceModels"];
     objc_setAssociatedObject(self, &HFDataSourceModels,
