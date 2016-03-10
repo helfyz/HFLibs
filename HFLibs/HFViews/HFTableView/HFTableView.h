@@ -21,7 +21,7 @@
 @end
 
 @interface HFTableView : UITableView <UITableViewDataSource,UITableViewDelegate>
-@property(nonatomic,strong)  NSMutableArray *dataSourceObjs;
+@property(nonatomic,strong)  NSMutableArray *dataSourceModels;
 // push 使用
 @property (assign,nonatomic) UIViewController *viewController;
 
@@ -65,7 +65,7 @@
 -(HFTableCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath;
 //HFFormTableCellObj 才会有key
 -(HFFormTableCellModel *)cellModelForObjKey:(NSString *)objKey;
--(HFTableSectionModel *)sectionObjForKey:(NSString *)sectionKey;
+-(HFTableSectionModel *)sectionModelForKey:(NSString *)sectionKey;
 
 #pragma mark -- 事件监听
 -(void)openKeyboardObserver;

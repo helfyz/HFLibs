@@ -12,7 +12,7 @@
 
 
 @property (nonatomic, strong) UICollectionView *hfc_collectionView;
-@property(nonatomic,strong)  NSMutableArray *hfc_dataSourceObjs;
+@property(nonatomic,strong)  NSMutableArray *hfc_dataSourceModels;
 
 
 @property(nonatomic,assign)  CGSize hft_itemSize;   //整体设置item 的size。。如cell的size不同。则设置每个cellObj的size

@@ -60,7 +60,7 @@
 #pragma setupData
 -(void)setupData
 {
-    self.dataSourceObjs = [NSMutableArray array];
+    self.dataSourceModels = [NSMutableArray array];
 }
 
 -(void)reloadData
@@ -81,14 +81,14 @@
 -(void) registerCellClassForcellModels
 {
     if (self.isSectionData) {
-        for (HFTableSectionModel *sectionObj in self.dataSourceObjs) {
-            for (HFTableCellModel *cellModel in sectionObj.cellModels) {
+        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
+            for (HFTableCellModel *cellModel in sectionModel.cellModels) {
                 [self registercellModel:cellModel];
             }
         }
     }
     else{
-        for (HFTableCellModel *cellModel in self.dataSourceObjs) {
+        for (HFTableCellModel *cellModel in self.dataSourceModels) {
             [self registercellModel:cellModel];
         }
     }
@@ -161,7 +161,7 @@
     }
     else{
         for (NSArray *sectionArray in dataSource) {
-            HFTableSectionModel *sectionObj = [[HFTableSectionModel alloc] init];
+            HFTableSectionModel *sectionModel = [[HFTableSectionModel alloc] init];
             NSMutableArray *subcellModels = [NSMutableArray array];
             
             for (id subObj in sectionArray) {
@@ -175,22 +175,22 @@
                 [subcellModels addObject:cellModel];
                 
             }
-            sectionObj.cellModels = subcellModels;
-            [cellModels addObject:sectionObj];
+            sectionModel.cellModels = subcellModels;
+            [cellModels addObject:sectionModel];
         }
         
     }
     if(addMore)
     {
-        if(self.dataSourceObjs == nil)
+        if(self.dataSourceModels == nil)
         {
             [self setupData];
         }
-        [self.dataSourceObjs addObjectsFromArray:cellModels];
+        [self.dataSourceModels addObjectsFromArray:cellModels];
     }
     else
     {
-        self.dataSourceObjs = cellModels;
+        self.dataSourceModels = cellModels;
     }
     //
     //这种设置方式不需要再提取注册cell
@@ -208,15 +208,15 @@
 {
     if(addMore)
     {
-        if(self.dataSourceObjs == nil)
+        if(self.dataSourceModels == nil)
         {
             [self setupData];
         }
-        [self.dataSourceObjs addObjectsFromArray:cellModels];
+        [self.dataSourceModels addObjectsFromArray:cellModels];
     }
     else
     {
-        self.dataSourceObjs = [cellModels mutableCopy];
+        self.dataSourceModels = [cellModels mutableCopy];
     }
     
     [self  registerCellClassForcellModels];
@@ -229,8 +229,8 @@
 {
     
     if (self. isSectionData) {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[section];
-        return sectionObj.headHeigth;
+        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        return sectionModel.headHeigth;
     }
     
     return 0.1;
@@ -239,8 +239,8 @@
 {
     
     if (self. isSectionData) {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[section];
-        return sectionObj.footerHeigth;
+        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        return sectionModel.footerHeigth;
     }
     
     return 0.1;
@@ -248,8 +248,8 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[section];
-        return sectionObj.headTitle;
+        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        return sectionModel.headTitle;
     }
     
     return nil;
@@ -257,15 +257,15 @@
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[section];
-        return sectionObj.headView;
+        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        return sectionModel.headView;
     }
     return nil;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self. isSectionData) {
-        return self.dataSourceObjs.count;
+        return self.dataSourceModels.count;
     }
     else{
         return 1;
@@ -275,11 +275,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[section];
-        return [sectionObj.cellModels count];
+        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        return [sectionModel.cellModels count];
     }
     else{
-        return self.dataSourceObjs.count;
+        return self.dataSourceModels.count;
     }
 }
 
@@ -360,10 +360,10 @@
 #pragma mark --
 -(void)reloadSectionForSectionIndex:(NSUInteger )sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
 {
-    if(self.isSectionData && sectionIndex < self.dataSourceObjs.count)
+    if(self.isSectionData && sectionIndex < self.dataSourceModels.count)
     {
-        HFTableSectionModel *sectionObj = self.dataSourceObjs[sectionIndex];
-        for (HFTableCellModel *cellModel in sectionObj.cellModels) {
+        HFTableSectionModel *sectionModel = self.dataSourceModels[sectionIndex];
+        for (HFTableCellModel *cellModel in sectionModel.cellModels) {
             [self registercellModel:cellModel];
         }
         [self reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:animation];
@@ -374,36 +374,36 @@
 {
     if(self.isSectionData && sectionKey.length > 0)
     {
-        HFTableSectionModel *sectionObj = [self sectionObjForKey:sectionKey];
-        for (HFTableCellModel *cellModel in sectionObj.cellModels) {
+        HFTableSectionModel *sectionModel = [self sectionModelForKey:sectionKey];
+        for (HFTableCellModel *cellModel in sectionModel.cellModels) {
             [self registercellModel:cellModel];
         }
-        [self reloadSections:[NSIndexSet indexSetWithIndex:[self.dataSourceObjs indexOfObject:sectionObj]] withRowAnimation:animation];
+        [self reloadSections:[NSIndexSet indexSetWithIndex:[self.dataSourceModels indexOfObject:sectionModel]] withRowAnimation:animation];
   
     }
 }
--(void)replaceSection:(HFTableSectionModel *)sectionObj sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
+-(void)replaceSection:(HFTableSectionModel *)sectionModel sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
 {
-    if(self.isSectionData && sectionIndex < self.dataSourceObjs.count)
+    if(self.isSectionData && sectionIndex < self.dataSourceModels.count)
     {
-        HFTableSectionModel *oldSectionObj = self.dataSourceObjs[sectionIndex];
-        if(oldSectionObj)
+        HFTableSectionModel *oldsectionModel = self.dataSourceModels[sectionIndex];
+        if(oldsectionModel)
         {
-            NSInteger sectionIndex = [self.dataSourceObjs indexOfObject:sectionObj];
-            [self.dataSourceObjs replaceObjectAtIndex:sectionIndex withObject:sectionObj];
+            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:sectionModel];
+            [self.dataSourceModels replaceObjectAtIndex:sectionIndex withObject:sectionModel];
             [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
         }
     }
 }
--(void)replaceSection:(HFTableSectionModel *)sectionObj sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
+-(void)replaceSection:(HFTableSectionModel *)sectionModel sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
 {
     if(self.isSectionData && sectionKey.length > 0)
     {
-        HFTableSectionModel *oldSectionObj = [self sectionObjForKey:sectionKey];
-        if(oldSectionObj)
+        HFTableSectionModel *oldsectionModel = [self sectionModelForKey:sectionKey];
+        if(oldsectionModel)
         {
-            NSInteger sectionIndex = [self.dataSourceObjs indexOfObject:sectionObj];
-            [self.dataSourceObjs replaceObjectAtIndex:sectionIndex withObject:sectionObj];
+            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:sectionModel];
+            [self.dataSourceModels replaceObjectAtIndex:sectionIndex withObject:sectionModel];
             [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
         }
     }
@@ -413,9 +413,9 @@
 //设置的数据是否是Section模式
 -(BOOL)isSectionData
 {
-    if(self.dataSourceObjs.count >0)
+    if(self.dataSourceModels.count >0)
     {
-        if([[self.dataSourceObjs firstObject] isKindOfClass:[HFTableSectionModel class]])
+        if([[self.dataSourceModels firstObject] isKindOfClass:[HFTableSectionModel class]])
         {
             return YES;
         }
@@ -426,10 +426,10 @@
 {
     HFTableCellModel *cellModel = nil;
     if (self.isSectionData) {
-        cellModel = ((HFTableSectionModel *)self.dataSourceObjs[indexPath.section]).cellModels[indexPath.row];
+        cellModel = ((HFTableSectionModel *)self.dataSourceModels[indexPath.section]).cellModels[indexPath.row];
     }
     else{
-        cellModel =self.dataSourceObjs[indexPath.row];
+        cellModel =self.dataSourceModels[indexPath.row];
     }
     return cellModel;
 }
@@ -440,8 +440,8 @@
     
     if(self.isSectionData)
     {
-        for (HFTableSectionModel *sectionObj in self.dataSourceObjs) {
-            for (HFTableCellModel *subObj  in sectionObj.cellModels) {
+        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
+            for (HFTableCellModel *subObj  in sectionModel.cellModels) {
                 if([subObj isKindOfClass:[HFFormTableCellModel class]])
                 {
                     if([((HFFormTableCellModel *)subObj).modelKey isEqualToString:objKey])
@@ -455,7 +455,7 @@
     }
     else
     {
-        for (HFTableCellModel *subObj  in self.dataSourceObjs) {
+        for (HFTableCellModel *subObj  in self.dataSourceModels) {
             
             if([subObj isKindOfClass:[HFFormTableCellModel class]])
             {
@@ -469,16 +469,16 @@
     return cellModel;
 }
 
--(HFTableSectionModel *)sectionObjForKey:(NSString *)sectionKey
+-(HFTableSectionModel *)sectionModelForKey:(NSString *)sectionKey
 {
     
     if(self.isSectionData && sectionKey.length > 0)
     {
-        for (HFTableSectionModel *sectionObj in self.dataSourceObjs) {
+        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
             
-            if([sectionObj.sectionKey isEqualToString:sectionKey])
+            if([sectionModel.sectionKey isEqualToString:sectionKey])
             {
-                return sectionObj;
+                return sectionModel;
             }
             
         }
@@ -520,8 +520,8 @@
     if(self.isSectionData)
     {
         
-        for (section =0 ;section<self.dataSourceObjs.count;section++) {
-            NSArray *sectionArray =self.dataSourceObjs[section];
+        for (section =0 ;section<self.dataSourceModels.count;section++) {
+            NSArray *sectionArray =self.dataSourceModels[section];
             for (row =0 ;row<sectionArray.count;row++) {
                 HFTableViewCell *obj = sectionArray[row];
                 if([obj isFirstResponder])
@@ -535,8 +535,8 @@
         
     }
     else{
-        for (row =0 ;row<self.dataSourceObjs.count;row++) {
-            HFTableViewCell *obj = self.dataSourceObjs[row];
+        for (row =0 ;row<self.dataSourceModels.count;row++) {
+            HFTableViewCell *obj = self.dataSourceModels[row];
             if([obj isFirstResponder])
             {
                 find = YES;
