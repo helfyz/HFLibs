@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFTableCellModel.h"
+#import "HFTableViewCellModel.h"
 
-@implementation HFTableCellModel
+@implementation HFTableViewCellModel
 
 
 -(id)init

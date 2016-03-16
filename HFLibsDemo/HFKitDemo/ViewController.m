@@ -35,11 +35,11 @@
 
 -(void)setupData
 {
-    HFTableSectionModel *sectionObj = [[HFTableSectionModel alloc] init];
+    HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
     sectionObj.headTitle = @"123";
     
-    [self.hft_tableView setCellModelsForObjs:@[sectionObj] isAddmore:NO];
+    [self.hft_tableView setCellModelsForModels:@[sectionObj] isAddmore:NO];
     
 }
 

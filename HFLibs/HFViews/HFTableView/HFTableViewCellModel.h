@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HFTableCellModel : NSObject
+@interface HFTableViewCellModel : NSObject
 
 
 @property (nonatomic,assign)   UITableViewCellSelectionStyle   selectionStyle;
@@ -31,11 +31,12 @@
 
 //静态的obj。。对应的cell不会被重载  defalut 为NO
 @property (nonatomic,assign) BOOL isStaticObj;
-@property (nonatomic,assign) float cellHeigth;  //行高 默认40
+@property (nonatomic,assign) float cellHeigth;  //行高  HFTableViewFormCellModel默认40   HFTableViewCustomCellModel如不设置。会根据约束自行计算
 
 //cell 的数据
 @property (nonatomic,strong) id valueData;
-
+@property (nonatomic,strong) NSString *modelName;
+@property (nonatomic,strong) NSString *modelKey;
 //设置初始默认值
 -(void)setupDefauleValues;
 

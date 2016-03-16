@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface HFTableSectionModel : NSObject
+@interface HFTableViewSectionModel : NSObject
 
 @property (nonatomic,strong) NSMutableArray *cellModels;
 

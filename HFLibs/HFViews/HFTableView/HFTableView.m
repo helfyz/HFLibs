@@ -7,12 +7,12 @@
 //
 
 #import "HFTableView.h"
-#import "HFTableCellModel.h"
-#import "HFTableSectionModel.h"
+#import "HFTableViewCellModel.h"
+#import "HFTableViewSectionModel.h"
 #import "HFTableViewCell.h"
-#import "HFFormTableCellModel.h"
-#import "HFCustomTableCellModel.h"
-#import "HFCustomTableViewCell.h"
+#import "HFTableViewFormCellModel.h"
+#import "HFTableViewCustomCellModel.h"
+#import "HFTableViewCustomCell.h"
 #import "UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h"
 
 @interface HFTableView()
@@ -81,21 +81,21 @@
 -(void) registerCellClassForcellModels
 {
     if (self.isSectionData) {
-        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
-            for (HFTableCellModel *cellModel in sectionModel.cellModels) {
+        for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
+            for (HFTableViewCellModel *cellModel in sectionModel.cellModels) {
                 [self registercellModel:cellModel];
             }
         }
     }
     else{
-        for (HFTableCellModel *cellModel in self.dataSourceModels) {
+        for (HFTableViewCellModel *cellModel in self.dataSourceModels) {
             [self registercellModel:cellModel];
         }
     }
     
 }
 
--(void)registercellModel:(HFTableCellModel *)cellModel
+-(void)registercellModel:(HFTableViewCellModel *)cellModel
 {
     
     if(cellModel.useXib)
@@ -147,9 +147,9 @@
     
     if(isSection == NO)
     {
-        for (id subObj in dataSource) {
-            HFCustomTableCellModel *cellModel = [[HFCustomTableCellModel alloc] init];
-            cellModel.valueData = subObj;
+        for (id subModel in dataSource) {
+            HFTableViewCustomCellModel*cellModel = [[HFTableViewCustomCellModel alloc] init];
+            cellModel.valueData = subModel;
             cellModel.tablViewCellClassName = className;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
@@ -161,12 +161,12 @@
     }
     else{
         for (NSArray *sectionArray in dataSource) {
-            HFTableSectionModel *sectionModel = [[HFTableSectionModel alloc] init];
+            HFTableViewSectionModel *sectionModel = [[HFTableViewSectionModel alloc] init];
             NSMutableArray *subcellModels = [NSMutableArray array];
             
-            for (id subObj in sectionArray) {
-                HFCustomTableCellModel *cellModel = [[HFCustomTableCellModel alloc] init];
-                cellModel.valueData = subObj;
+            for (id subModel in sectionArray) {
+                HFTableViewCustomCellModel*cellModel = [[HFTableViewCustomCellModel alloc] init];
+                cellModel.valueData = subModel;
                 cellModel.tablViewCellClassName = className;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
@@ -204,7 +204,7 @@
  *  @param cellModel cellModel
  *  @param addMore yes 数据直接添加到已有数据之后。NO 覆盖
  */
--(void) setCellModelsForObjs:(NSArray *)cellModels  isAddmore:(BOOL)addMore
+-(void) setCellModelsForModels:(NSArray *)cellModels  isAddmore:(BOOL)addMore
 {
     if(addMore)
     {
@@ -229,7 +229,7 @@
 {
     
     if (self. isSectionData) {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[section];
         return sectionModel.headHeigth;
     }
     
@@ -239,7 +239,7 @@
 {
     
     if (self. isSectionData) {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[section];
         return sectionModel.footerHeigth;
     }
     
@@ -248,7 +248,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[section];
         return sectionModel.headTitle;
     }
     
@@ -257,7 +257,7 @@
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[section];
         return sectionModel.headView;
     }
     return nil;
@@ -275,7 +275,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (self. isSectionData) {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[section];
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[section];
         return [sectionModel.cellModels count];
     }
     else{
@@ -286,9 +286,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    HFTableCellModel *cellModel = [self  cellModelForIndexPath:indexPath];
+    HFTableViewCellModel *cellModel = [self  cellModelForIndexPath:indexPath];
     
-    if([[cellModel class] isSubclassOfClass:[HFCustomTableCellModel class]])
+    if([[cellModel class] isSubclassOfClass:[HFTableViewCustomCellModel class]])
     {
         
         if(cellModel.cellHeigth  > 0)
@@ -305,7 +305,7 @@
         
 
     }
-    else if([cellModel isKindOfClass:[HFFormTableCellModel class]])
+    else if([cellModel isKindOfClass:[HFTableViewFormCellModel class]])
     {
         return cellModel.cellHeigth;
     }
@@ -315,7 +315,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)sender cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HFTableCellModel *cellModel = [self cellModelForIndexPath:indexPath];
+    HFTableViewCellModel *cellModel = [self cellModelForIndexPath:indexPath];
     HFTableViewCell *cell = [sender dequeueReusableCellWithIdentifier:cellModel.cellIdentifier forIndexPath:indexPath];
     [cell bindData:cellModel];
     
@@ -338,32 +338,30 @@
         return;
     }
     
-    HFTableCellModel *cellModel = [self cellModelForIndexPath:indexPath];
-    if(((HFFormTableCellModel *)cellModel).cellAction){
-        if([self.customDelegate respondsToSelector:((HFFormTableCellModel *)cellModel).cellAction])
+    HFTableViewCellModel *cellModel = [self cellModelForIndexPath:indexPath];
+    if(((HFTableViewFormCellModel *)cellModel).cellAction){
+        if([self.customDelegate respondsToSelector:((HFTableViewFormCellModel *)cellModel).cellAction])
         {
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [self.customDelegate performSelector:((HFFormTableCellModel *)cellModel).cellAction withObject:cellModel];
+            [self.customDelegate performSelector:((HFTableViewFormCellModel *)cellModel).cellAction withObject:cellModel];
         }
     }
-    else if(((HFFormTableCellModel *)cellModel).pushToClass)
+    else if(((HFTableViewFormCellModel *)cellModel).pushToClass)
     {
-        UIViewController *controller = [[[((HFFormTableCellModel *)cellModel) pushToClass] alloc] init];
+        UIViewController *controller = [[[((HFTableViewFormCellModel *)cellModel) pushToClass] alloc] init];
         [self.viewController.navigationController pushViewController:controller animated:YES];
     }
-  
-    
-    
+
 }
 
 
-#pragma mark --
+#pragma mark -- reload
 -(void)reloadSectionForSectionIndex:(NSUInteger )sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
 {
     if(self.isSectionData && sectionIndex < self.dataSourceModels.count)
     {
-        HFTableSectionModel *sectionModel = self.dataSourceModels[sectionIndex];
-        for (HFTableCellModel *cellModel in sectionModel.cellModels) {
+        HFTableViewSectionModel *sectionModel = self.dataSourceModels[sectionIndex];
+        for (HFTableViewCellModel *cellModel in sectionModel.cellModels) {
             [self registercellModel:cellModel];
         }
         [self reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:animation];
@@ -374,40 +372,92 @@
 {
     if(self.isSectionData && sectionKey.length > 0)
     {
-        HFTableSectionModel *sectionModel = [self sectionModelForKey:sectionKey];
-        for (HFTableCellModel *cellModel in sectionModel.cellModels) {
+        HFTableViewSectionModel *sectionModel = [self sectionModelForKey:sectionKey];
+        for (HFTableViewCellModel *cellModel in sectionModel.cellModels) {
             [self registercellModel:cellModel];
         }
         [self reloadSections:[NSIndexSet indexSetWithIndex:[self.dataSourceModels indexOfObject:sectionModel]] withRowAnimation:animation];
   
     }
 }
--(void)replaceSection:(HFTableSectionModel *)sectionModel sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
+
+-(void)replaceSection:(HFTableViewSectionModel *)sectionModel sectionIndex:(NSUInteger)sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
 {
     if(self.isSectionData && sectionIndex < self.dataSourceModels.count)
     {
-        HFTableSectionModel *oldsectionModel = self.dataSourceModels[sectionIndex];
+        HFTableViewSectionModel *oldsectionModel = self.dataSourceModels[sectionIndex];
         if(oldsectionModel)
         {
-            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:sectionModel];
+            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:oldsectionModel];
             [self.dataSourceModels replaceObjectAtIndex:sectionIndex withObject:sectionModel];
             [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
         }
     }
 }
--(void)replaceSection:(HFTableSectionModel *)sectionModel sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
+-(void)replaceSection:(HFTableViewSectionModel *)sectionModel sectionKey:(NSString *)sectionKey withRowAnimation:(UITableViewRowAnimation)animation
 {
     if(self.isSectionData && sectionKey.length > 0)
     {
-        HFTableSectionModel *oldsectionModel = [self sectionModelForKey:sectionKey];
+        HFTableViewSectionModel *oldsectionModel = [self sectionModelForKey:sectionKey];
         if(oldsectionModel)
         {
-            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:sectionModel];
+            NSInteger sectionIndex = [self.dataSourceModels indexOfObject:oldsectionModel];
             [self.dataSourceModels replaceObjectAtIndex:sectionIndex withObject:sectionModel];
             [self reloadSectionForSectionIndex:sectionIndex withRowAnimation:animation];
         }
     }
 }
+
+-(void)reloadCellForSectionIndex:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation
+{
+     if(indexPath)
+     {
+         HFTableViewCellModel *cellModel = [self cellModelForIndexPath:indexPath];
+         if(cellModel)
+         {
+             [self registercellModel:cellModel];
+         }
+         [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
+     }
+
+}
+-(void)reloadCellForSectionKey:(NSString *)cellModelKey withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(cellModelKey.length > 0)
+    {
+        NSIndexPath *indexPath = [self cellIndexForModelKey:cellModelKey];
+        [self reloadCellForSectionIndex:indexPath withRowAnimation:animation];
+    }
+}
+
+-(void)replaceCellModel:(HFTableViewCellModel *)cellModel cellIndex:(NSIndexPath *)indexpath withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(cellModel && indexpath && indexpath.section < self.dataSourceModels.count)
+    {
+        HFTableViewSectionModel *section = self.dataSourceModels[indexpath.section];
+        [section.cellModels replaceObjectAtIndex:indexpath.row withObject:cellModel];
+        
+        [self registercellModel:cellModel];
+        [self reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:animation];
+        
+    }
+}
+-(void)replaceCellModel:(HFTableViewCellModel *)cellModel cellModelKey:(NSString *)cellModelKey withRowAnimation:(UITableViewRowAnimation)animation
+{
+    if(cellModel && cellModelKey.length > 0)
+    {
+        NSIndexPath *indexPath = [self cellIndexForModelKey:cellModelKey];
+        
+        HFTableViewSectionModel *section = self.dataSourceModels[indexPath.section];
+        [section.cellModels replaceObjectAtIndex:indexPath.row withObject:cellModel];
+        
+        [self registercellModel:cellModel];
+        [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
+    
+    }
+}
+
+
 
 #pragma mark 数据提取
 //设置的数据是否是Section模式
@@ -415,18 +465,18 @@
 {
     if(self.dataSourceModels.count >0)
     {
-        if([[self.dataSourceModels firstObject] isKindOfClass:[HFTableSectionModel class]])
+        if([[self.dataSourceModels firstObject] isKindOfClass:[HFTableViewSectionModel class]])
         {
             return YES;
         }
     }
     return NO;
 }
--(HFTableCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath
+-(HFTableViewCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath
 {
-    HFTableCellModel *cellModel = nil;
+    HFTableViewCellModel *cellModel = nil;
     if (self.isSectionData) {
-        cellModel = ((HFTableSectionModel *)self.dataSourceModels[indexPath.section]).cellModels[indexPath.row];
+        cellModel = ((HFTableViewSectionModel *)self.dataSourceModels[indexPath.section]).cellModels[indexPath.row];
     }
     else{
         cellModel =self.dataSourceModels[indexPath.row];
@@ -434,47 +484,40 @@
     return cellModel;
 }
 
--(HFFormTableCellModel *)cellModelForObjKey:(NSString *)objKey
+-(HFTableViewCellModel *)cellModelForModelKey:(NSString *)modelKey
 {
-    HFFormTableCellModel *cellModel = nil;
+    HFTableViewCellModel *cellModel = nil;
     
     if(self.isSectionData)
     {
-        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
-            for (HFTableCellModel *subObj  in sectionModel.cellModels) {
-                if([subObj isKindOfClass:[HFFormTableCellModel class]])
-                {
-                    if([((HFFormTableCellModel *)subObj).modelKey isEqualToString:objKey])
+        for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
+            for (HFTableViewCellModel *subModel  in sectionModel.cellModels) {
+                    if([subModel.modelKey isEqualToString:modelKey])
                     {
-                        return (HFFormTableCellModel *)subObj;
+                        return subModel;
                     }
-                }
             }
         }
-        
     }
     else
     {
-        for (HFTableCellModel *subObj  in self.dataSourceModels) {
-            
-            if([subObj isKindOfClass:[HFFormTableCellModel class]])
-            {
-                if([((HFFormTableCellModel *)subObj).modelKey isEqualToString:objKey])
+        for (HFTableViewCellModel *subModel  in self.dataSourceModels) {
+        
+                if([subModel.modelKey isEqualToString:modelKey])
                 {
-                    return (HFFormTableCellModel *)subObj;
+                    return subModel;
                 }
-            }
         }
     }
     return cellModel;
 }
 
--(HFTableSectionModel *)sectionModelForKey:(NSString *)sectionKey
+-(HFTableViewSectionModel *)sectionModelForKey:(NSString *)sectionKey
 {
     
     if(self.isSectionData && sectionKey.length > 0)
     {
-        for (HFTableSectionModel *sectionModel in self.dataSourceModels) {
+        for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
             
             if([sectionModel.sectionKey isEqualToString:sectionKey])
             {
@@ -487,6 +530,49 @@
     return nil;
 }
 
+-(NSIndexPath *)cellIndexForModelKey:(NSString *)modelKey
+{
+    NSIndexPath *indexpath = nil;
+    int sectionIndex = 0;
+    int rowIndex = 0;
+    if(self.isSectionData)
+    {
+        for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
+            rowIndex = 0;
+            for (HFTableViewCellModel *subModel  in sectionModel.cellModels) {
+                    if([subModel.modelKey isEqualToString:modelKey])
+                    {
+                        indexpath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
+                    }
+                rowIndex ++;
+            }
+            
+            sectionIndex ++;
+        }
+        
+    }
+    else
+    {
+        for (HFTableViewCellModel *subModel  in self.dataSourceModels) {
+                if([subModel.modelKey isEqualToString:modelKey])
+                {
+                    indexpath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
+                }
+            rowIndex++;
+        }
+    }
+    
+    return indexpath;
+}
+-(NSInteger)sectionIndexForModelKey:(NSString *)sectionKey
+{
+    HFTableViewSectionModel *sectionModel = [self sectionModelForKey:sectionKey];
+    if(sectionModel)
+    {
+        return [self.dataSourceModels indexOfObject:sectionModel];
+    }
+    return NSNotFound;
+}
 
 #pragma mark -- 事件监听
 -(void)openKeyboardObserver
@@ -521,9 +607,9 @@
     {
         
         for (section =0 ;section<self.dataSourceModels.count;section++) {
-            NSArray *sectionArray =self.dataSourceModels[section];
-            for (row =0 ;row<sectionArray.count;row++) {
-                HFTableViewCell *obj = sectionArray[row];
+            HFTableViewSectionModel *sectionModel =self.dataSourceModels[section];
+            for (row =0 ;row < sectionModel.cellModels.count;row++) {
+                HFTableViewCell *obj = sectionModel.cellModels[row];
                 if([obj isFirstResponder])
                 {
                     find = YES;
@@ -548,11 +634,17 @@
     
     if(find)
     {
-        [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        
+        float duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:duration];
+        [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+        [UIView commitAnimations];
     }
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification{
+
     [self setContentInset:UIEdgeInsetsMake(self.contentInset.top, self.contentInset.left, 0, self.contentInset.right)];
 }
 

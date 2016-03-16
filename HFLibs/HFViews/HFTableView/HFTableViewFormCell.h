@@ -7,9 +7,9 @@
 //
 
 #import "HFTableViewCell.h"
-#import "HFFormTableCellModel.h"
+#import "HFTableViewFormCellModel.h"
 
-@interface HFFormTableViewCell : HFTableViewCell
+@interface HFTableViewFormCell : HFTableViewCell
 
 @property (nonatomic,readonly)  UILabel *titleLabel;
 @property (nonatomic,readonly)  UIImageView *iconView;

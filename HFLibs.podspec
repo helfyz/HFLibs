@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = "HFLibs"
-  s.version               = "0.7.5"
+  s.version               = "0.8.0"
   s.summary               = "基于UIKit 希望能简化UIKit 的设置 快速开发"
 
   s.description           = <<-DESC

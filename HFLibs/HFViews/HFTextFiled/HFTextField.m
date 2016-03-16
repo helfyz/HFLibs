@@ -9,6 +9,16 @@
 #import "HFTextField.h"
 #import "UIView+CGRect.h"
 @implementation HFTextField
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [self setupView];
+    }
+    
+    return self;
+}
 -(id)init
 {
     self = [super init];

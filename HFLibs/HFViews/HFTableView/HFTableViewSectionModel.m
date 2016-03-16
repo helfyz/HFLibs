@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFTableSectionModel.h"
+#import "HFTableViewSectionModel.h"
 
-@implementation HFTableSectionModel
+@implementation HFTableViewSectionModel
 
 -(id)init
 {

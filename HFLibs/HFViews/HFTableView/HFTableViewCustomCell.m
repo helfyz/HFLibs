@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFCustomTableViewCell.h"
+#import "HFTableViewCustomCell.h"
 
-@implementation HFCustomTableViewCell
+@implementation HFTableViewCustomCell
 
 
 
@@ -17,7 +17,7 @@
 {
 }
 
--(void)bindData:(HFCustomTableCellModel *)cellObj
+-(void)bindData:(HFTableViewCustomCellModel*)cellObj
 {
     [super bindData:cellObj];
 }

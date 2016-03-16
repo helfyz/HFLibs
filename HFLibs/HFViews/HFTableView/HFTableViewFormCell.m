@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFFormTableViewCell.h"
+#import "HFTableViewFormCell.h"
 #import "Masonry/Masonry.h"
-@implementation HFFormTableViewCell
+@implementation HFTableViewFormCell
 {
         UIView *accessoryView;
 }
@@ -27,7 +27,7 @@
     
 }
 
--(void)bindData:(HFFormTableCellModel *)cellObj
+-(void)bindData:(HFTableViewFormCellModel *)cellObj
 {
     [super bindData:cellObj];
     self.titleLabel.font = cellObj.titleFont;

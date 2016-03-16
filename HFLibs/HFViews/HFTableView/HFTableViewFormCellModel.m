@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "HFFormTableCellModel.h"
+#import "HFTableViewFormCellModel.h"
 #import "HFButton.h"
 #import "HFTextView.h"
 #import "HFTextField.h"
 #import "HFLabel.h"
 
-@implementation HFFormTableCellModel
+@implementation HFTableViewFormCellModel
 @synthesize cellIdentifier = _cellIdentifier;
 @synthesize valueData = _valueData;
 
@@ -31,7 +31,7 @@
     self.accessoryMode         = HFFormAccessoryModeNone;
     self.isRequired            = NO;
     self.isStaticObj           = YES;
-    self.tablViewCellClassName = @"HFFormTableViewCell";
+    self.tablViewCellClassName = @"HFTableViewFormCell";
     self.leftPadding           = 15;
     self.rigthPadding          = 15;
     self.topPadding            = -1;
