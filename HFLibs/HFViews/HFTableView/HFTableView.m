@@ -318,10 +318,15 @@
     HFTableViewCellModel *cellModel = [self cellModelForIndexPath:indexPath];
     HFTableViewCell *cell = [sender dequeueReusableCellWithIdentifier:cellModel.cellIdentifier forIndexPath:indexPath];
     [cell bindData:cellModel];
-    
+  
     if([self.customDelegate respondsToSelector:@selector(tableView:configCell:indexPath:)])
     {
         [self.customDelegate tableView:sender configCell:cell indexPath:indexPath];
+    }
+    
+    if(cellModel.configCellBlock)
+    {
+        cellModel.configCellBlock(cell);
     }
     return cell;
 }
