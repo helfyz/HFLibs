@@ -28,12 +28,28 @@
     {
         return _cellIdentifier;
     }
-    
+    if(self.isStaticObj)
+    {
+        _cellIdentifier = [self creatNewIdentifier];
+        return _cellIdentifier;
+    }
     return self.tablViewCellClassName;
 }
 -(void)setCellIdentifier:(NSString *)cellIdentifier
 {
     _cellIdentifier = cellIdentifier;
+}
+
+
+//创建一个惟一标示
+-(NSString *)creatNewIdentifier
+{
+    
+    CFUUIDRef uuidObj = CFUUIDCreate(nil);
+    NSString *uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(nil, uuidObj);
+    CFRelease(uuidObj);
+    return uuidString;
+    
 }
 
 

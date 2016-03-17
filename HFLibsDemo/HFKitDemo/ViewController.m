@@ -37,9 +37,36 @@
 {
     HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
-    sectionObj.headTitle = @"123";
+    sectionObj.headTitle = @"HFTable";
+    HFTableViewFormCellModel *cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
+    cellModel.title = @"HFDSettingViewController";
+    cellModel.pushToClass = NSClassFromString(@"HFDSettingViewController");
+    [sectionObj.cellModels addObject:cellModel];
     
-    [self.hft_tableView setCellModelsForModels:@[sectionObj] isAddmore:NO];
+    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
+    cellModel.title = @"HFDListViewController";
+    cellModel.pushToClass = NSClassFromString(@"HFDListViewController");
+    [sectionObj.cellModels addObject:cellModel];
+    
+    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
+    cellModel.title = @"HFDCommitViewController";
+    cellModel.pushToClass = NSClassFromString(@"HFDCommitViewController");
+    [sectionObj.cellModels addObject:cellModel];
+    
+    
+    
+    
+    HFTableViewSectionModel *normalSectionObj = [[HFTableViewSectionModel alloc] init];
+    normalSectionObj.headHeigth = 30;
+    normalSectionObj.headTitle = @"常规方式";
+    
+    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
+    cellModel.title = @"HFDNormalSettingViewController";
+    cellModel.pushToClass = NSClassFromString(@"HFDNormalSettingViewController");
+    [normalSectionObj.cellModels addObject:cellModel];
+    
+    
+    [self.hft_tableView setCellModelsForModels:@[sectionObj,normalSectionObj] isAddmore:NO];
     
 }
 

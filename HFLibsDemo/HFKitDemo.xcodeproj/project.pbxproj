@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D15BB857CFBFDDAA0DA1EE1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C65D1C999896C836ED7197AC /* libPods.a */; };
+		A810BCD81C9A49E200A94D68 /* HFDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCD71C9A49E200A94D68 /* HFDListViewController.m */; };
+		A810BCDB1C9A49F100A94D68 /* HFDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCDA1C9A49F100A94D68 /* HFDSettingViewController.m */; };
+		A810BCDE1C9A4A5200A94D68 /* HFDCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCDD1C9A4A5200A94D68 /* HFDCommitViewController.m */; };
+		A810BCE11C9A4C9600A94D68 /* HFDNormalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCE01C9A4C9600A94D68 /* HFDNormalSettingViewController.m */; };
+		A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */; };
+		A810BCF51C9AA5D600A94D68 /* HFDListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */; };
 		A8AA14481C98F5AE0064AE64 /* HFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141A1C98F5AE0064AE64 /* HFButton.m */; };
 		A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141D1C98F5AE0064AE64 /* HFCollectionReusableView.m */; };
 		A8AA144A1C98F5AE0064AE64 /* HFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141F1C98F5AE0064AE64 /* HFCollectionViewCell.m */; };
@@ -49,6 +55,17 @@
 
 /* Begin PBXFileReference section */
 		6A4708AB3D8E6D2A09D73EF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A810BCD61C9A49E200A94D68 /* HFDListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDListViewController.h; sourceTree = "<group>"; };
+		A810BCD71C9A49E200A94D68 /* HFDListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDListViewController.m; sourceTree = "<group>"; };
+		A810BCD91C9A49F100A94D68 /* HFDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDSettingViewController.h; sourceTree = "<group>"; };
+		A810BCDA1C9A49F100A94D68 /* HFDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDSettingViewController.m; sourceTree = "<group>"; };
+		A810BCDC1C9A4A5200A94D68 /* HFDCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDCommitViewController.h; sourceTree = "<group>"; };
+		A810BCDD1C9A4A5200A94D68 /* HFDCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDCommitViewController.m; sourceTree = "<group>"; };
+		A810BCDF1C9A4C9600A94D68 /* HFDNormalSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDNormalSettingViewController.h; sourceTree = "<group>"; };
+		A810BCE01C9A4C9600A94D68 /* HFDNormalSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDNormalSettingViewController.m; sourceTree = "<group>"; };
+		A810BCF11C9AA5D600A94D68 /* HFDListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDListTableViewCell.h; sourceTree = "<group>"; };
+		A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDListTableViewCell.m; sourceTree = "<group>"; };
+		A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDListTableViewCell.xib; sourceTree = "<group>"; };
 		A8AA14161C98F5AE0064AE64 /* HFLibs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLibs.h; sourceTree = "<group>"; };
 		A8AA14191C98F5AE0064AE64 /* HFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFButton.h; sourceTree = "<group>"; };
 		A8AA141A1C98F5AE0064AE64 /* HFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFButton.m; sourceTree = "<group>"; };
@@ -141,6 +158,39 @@
 				6A4708AB3D8E6D2A09D73EF5 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A810BCD51C9A485500A94D68 /* subViewContrellers */ = {
+			isa = PBXGroup;
+			children = (
+				A810BCD61C9A49E200A94D68 /* HFDListViewController.h */,
+				A810BCD71C9A49E200A94D68 /* HFDListViewController.m */,
+				A810BCD91C9A49F100A94D68 /* HFDSettingViewController.h */,
+				A810BCDA1C9A49F100A94D68 /* HFDSettingViewController.m */,
+				A810BCDC1C9A4A5200A94D68 /* HFDCommitViewController.h */,
+				A810BCDD1C9A4A5200A94D68 /* HFDCommitViewController.m */,
+				A810BCDF1C9A4C9600A94D68 /* HFDNormalSettingViewController.h */,
+				A810BCE01C9A4C9600A94D68 /* HFDNormalSettingViewController.m */,
+			);
+			path = subViewContrellers;
+			sourceTree = "<group>";
+		};
+		A810BCEF1C9AA5A300A94D68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A810BCF01C9AA5A300A94D68 /* cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A810BCF01C9AA5A300A94D68 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				A810BCF11C9AA5D600A94D68 /* HFDListTableViewCell.h */,
+				A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */,
+				A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		A8AA14151C98F5AE0064AE64 /* HFLibs */ = {
@@ -292,6 +342,8 @@
 				A8BDB5481B8198190002F60F /* AppDelegate.m */,
 				A8BDB54A1B8198190002F60F /* ViewController.h */,
 				A8BDB54B1B8198190002F60F /* ViewController.m */,
+				A810BCD51C9A485500A94D68 /* subViewContrellers */,
+				A810BCEF1C9AA5A300A94D68 /* Views */,
 				A8BDB54D1B8198190002F60F /* Main.storyboard */,
 				A8BDB5501B8198190002F60F /* Images.xcassets */,
 				A8BDB5521B8198190002F60F /* LaunchScreen.xib */,
@@ -411,6 +463,7 @@
 			files = (
 				A8BDB54F1B8198190002F60F /* Main.storyboard in Resources */,
 				A8BDB5541B8198190002F60F /* LaunchScreen.xib in Resources */,
+				A810BCF51C9AA5D600A94D68 /* HFDListTableViewCell.xib in Resources */,
 				A8BDB5511B8198190002F60F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,18 +536,23 @@
 				A8AA144D1C98F5AE0064AE64 /* HFCollectionSectionModel.m in Sources */,
 				A8BDB54C1B8198190002F60F /* ViewController.m in Sources */,
 				A8AA14511C98F5AE0064AE64 /* HFTableViewCustomCell.m in Sources */,
+				A810BCE11C9A4C9600A94D68 /* HFDNormalSettingViewController.m in Sources */,
 				A8AA144B1C98F5AE0064AE64 /* HFLabel.m in Sources */,
 				A8AA14581C98F5AE0064AE64 /* UIView+CGRect.m in Sources */,
 				A8BDB5491B8198190002F60F /* AppDelegate.m in Sources */,
 				A8BDB5461B8198190002F60F /* main.m in Sources */,
+				A810BCDE1C9A4A5200A94D68 /* HFDCommitViewController.m in Sources */,
 				A8AA14481C98F5AE0064AE64 /* HFButton.m in Sources */,
 				A8AA144F1C98F5AE0064AE64 /* HFTableViewCell.m in Sources */,
 				A8AA14561C98F5AE0064AE64 /* HFTextField.m in Sources */,
 				A8AA14501C98F5AE0064AE64 /* HFTableViewCellModel.m in Sources */,
 				A8AA144C1C98F5AE0064AE64 /* HFCollectionCellModel.m in Sources */,
+				A810BCDB1C9A49F100A94D68 /* HFDSettingViewController.m in Sources */,
+				A810BCD81C9A49E200A94D68 /* HFDListViewController.m in Sources */,
 				A8AA14541C98F5AE0064AE64 /* HFTableViewFormCellModel.m in Sources */,
 				A8AA144A1C98F5AE0064AE64 /* HFCollectionViewCell.m in Sources */,
 				A8AA145B1C98F5AE0064AE64 /* UIViewController+HFTableView.m in Sources */,
+				A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */,
 				A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */,
 				A8AA144E1C98F5AE0064AE64 /* HFTableView.m in Sources */,
 				A8AA14531C98F5AE0064AE64 /* HFTableViewFormCell.m in Sources */,

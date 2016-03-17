@@ -15,28 +15,10 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
-    }
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.alertBody = @"测试";
-    localNotification.repeatInterval = 0;
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    localNotification.userInfo = @{@"id":@"hftest"};
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    [localNotification setTimeZone:[NSTimeZone defaultTimeZone]];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:100];
-    
-    return YES;
-}
 //本地通知回调处理方法
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"notification");
+
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="KGk-i7-Jjw" customClass="HFDListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tr-UX-bWt">
+                        <rect key="frame" x="15" y="5" width="293" height="55"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="7Tr-UX-bWt" secondAttribute="bottom" constant="5" id="NGa-Qm-n3v"/>
+                    <constraint firstItem="7Tr-UX-bWt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="WG5-w6-Lc3"/>
+                    <constraint firstItem="7Tr-UX-bWt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="j4t-TV-IMg"/>
+                    <constraint firstAttribute="trailing" secondItem="7Tr-UX-bWt" secondAttribute="trailing" constant="15" id="jcv-ih-m3P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="7Tr-UX-bWt" id="Bdk-FE-Qet"/>
+            </connections>
+            <point key="canvasLocation" x="236.5" y="340.5"/>
+        </tableViewCell>
+    </objects>
+</document>
