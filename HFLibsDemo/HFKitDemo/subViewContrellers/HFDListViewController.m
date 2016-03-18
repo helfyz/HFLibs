@@ -29,7 +29,7 @@
 }
 -(void)setupTableView
 {
-    [self hft_setupGroupedTableViw];
+    [self hft_setupPlainTableViw];
 }
 
 

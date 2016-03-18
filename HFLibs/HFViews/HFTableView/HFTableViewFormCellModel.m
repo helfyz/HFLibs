@@ -15,6 +15,7 @@
 @implementation HFTableViewFormCellModel
 @synthesize cellIdentifier = _cellIdentifier;
 @synthesize valueData = _valueData;
+@synthesize modelName = _modelName;
 
 -(id)initWithAccessoryMode:(HFFormAccessoryMode)mode
 {
@@ -276,7 +277,9 @@
             break;
         }
         case HFFormAccessoryModeTextView: {
-            return _valueData;
+            HFTextView *inputView = (HFTextView *)self.accessoryView;
+            NSString *value =inputView.text;
+            return value;
             break;
         }
         case HFFormAccessoryModeButton: {
@@ -348,6 +351,14 @@
         }
     }
     return valueStr;
+}
+-(NSString *)modelName
+{
+    if(_modelName)
+    {
+        return _modelName;
+    }
+    return self.title;
 }
 #pragma mark action
 

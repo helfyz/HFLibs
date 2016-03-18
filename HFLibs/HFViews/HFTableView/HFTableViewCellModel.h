@@ -36,7 +36,7 @@
 //cell 的数据
 @property (nonatomic,strong) id valueData;
 @property (nonatomic,strong) void (^configCellBlock)(HFTableViewCell *cell);  //配置cell 的回调。主要用于valueData不能满足设置的情况。设置该回调进行配置
-@property (nonatomic,strong) NSString *modelName;
+@property (nonatomic,strong) NSString *modelName;   //提示用。 formcell下。如未设置。则取title
 @property (nonatomic,strong) NSString *modelKey;
 //设置初始默认值
 -(void)setupDefauleValues;

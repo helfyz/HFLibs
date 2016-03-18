@@ -54,8 +54,6 @@
     [sectionObj.cellModels addObject:cellModel];
     
     
-    
-    
     HFTableViewSectionModel *normalSectionObj = [[HFTableViewSectionModel alloc] init];
     normalSectionObj.headHeigth = 30;
     normalSectionObj.headTitle = @"常规方式";

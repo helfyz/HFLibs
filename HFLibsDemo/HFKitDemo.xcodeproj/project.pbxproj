@@ -14,6 +14,7 @@
 		A810BCE11C9A4C9600A94D68 /* HFDNormalSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCE01C9A4C9600A94D68 /* HFDNormalSettingViewController.m */; };
 		A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */; };
 		A810BCF51C9AA5D600A94D68 /* HFDListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */; };
+		A810BCFE1C9B97F800A94D68 /* HFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCFD1C9B97F800A94D68 /* HFPickerView.m */; };
 		A8AA14481C98F5AE0064AE64 /* HFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141A1C98F5AE0064AE64 /* HFButton.m */; };
 		A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141D1C98F5AE0064AE64 /* HFCollectionReusableView.m */; };
 		A8AA144A1C98F5AE0064AE64 /* HFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141F1C98F5AE0064AE64 /* HFCollectionViewCell.m */; };
@@ -66,6 +67,8 @@
 		A810BCF11C9AA5D600A94D68 /* HFDListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDListTableViewCell.h; sourceTree = "<group>"; };
 		A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDListTableViewCell.m; sourceTree = "<group>"; };
 		A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDListTableViewCell.xib; sourceTree = "<group>"; };
+		A810BCFC1C9B97F800A94D68 /* HFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPickerView.h; sourceTree = "<group>"; };
+		A810BCFD1C9B97F800A94D68 /* HFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPickerView.m; sourceTree = "<group>"; };
 		A8AA14161C98F5AE0064AE64 /* HFLibs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLibs.h; sourceTree = "<group>"; };
 		A8AA14191C98F5AE0064AE64 /* HFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFButton.h; sourceTree = "<group>"; };
 		A8AA141A1C98F5AE0064AE64 /* HFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFButton.m; sourceTree = "<group>"; };
@@ -193,6 +196,15 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		A810BCFB1C9B97D100A94D68 /* HFPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				A810BCFC1C9B97F800A94D68 /* HFPickerView.h */,
+				A810BCFD1C9B97F800A94D68 /* HFPickerView.m */,
+			);
+			path = HFPickerView;
+			sourceTree = "<group>";
+		};
 		A8AA14151C98F5AE0064AE64 /* HFLibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 		A8AA14171C98F5AE0064AE64 /* HFViews */ = {
 			isa = PBXGroup;
 			children = (
+				A810BCFB1C9B97D100A94D68 /* HFPickerView */,
 				A8AA14181C98F5AE0064AE64 /* HFButton */,
 				A8AA141B1C98F5AE0064AE64 /* HFCollectionView */,
 				A8AA14201C98F5AE0064AE64 /* HFLabel */,
@@ -554,6 +567,7 @@
 				A8AA145B1C98F5AE0064AE64 /* UIViewController+HFTableView.m in Sources */,
 				A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */,
 				A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */,
+				A810BCFE1C9B97F800A94D68 /* HFPickerView.m in Sources */,
 				A8AA144E1C98F5AE0064AE64 /* HFTableView.m in Sources */,
 				A8AA14531C98F5AE0064AE64 /* HFTableViewFormCell.m in Sources */,
 				A8AA14551C98F5AE0064AE64 /* HFTableViewSectionModel.m in Sources */,
