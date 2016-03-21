@@ -10,8 +10,10 @@
 #import "UIViewController+HFTableView.h"
 #import "HFLibs.h"
 #import <Masonry.h>
+#import "HFDCustomInputTableViewCell.h"
 @interface HFDCommitViewController ()
 @property (nonatomic,strong) NSDate *birthdayDate;
+@property (nonatomic,strong) NSString *customInputString;
 @end
 
 @implementation HFDCommitViewController
@@ -47,8 +49,9 @@
     HFButton *commitButton = [HFButton new];
     [commitButton setTitile:@"提交" textColor:[UIColor whiteColor]];
     [commitButton addTarget:self action:@selector(commit:)];
+    [commitButton setNormalBgColor:[UIColor orangeColor] highlightedBgColor:[UIColor grayColor]];
+    
     [tableViewFooterView addSubview:commitButton];
-    commitButton.backgroundColor = [UIColor orangeColor];
     commitButton.layer.cornerRadius=5;
     [commitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(12));
@@ -91,6 +94,7 @@
     
     cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeTextField];
     cellModel.title = @"手机号";
+    [(UITextField *)cellModel.accessoryView setKeyboardType:UIKeyboardTypeNumberPad];
     cellModel.regex = @"^1\\d{10}";
     cellModel.isRequired = YES;
     cellModel.valuePlaceholder = @"请输入您的手机号";
@@ -123,11 +127,40 @@
     [sectionObj.cellModels addObject:cellModel];
     
     
+    HFTableViewCustomCellModel *customCellModel = [[HFTableViewCustomCellModel alloc] init];
+    customCellModel.useXib = YES;
+    customCellModel.tablViewCellClassName = @"HFDCustomInputTableViewCell";
+    customCellModel.modelKey = @"customInput";
+    [customCellModel setConfigCellBlock:^(HFTableViewCell * cell) {
+        HFDCustomInputTableViewCell *customCell = (HFDCustomInputTableViewCell *)cell;
+        customCell.inputTextFiled.delegate = (id)self;
+    }];
+    [sectionObj.cellModels addObject:customCellModel];
+    
     
     [self.hft_tableView setCellModelsForModels:dataSource isAddmore:NO];
 }
 
+#pragma mark --
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    //如果未设置key。。 也可通过  textField.userInfo 来传递
+    HFTableViewCustomCellModel *model = (HFTableViewCustomCellModel*)[self.hft_tableView cellModelForModelKey:@"customInput"];
+    model.firstResponder = YES;
+    
+    return YES;
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+ 
+    self.customInputString = textField.text;
+    HFTableViewCustomCellModel *model = (HFTableViewCustomCellModel*)[self.hft_tableView cellModelForModelKey:@"customInput"];
+    model.firstResponder = NO;
+    
+    return YES;
+}
 
+#pragma mark -- cellAction
 -(void)setBirthdayDate:(NSDate *)birthdayDate
 {
     _birthdayDate = birthdayDate;
@@ -185,6 +218,10 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     for (HFTableViewSectionModel *sectionModel in self.hft_tableView.dataSourceModels) {
         for (HFTableViewFormCellModel *cellModel in sectionModel.cellModels) {
+            if(![cellModel isKindOfClass:[HFTableViewFormCellModel class]])
+            {
+                continue;
+            }
             NSString *error = [cellModel checkValueError];
             if(error)
             {
@@ -200,7 +237,12 @@
             }
         }
     }
-    
+    //
+    if(self.customInputString)
+    {
+        [dic setObject:self.customInputString forKey:@"customInput"];
+        
+    }
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"填写完成" message:[NSString stringWithFormat:@"%@",dic] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
     [alert show];
 }

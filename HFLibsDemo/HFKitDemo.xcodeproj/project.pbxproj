@@ -15,6 +15,8 @@
 		A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */; };
 		A810BCF51C9AA5D600A94D68 /* HFDListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */; };
 		A810BCFE1C9B97F800A94D68 /* HFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A810BCFD1C9B97F800A94D68 /* HFPickerView.m */; };
+		A85F9DEA1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */; };
+		A85F9DEB1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */; };
 		A8AA14481C98F5AE0064AE64 /* HFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141A1C98F5AE0064AE64 /* HFButton.m */; };
 		A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141D1C98F5AE0064AE64 /* HFCollectionReusableView.m */; };
 		A8AA144A1C98F5AE0064AE64 /* HFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141F1C98F5AE0064AE64 /* HFCollectionViewCell.m */; };
@@ -69,6 +71,9 @@
 		A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDListTableViewCell.xib; sourceTree = "<group>"; };
 		A810BCFC1C9B97F800A94D68 /* HFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPickerView.h; sourceTree = "<group>"; };
 		A810BCFD1C9B97F800A94D68 /* HFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPickerView.m; sourceTree = "<group>"; };
+		A85F9DE71C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDCustomInputTableViewCell.h; sourceTree = "<group>"; };
+		A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDCustomInputTableViewCell.m; sourceTree = "<group>"; };
+		A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDCustomInputTableViewCell.xib; sourceTree = "<group>"; };
 		A8AA14161C98F5AE0064AE64 /* HFLibs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLibs.h; sourceTree = "<group>"; };
 		A8AA14191C98F5AE0064AE64 /* HFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFButton.h; sourceTree = "<group>"; };
 		A8AA141A1C98F5AE0064AE64 /* HFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFButton.m; sourceTree = "<group>"; };
@@ -192,6 +197,9 @@
 				A810BCF11C9AA5D600A94D68 /* HFDListTableViewCell.h */,
 				A810BCF21C9AA5D600A94D68 /* HFDListTableViewCell.m */,
 				A810BCF31C9AA5D600A94D68 /* HFDListTableViewCell.xib */,
+				A85F9DE71C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.h */,
+				A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */,
+				A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -478,6 +486,7 @@
 				A8BDB5541B8198190002F60F /* LaunchScreen.xib in Resources */,
 				A810BCF51C9AA5D600A94D68 /* HFDListTableViewCell.xib in Resources */,
 				A8BDB5511B8198190002F60F /* Images.xcassets in Resources */,
+				A85F9DEB1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +576,7 @@
 				A8AA145B1C98F5AE0064AE64 /* UIViewController+HFTableView.m in Sources */,
 				A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */,
 				A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */,
+				A85F9DEA1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m in Sources */,
 				A810BCFE1C9B97F800A94D68 /* HFPickerView.m in Sources */,
 				A8AA144E1C98F5AE0064AE64 /* HFTableView.m in Sources */,
 				A8AA14531C98F5AE0064AE64 /* HFTableViewFormCell.m in Sources */,
