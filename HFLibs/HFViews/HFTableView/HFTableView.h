@@ -23,7 +23,7 @@
 @interface HFTableView : UITableView <UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)  NSMutableArray *dataSourceModels;
 // push 使用
-@property (assign,nonatomic) UIViewController *viewController;
+@property (weak,nonatomic) UIViewController *viewController;
 
 
 

@@ -153,4 +153,8 @@
     
     return headerStr;
 }
+-(void)dealloc
+{
+    NSLog(@"dealloc");
+}
 @end

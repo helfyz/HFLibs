@@ -16,8 +16,8 @@
 #import "UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h"
 
 @interface HFTableView()
-@property (nonatomic,strong) id<UITableViewDelegate,HFTableViewDelegate> customDelegate;
-@property (nonatomic,strong) id<UITableViewDataSource> customDataSource;
+@property (nonatomic,weak, nullable) id<UITableViewDelegate,HFTableViewDelegate> customDelegate;
+@property (nonatomic,weak, nullable) id<UITableViewDataSource> customDataSource;
 
 @end
 

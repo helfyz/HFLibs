@@ -131,9 +131,10 @@
     customCellModel.useXib = YES;
     customCellModel.tablViewCellClassName = @"HFDCustomInputTableViewCell";
     customCellModel.modelKey = @"customInput";
+    __weak HFDCommitViewController * ws = self;
     [customCellModel setConfigCellBlock:^(HFTableViewCell * cell) {
         HFDCustomInputTableViewCell *customCell = (HFDCustomInputTableViewCell *)cell;
-        customCell.inputTextFiled.delegate = (id)self;
+        customCell.inputTextFiled.delegate = (id)ws;
     }];
     [sectionObj.cellModels addObject:customCellModel];
     
@@ -246,4 +247,10 @@
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"填写完成" message:[NSString stringWithFormat:@"%@",dic] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
     [alert show];
 }
+
+-(void)dealloc
+{
+    NSLog(@"dealloc");
+}
+
 @end
