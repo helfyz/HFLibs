@@ -45,9 +45,14 @@
     self.space                      = 5;
 }
 // 快捷设置
--(void)setTitile:(NSString *)title textColor:(UIColor *)textColor  // 默认状态:UIControlStateNormal
+
+-(void)setTitile:(NSString *)title
 {
     [self setTitle:title forState:UIControlStateNormal];
+}
+-(void)setTitile:(NSString *)title textColor:(UIColor *)textColor  // 默认状态:UIControlStateNormal
+{
+    [self setTitile:title];
     [self setTitleColor:textColor forState:UIControlStateNormal];
 }
 -(void)addTarget:(id)target action:(SEL)action                     // 默认事件:UIControlEventTouchUpInside
@@ -62,8 +67,18 @@
     [self setCustomHighligth:self.highlighted];
     
 }
--(void)setImageSize:(CGSize)size{
-    _imageSize = size;
+
+
+-(void)setImage:(UIImage *)image
+{
+    [self setImage:image forState:UIControlStateNormal];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+
+}
+-(void)setImage:(UIImage *)image imagesize:(CGSize)imageSize
+{
+    self.imageSize = imageSize;
+    [self setImage:image];
 }
 
 -(void)setCustomHighligth:(BOOL)highlight

@@ -23,11 +23,14 @@ typedef NS_ENUM(NSInteger, HFButtonImageContentMode)
 
 @property (nonatomic,assign) UIEdgeInsets contentInsets; //整体内容的缩进
 
--(void)setImageSize:(CGSize)imageSiez;  //设置image的尺寸
 
+// 基于UIControlStateNormal 的快捷设置
+-(void)setImage:(UIImage *)image;  //设置image 状态:UIControlStateNormal
+-(void)setImage:(UIImage *)image imagesize:(CGSize)imageSize;
 
-// 快捷设置
--(void)setTitile:(NSString *)title textColor:(UIColor *)textColor;  // 默认状态:UIControlStateNormal
+-(void)setTitile:(NSString *)title;
+-(void)setTitile:(NSString *)title textColor:(UIColor *)textColor;
+
 -(void)addTarget:(id)target action:(SEL)action;                     // 默认事件:UIControlEventTouchUpInside
 
 
