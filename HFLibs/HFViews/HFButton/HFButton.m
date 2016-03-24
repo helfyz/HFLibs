@@ -75,6 +75,10 @@
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 
 }
+-(void)setImageSize:(CGSize)imagSize
+{
+    _imageSize = imagSize;
+}
 -(void)setImage:(UIImage *)image imagesize:(CGSize)imageSize
 {
     self.imageSize = imageSize;

@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, HFButtonImageContentMode)
 
 // 基于UIControlStateNormal 的快捷设置
 -(void)setImage:(UIImage *)image;  //设置image 状态:UIControlStateNormal
+-(void)setImageSize:(CGSize)imagSize;  //
 -(void)setImage:(UIImage *)image imagesize:(CGSize)imageSize;
 
 -(void)setTitile:(NSString *)title;
