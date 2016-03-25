@@ -29,7 +29,7 @@
 }
 -(void)setupTableView
 {
-    [self hft_setupPlainTableViw];
+    [self hft_setupTableViwForTableClass:NSClassFromString(@"HFDTableView") Style:UITableViewStylePlain];
 }
 
 

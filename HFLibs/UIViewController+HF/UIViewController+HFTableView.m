@@ -29,6 +29,15 @@ static char HFTableViewString;
 
 
 #pragma setupViews
+-(void)hft_setupTableViwForTableClass:(Class)hfTableSubClass Style:(UITableViewStyle)style
+{
+    self.hft_tableView  =[[hfTableSubClass alloc] initWithFrame:CGRectZero style:style];
+    [self.view addSubview: self.hft_tableView];
+    self.hft_tableView .delegate = (id)self;
+    self.hft_tableView .dataSource = (id)self;
+    self.hft_tableView.frame = self.view.bounds;
+    self.hft_tableView.viewController = self;
+}
 -(void)hft_setupTableViwForTableStyle:(UITableViewStyle)style
 {
     self.hft_tableView  =[[HFTableView alloc] initWithFrame:CGRectZero style:style];

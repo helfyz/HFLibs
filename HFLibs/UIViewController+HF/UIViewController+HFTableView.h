@@ -14,6 +14,10 @@
 
 @property (nonatomic, strong) HFTableView *hft_tableView;
 
+//hfTableSubClass  必须为 HFTableView 的子类
+//用户根据自身情况继承HFTableView ，实现一些HFTableView未实现的代理等方法，如。滑动删除、滚动隐藏等。。
+-(void)hft_setupTableViwForTableClass:(Class)hfTableSubClass Style:(UITableViewStyle)style;
+
 
 -(void)hft_setupTableViwForTableStyle:(UITableViewStyle)style;
 -(void)hft_setupGroupedTableViw;
