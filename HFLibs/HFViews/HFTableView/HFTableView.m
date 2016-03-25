@@ -511,10 +511,8 @@
     {
         HFTableViewSectionModel *section = self.dataSourceModels[indexpath.section];
         [section.cellModels replaceObjectAtIndex:indexpath.row withObject:cellModel];
-        
         [self registercellModel:cellModel];
         [self reloadRowsAtIndexPaths:@[indexpath] withRowAnimation:animation];
-        
     }
 }
 -(void)replaceCellModel:(HFTableViewCellModel *)cellModel cellModelKey:(NSString *)cellModelKey withRowAnimation:(UITableViewRowAnimation)animation
@@ -522,18 +520,45 @@
     if(cellModel && cellModelKey.length > 0)
     {
         NSIndexPath *indexPath = [self cellIndexForModelKey:cellModelKey];
-        
         HFTableViewSectionModel *section = self.dataSourceModels[indexPath.section];
         [section.cellModels replaceObjectAtIndex:indexPath.row withObject:cellModel];
-        
         [self registercellModel:cellModel];
         [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
-    
     }
 }
 
-
-
+-(void)deleteCellForIndex:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation
+{
+    
+    if (self.isSectionData) {
+        [((HFTableViewSectionModel *)self.dataSourceModels[indexPath.section]).cellModels removeObjectAtIndex:indexPath.row];
+    }
+    else{
+        [self.dataSourceModels removeObjectAtIndex:indexPath.row];
+    }
+    [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
+}
+-(void)deleteCellForCellModel:(HFTableViewCellModel *)cellModel withRowAnimation:(UITableViewRowAnimation)animation
+{
+    NSUInteger sectionIndex = 0;
+    NSUInteger rowIndex = 0;
+    if (self.isSectionData)
+    {
+        for (HFTableViewSectionModel *sectionModel in self.dataSourceModels) {
+            if([sectionModel.cellModels containsObject:cellModel])
+            {
+                rowIndex = [sectionModel.cellModels indexOfObject:cellModel];
+            }
+            sectionIndex ++;
+        }
+    }
+    else
+    {
+        rowIndex = [self.dataSourceModels indexOfObject:cellModel];
+    }
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
+    [self deleteCellForIndex:indexpath withRowAnimation:animation];
+}
 
 #pragma mark 数据提取
 //设置的数据是否是Section模式

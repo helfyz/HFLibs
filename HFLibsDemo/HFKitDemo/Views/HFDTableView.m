@@ -11,9 +11,5 @@
 @implementation HFDTableView
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSLog(@"scrollViewDidScroll");
-}
 
 @end

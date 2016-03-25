@@ -69,7 +69,8 @@
 -(void)replaceCellModel:(HFTableViewCellModel *)cellModel cellIndex:(NSIndexPath *)indexpath withRowAnimation:(UITableViewRowAnimation)animation;
 -(void)replaceCellModel:(HFTableViewCellModel *)cellModel cellModelKey:(NSString *)cellModelKey withRowAnimation:(UITableViewRowAnimation)animation;
 
-
+-(void)deleteCellForIndex:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation;
+-(void)deleteCellForCellModel:(HFTableViewCellModel *)cellModel withRowAnimation:(UITableViewRowAnimation)animation;
 
 -(HFTableViewCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath;
 -(HFTableViewFormCellModel *)cellModelForModelKey:(NSString *)modelKey;
