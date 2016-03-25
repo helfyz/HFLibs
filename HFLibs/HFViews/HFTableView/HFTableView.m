@@ -358,8 +358,78 @@
     }
 
 }
+#pragma mark -- 一些可能会用到的代理抛不出来。。需要用到不常用的就自己去继承吧
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.customDelegate respondsToSelector:@selector(tableView:editingStyleForRowAtIndexPath:)])
+    {
+        return [self.customDelegate tableView:tableView editingStyleForRowAtIndexPath:indexPath];
+    }
+    return UITableViewCellEditingStyleNone;
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.customDataSource respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)])
+    {
+        return [self.customDataSource tableView:tableView canEditRowAtIndexPath:indexPath];
+        
+    }
+    return NO;
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.customDataSource respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)])
+    {
+        [self.customDataSource tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+        
+        return;
+    }
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if([self.customDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
+    {
+        [self.customDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if([self.customDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
+    {
+        return [self.customDelegate scrollViewDidScroll:scrollView];
+    }
+}
 
-
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self endEditing:YES];
+    if([self.customDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
+    {
+        return [self.customDelegate scrollViewWillBeginDragging:scrollView];
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if([self.customDelegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+    {
+        [self.customDelegate scrollViewDidEndDecelerating:scrollView];
+    }
+}
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+    if([self.customDelegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+    {
+        return [self.customDelegate scrollViewShouldScrollToTop:scrollView];
+    }
+    return YES;
+}
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    if([self.customDelegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
+    {
+        return [self.customDelegate scrollViewDidScrollToTop:scrollView];
+    }
+}
 #pragma mark -- reload
 -(void)reloadSectionForSectionIndex:(NSUInteger )sectionIndex withRowAnimation:(UITableViewRowAnimation)animation
 {
@@ -461,6 +531,7 @@
     
     }
 }
+
 
 
 
@@ -593,10 +664,7 @@
 
 
 #pragma mark -- 键盘弹起 & 收起
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [self endEditing:YES];
-}
+
 
 -(void)keyboardWillShow:(NSNotification *)notification{
     CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
