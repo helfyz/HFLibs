@@ -250,7 +250,7 @@
 
 -(void)dealloc
 {
-    NSLog(@"dealloc");
+    NSLog(@"demo....dealloc");
 }
 
 @end

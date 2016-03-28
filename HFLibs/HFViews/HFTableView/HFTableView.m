@@ -548,6 +548,7 @@
             if([sectionModel.cellModels containsObject:cellModel])
             {
                 rowIndex = [sectionModel.cellModels indexOfObject:cellModel];
+                break;
             }
             sectionIndex ++;
         }
