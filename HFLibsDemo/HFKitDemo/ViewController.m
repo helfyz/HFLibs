@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "UIViewController+HFTableView.h"
+#import "UIViewController+HFTableViewManger.h"
+#import "UIViewController+HFExtend.h"
 @interface ViewController ()
 
 @end
@@ -38,35 +39,34 @@
 {
     HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
-    sectionObj.headTitle = @"HFTable";
-    HFTableViewFormCellModel *cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
-    cellModel.title = @"HFDSettingViewController";
-    cellModel.pushToClass = NSClassFromString(@"HFDSettingViewController");
-    [sectionObj.cellModels addObject:cellModel];
-    
-    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
-    cellModel.title = @"HFDListViewController";
-    cellModel.pushToClass = NSClassFromString(@"HFDListViewController");
-    [sectionObj.cellModels addObject:cellModel];
-    
-    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
-    cellModel.title = @"HFDCommitViewController";
-    cellModel.pushToClass = NSClassFromString(@"HFDCommitViewController");
-    [sectionObj.cellModels addObject:cellModel];
+    sectionObj.headTitle = @"列表模式";
+    HFTableViewCellModel*cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+    [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
+        cell.textLabel.text = @"列表模式";
+    }];
+    __weak ViewController *ws = self;
+    [cellModel setCellDidSelectBlock:^(UITableViewCell *cell, HFTableViewCellModel *cellModel) {
+        [ws hf_pushToViewControllerForName:@"HFDListViewController"];
+    }];
+    [sectionObj addCellModel:cellModel];
     
     
-    HFTableViewSectionModel *normalSectionObj = [[HFTableViewSectionModel alloc] init];
-    normalSectionObj.headHeigth = 30;
-    normalSectionObj.headTitle = @"常规方式";
     
-    cellModel = [[HFTableViewFormCellModel alloc] initWithAccessoryMode:HFFormAccessoryModeNone];
-    cellModel.title = @"HFDNormalSettingViewController";
-    cellModel.pushToClass = NSClassFromString(@"HFDNormalSettingViewController");
-    [normalSectionObj.cellModels addObject:cellModel];
+    HFTableViewSectionModel *settingSectionObj = [[HFTableViewSectionModel alloc] init];
+    settingSectionObj.headHeigth = 30;
+    settingSectionObj.headTitle = @"表单模式";
+    cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+    [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
+        cell.textLabel.text = @"表单模式";
+    }];
+    [cellModel setCellDidSelectBlock:^(UITableViewCell *cell, HFTableViewCellModel *cellModel) {
+        [ws hf_pushToViewControllerForName:@"HFDFormViewController"];
+    }];
+    [settingSectionObj addCellModel:cellModel];
     
-    
-    [self.hft_tableView setCellModelsForModels:@[sectionObj,normalSectionObj] isAddmore:NO];
+    [self.hft_tableViewManger setupDataSourceModels:@[sectionObj,settingSectionObj] isAddmore:NO];
     
 }
+
 
 @end

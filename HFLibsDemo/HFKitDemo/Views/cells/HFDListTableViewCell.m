@@ -20,7 +20,7 @@
 {
     //根据 valueData 绑定数据
     
-    NSString *contentText = cellModel.valueData;
+    NSString *contentText = cellModel.cellData;
     self.contentLabel.text = contentText;
 }
 

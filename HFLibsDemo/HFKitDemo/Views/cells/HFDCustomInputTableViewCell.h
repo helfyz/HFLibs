@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFTableViewCustomCell.h"
-@interface HFDCustomInputTableViewCell : HFTableViewCustomCell
+#import "HFTableViewCellFormModel.h"
+@interface HFDCustomInputTableViewCell : UITableViewCell <UITextFieldDelegate>
+@property (strong, nonatomic) HFTableViewCellFormModel *cellModel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLbale;
 
 @property (weak, nonatomic) IBOutlet UITextField *inputTextFiled;

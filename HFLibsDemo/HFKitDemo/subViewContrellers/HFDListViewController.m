@@ -2,122 +2,63 @@
 //  HFDListViewController.m
 //  HFKitDemo
 //
-//  Created by helfy on 16/3/17.
+//  Created by helfy on 16/6/27.
 //  Copyright © 2016年 helfy. All rights reserved.
 //
 
 #import "HFDListViewController.h"
-#import "UIViewController+HFTableView.h"
-#import "HFDListTableViewCell.h"
-#import "HFTableViewCustomCellModel.h"
+#import "UIViewController+HFTableViewManger.h"
+#import <Masonry.h>
 @interface HFDListViewController ()
 
 @end
 
 @implementation HFDListViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view, typically from a nib.
+    self.title = NSStringFromClass([self class]);
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self setupTableView];
     [self setupData];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(void)setupTableView
 {
-    [self hft_setupTableViwForTableClass:NSClassFromString(@"HFDTableView") Style:UITableViewStylePlain];
+    [self hft_setupGroupedTableViw];
+    [self.hft_tableViewManger.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
-
 
 -(void)setupData
 {
-    NSArray *textArray = @[@"HFLibs",
-                           @"基于UIKit，希望能简化UIKit 的设置 快速开发",
-                           @"tableView 是常规app中使用比较频繁的控件，但是我个人始终觉得tableView 的设置太过繁琐了。",
-                           @"每次写个tableView，需要去实现一堆代理而且需求改动的话，修改也很跳跃，稍不注意就是坑。",
-                           @"HFDNormalSettingViewController  采用原始的方式(switch) 来做的。 大家可以和 HFDSettingViewController 对比一下",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           @"哈哈哈",
-                           ];
-    
-    NSArray *cellObjs = [self cellsForDataSource:textArray cellClassName:@"HFDListTableViewCell"];
-    
-    [self.hft_tableView setCellModelsForModels:cellObjs isAddmore:NO];
-}
-//批量设置数据cell
--(NSArray *)cellsForDataSource:(NSArray *)dataSource cellClassName:(NSString *)className
-{
-    [self.hft_tableView registerClass:NSClassFromString(className) forCellReuseIdentifier:className];
-    
-    NSMutableArray *subCellObjs = [NSMutableArray array];
-    int index = 0;
-    for (NSObject *obj in dataSource) {
-        HFTableViewCustomCellModel *cellObj = [[HFTableViewCustomCellModel alloc] init];
-        cellObj.valueData = obj;
-        cellObj.useXib = YES;
-        cellObj.tablViewCellClassName = className;
-        if(index == 0)
-        {
-            cellObj.isStaticObj = YES;
-            [cellObj setConfigCellBlock:^(HFTableViewCell *cell) {
-                [((HFDListTableViewCell *)cell) contentLabel].textAlignment = NSTextAlignmentCenter;
-            }];
-        }
-        [subCellObjs addObject:cellObj];
-        index ++;
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (int index = 0; index < 10; index ++) {
+        [dataArray addObject:@(index).stringValue];
     }
+    [self.hft_tableViewManger setupDataSourceModelsForData:dataArray cellClassName:@"HFDListTableViewCell" isAddmore:NO];
     
-    return subCellObjs;
-}
-//如果用户需要对cell进行配置
-- (void)tableView:(UITableView *)sender configCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
-{
     
-    if([cell isKindOfClass:[HFDListTableViewCell class]])
-    {
-      //
+    //混点 UITableViewCell
+    [dataArray removeAllObjects];
+    for (int index = 0; index < 10; index ++) {
+        HFTableViewCellModel*cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+        cellModel.cellHeigth = 44;
+        [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
+            cell.textLabel.text = [NSString stringWithFormat:@"UITableViewCell-%i",index];
+        }];
+        [dataArray addObject:cellModel];
     }
+    [self.hft_tableViewManger setupDataSourceModels:dataArray isAddmore:YES];
 }
 
 
+//cell 设置了 响应block 和 action 将不再调用该方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@",indexPath);
+}
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellEditingStyleDelete;
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        [self.hft_tableView deleteCellForIndex:indexPath withRowAnimation:UITableViewRowAnimationMiddle];
-    }
-}
--(void)dealloc
-{
-    NSLog(@"dealloc");
-}
+
 
 @end

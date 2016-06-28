@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFTableViewCustomCell.h"
-@interface HFDListTableViewCell : HFTableViewCustomCell
+#import "HFTableViewCell.h"
+@interface HFDListTableViewCell : HFTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @end

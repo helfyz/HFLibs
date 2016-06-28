@@ -1,5 +1,5 @@
 //
-//  HFDSettingViewController.h
+//  HFDFormViewController.h
 //  HFKitDemo
 //
 //  Created by helfy on 16/6/27.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- *  
- */
-@interface HFDSettingViewController : UIViewController
+@interface HFDFormViewController : UIViewController
 
 @end

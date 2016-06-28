@@ -9,39 +9,38 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class HFTableViewCell;
+
 @interface HFTableViewCellModel : NSObject
+/**
+ *  通过cellClassName 直接初始化 cellModel
+ *
+ *  @param cellClassName cell 的类名
+ *
+ *  @return cellModel
+ */
++(instancetype)cellModelForCellClassName:(NSString *)cellClassName;
 
-
-@property (nonatomic,assign)   UITableViewCellSelectionStyle   selectionStyle;
-@property (nonatomic,assign)   UITableViewCellAccessoryType    accessoryType;
++(instancetype)cellModelForCellClassName:(NSString *)cellClassName cellData:(id)cellData;
 
 
 @property (nonatomic,strong) NSString *tablViewCellClassName;
-@property (nonatomic,readonly) NSString *cellIdentifier;   //当isStaticObj 为NO 时。默认为tablViewCellClassName。当isStaticObj为YES..默认会生成一个唯一的
+
+@property (nonatomic,strong) NSString *cellIdentifier;  //默认是cell的className，处理重用设置
+
+@property (nonatomic,assign) float cellHeigth;  //行高  如不设置。会根据约束自行计算
+
+//cell 的数据 类型自定
+@property (nonatomic,strong) id cellData;
 
 
-//cell响应事件，快捷设置cell 的响应   重载tableVie的cell选中来实现自己的响应事件
-@property (nonatomic,assign) SEL cellAction;
+//cell响应事件，快捷设置cell 的响应，适合设置或者个人中心cell 对应不同事件的配置，  该设置优先响应，并不再响应table的代理回调
+//如果不设置。则响应table 的代理
+@property (nonatomic,assign) SEL cellAction;   //响应对象 是 tableView 的delegate ,参数为cellModel
+@property (nonatomic,strong) void (^cellDidSelectBlock)(UITableViewCell *cell,HFTableViewCellModel *cellModel); //不能同时设置cellAction，若设置cellAction，该回调不响应
 
-@property (nonatomic,assign) Class pushToClass;  //点击直接push 到viewcontroller  如果需要传递参数。使用cellAction
-
-//使用xib
-@property (nonatomic,assign) BOOL useXib;
-
-//静态的obj。。对应的cell不会被重载  defalut 为NO
-@property (nonatomic,assign) BOOL isStaticObj;
-@property (nonatomic,assign) float cellHeigth;  //行高  HFTableViewFormCellModel默认40   HFTableViewCustomCellModel如不设置。会根据约束自行计算
-
-//cell 的数据
-@property (nonatomic,strong) id valueData;
-@property (nonatomic,strong) void (^configCellBlock)(HFTableViewCell *cell);  //配置cell 的回调。主要用于valueData不能满足设置的情况。设置该回调进行配置
-@property (nonatomic,strong) NSString *modelName;   //提示用。 formcell下。如未设置。则取title
-@property (nonatomic,strong) NSString *modelKey;
-//设置初始默认值
--(void)setupDefauleValues;
+@property (nonatomic,strong) void (^configCellBlock)(UITableViewCell *cell);  //配置cell 的回调。主要用于valueData不能满足设置的情况。设置该回调进行配置，比如cell有事件回调处理
 
 
-//子类重载判断 subView 的输入控件是否是输入状态。用户键盘弹起时，tableView的滚动  默认NO
-- (BOOL)isFirstResponder;
 @end
+
+

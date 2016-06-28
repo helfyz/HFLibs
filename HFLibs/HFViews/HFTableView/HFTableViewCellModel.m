@@ -10,6 +10,18 @@
 
 @implementation HFTableViewCellModel
 
++(instancetype)cellModelForCellClassName:(NSString *)cellClassName
+{
+    HFTableViewCellModel *cellModel = [[[self class] alloc] init];
+    cellModel.tablViewCellClassName = cellClassName;
+    return cellModel;
+}
++(instancetype)cellModelForCellClassName:(NSString *)cellClassName cellData:(id)cellData
+{
+    HFTableViewCellModel *cellModel =  [self cellModelForCellClassName:cellClassName];
+    cellModel.cellData = cellData;
+    return cellModel;
+}
 
 -(id)init
 {
@@ -22,18 +34,18 @@
 
 -(void)setupDefauleValues
 {
-    self.accessoryType         = UITableViewCellAccessoryNone;
-    self.selectionStyle        = UITableViewCellSelectionStyleDefault;
     self.tablViewCellClassName = @"UITableViewCell";
-    self.isStaticObj           = NO;
-
-    self.useXib                = NO;
 }
 
 
-- (BOOL)isFirstResponder
+-(NSString *)cellIdentifier
 {
-    return NO;
+    if(_cellIdentifier)
+    {
+        return _cellIdentifier;
+    }
+ 
+    return self.tablViewCellClassName;
 }
 
 @end

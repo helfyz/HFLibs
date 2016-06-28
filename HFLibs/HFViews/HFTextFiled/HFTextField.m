@@ -61,22 +61,9 @@
     return CGRectInset(rect, self.textOffset, 0);
 }
 
-//-(void)setPlaceholderColor:(UIColor *)placeholderColor
-//{
-//    _placeholderColor = placeholderColor;
-//    [self setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
-//
-//}
-
-//
 //控制placeHolder的颜色、字体
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
-
-  
-    
-    
-    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingMiddle;
    paragraphStyle.alignment = self.textAlignment;
