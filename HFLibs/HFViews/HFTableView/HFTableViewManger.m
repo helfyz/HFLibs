@@ -568,34 +568,49 @@
     }
     return responds;
 }
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
+
+- (id)forwardingTargetForSelector:(SEL)aSelector
 {
-    if ([self.delegate respondsToSelector:selector])
+    if ([self.delegate respondsToSelector:aSelector])
     {
-        NSMethodSignature *signature = [(id)self.delegate methodSignatureForSelector:selector];
-        return signature;
+        return self.delegate;
     }
-    
-    if ([self.dataSource respondsToSelector:selector])
+   else if ([self.dataSource respondsToSelector:aSelector])
     {
-        NSMethodSignature *signature = [(id)self.dataSource methodSignatureForSelector:selector];
-        return signature;
+        return self.dataSource;
     }
-    return [super methodSignatureForSelector:selector];
+    return [super forwardingTargetForSelector:aSelector];
 }
 
-- (void)forwardInvocation:(NSInvocation *)anInvocation
-{
-    if ([self.delegate respondsToSelector:[anInvocation selector]])
-    {
-        return [anInvocation invokeWithTarget:self.delegate];
-    }
-    if ([self.dataSource respondsToSelector:[anInvocation selector]])
-    {
-        return [anInvocation invokeWithTarget:self.dataSource];
-    }
-    return [super forwardInvocation:anInvocation];
-}
+//消息转发第三步。。不过貌似没什么用
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
+//{
+//    if ([self.delegate respondsToSelector:selector])
+//    {
+//        NSMethodSignature *signature = [(id)self.delegate methodSignatureForSelector:selector];
+//        return signature;
+//    }
+//    
+//    if ([self.dataSource respondsToSelector:selector])
+//    {
+//        NSMethodSignature *signature = [(id)self.dataSource methodSignatureForSelector:selector];
+//        return signature;
+//    }
+//    return [super methodSignatureForSelector:selector];
+//}
+//
+//- (void)forwardInvocation:(NSInvocation *)anInvocation
+//{
+//    if ([self.delegate respondsToSelector:[anInvocation selector]])
+//    {
+//        return [anInvocation invokeWithTarget:self.delegate];
+//    }
+//    if ([self.dataSource respondsToSelector:[anInvocation selector]])
+//    {
+//        return [anInvocation invokeWithTarget:self.dataSource];
+//    }
+//    return [super forwardInvocation:anInvocation];
+//}
 
 
 
