@@ -90,7 +90,7 @@ static char scrollerToEndEditString;
                    NSString *errorString = [formModel checkValid];
                     if(errorString)
                     {
-                        fail(errorString);
+                        !fail?:fail(errorString);
                         return;
                     }
                     if(formModel.cellFormValue && formModel.cellFormKey)
@@ -108,7 +108,7 @@ static char scrollerToEndEditString;
                 NSString *errorString = [formModel checkValid];
                 if(errorString)
                 {
-                    fail(errorString);
+                    !fail?:fail(errorString);
                     return;
                 }
                 if(formModel.cellFormValue && formModel.cellFormKey)
@@ -118,8 +118,7 @@ static char scrollerToEndEditString;
             }
         }
     }
-    
-    success(formData);
+    !success?:success(formData);
 }
 
 

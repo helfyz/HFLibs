@@ -9,11 +9,10 @@
 #import "UIView+UserInfo.h"
 #import <objc/runtime.h>
 
-static char UIViewUserInfo;
 @implementation UIView (UserInfo)
 - (void)setUserInfo:(id )userInfo {
     [self willChangeValueForKey:@"UIViewUserInfo"];
-    objc_setAssociatedObject(self, &UIViewUserInfo,
+    objc_setAssociatedObject(self, @selector(userInfo),
                              userInfo,
                              OBJC_ASSOCIATION_RETAIN);
     [self didChangeValueForKey:@"UIViewUserInfo"];
@@ -21,7 +20,7 @@ static char UIViewUserInfo;
 
 -(id)userInfo
 {
-    return  objc_getAssociatedObject(self, &UIViewUserInfo);
+    return  objc_getAssociatedObject(self, @selector(userInfo));
 }
 
 @end

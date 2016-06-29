@@ -420,10 +420,8 @@
         [cell bindData:cellModel];
     }
     
-    if(cellModel.configCellBlock)
-    {
-        cellModel.configCellBlock(cell);
-    }
+    !cellModel.configCellBlock?:cellModel.configCellBlock(cell);
+
     return cell;
 }
 

@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, HFButtonImageContentMode)
 
 @property (nonatomic,assign) UIEdgeInsets contentInsets; //整体内容的缩进
 
-
 // 基于UIControlStateNormal 的快捷设置
 -(void)setImage:(UIImage *)image;  //设置image 状态:UIControlStateNormal
 -(void)setImageSize:(CGSize)imagSize;  //

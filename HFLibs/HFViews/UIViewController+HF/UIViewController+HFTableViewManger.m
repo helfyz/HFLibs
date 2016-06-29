@@ -10,12 +10,11 @@
 #import <objc/runtime.h>
 @implementation UIViewController (HFTableViewManger)
 
-static char HFTableViewMangerString;
-#pragma getter & setter 
+#pragma getter & setter
 
 - (void)setHft_tableViewManger:(HFTableViewManger *)hft_tableViewManger{
     [self willChangeValueForKey:@"hft_tableViewManger"];
-    objc_setAssociatedObject(self, &HFTableViewMangerString,
+    objc_setAssociatedObject(self, @selector(hft_tableViewManger),
                              hft_tableViewManger,
                              OBJC_ASSOCIATION_RETAIN);
     [self didChangeValueForKey:@"hft_tableViewManger"];
@@ -23,7 +22,7 @@ static char HFTableViewMangerString;
 
 -(HFTableViewManger *)hft_tableViewManger
 {
-    return  objc_getAssociatedObject(self, &HFTableViewMangerString);
+    return  objc_getAssociatedObject(self, @selector(hft_tableViewManger));
 }
 
 #pragma setupViews
