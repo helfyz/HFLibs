@@ -8,6 +8,7 @@
 
 #import "HFPickerView.h"
 #import "Masonry/Masonry.h"
+#define kContentHeight 261  //216 + 45
 @interface HFPickerView()
 
 
@@ -18,14 +19,6 @@
 
 
 @implementation HFPickerView
-
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
 
 -(id)initWithType:(HFPickerViewType)type
 {
@@ -38,8 +31,8 @@
         [self addSubview:self.contentView];
         
         [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@(240));
-            make.bottom.equalTo(self).offset(240);
+            make.height.equalTo(@(kContentHeight));
+            make.bottom.equalTo(self).offset(kContentHeight);
             make.left.right.equalTo(self);
             
         }];
@@ -189,8 +182,8 @@
 -(void)cancel
 {
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(240));
-        make.bottom.equalTo(self).offset(240);
+        make.height.equalTo(@(kContentHeight));
+        make.bottom.equalTo(self).offset(kContentHeight);
         make.left.right.equalTo(self);
     }];
     
@@ -221,7 +214,7 @@
     }];
     [self.contentView layoutIfNeeded];
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(240));
+        make.height.equalTo(@(kContentHeight));
         make.bottom.equalTo(self);
         make.left.right.equalTo(self);
         

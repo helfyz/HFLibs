@@ -28,9 +28,9 @@
         }
         else
         {
-            if(self.cellRegular)
+            if(self.cellRegex)
             {
-                NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.cellRegular];
+                NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.cellRegex];
                 if(![regexPredicate evaluateWithObject:self.cellFormValue])
                 {
                     if(self.customFormatNote)
@@ -47,9 +47,9 @@
     }
     else
     {
-        if(self.cellRegular && self.cellFormValue != nil && self.cellFormValue.length >0)
+        if(self.cellRegex && self.cellFormValue != nil && self.cellFormValue.length >0)
         {
-            NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.cellRegular];
+            NSPredicate *regexPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", self.cellRegex];
             if(![regexPredicate evaluateWithObject:self.cellFormValue])
             {
                 if(self.customFormatNote)

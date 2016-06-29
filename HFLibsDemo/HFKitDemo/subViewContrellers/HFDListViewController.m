@@ -22,6 +22,11 @@
     [self setupTableView];
     [self setupData];
 }
+
+-(void)dealloc
+{
+    NSLog(@"%@ dealloc",[self class]);
+}
 -(void)setupTableView
 {
     [self hft_setupGroupedTableViw];
@@ -42,10 +47,11 @@
     //混点 UITableViewCell
     [dataArray removeAllObjects];
     for (int index = 0; index < 10; index ++) {
-        HFTableViewCellModel*cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+        HFTableViewCellModel*cellModel = [HFTableViewCellModel new];
         cellModel.cellHeigth = 44;
         [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
-            cell.textLabel.text = [NSString stringWithFormat:@"UITableViewCell-%i",index];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@-%i",[cell class],index];
+
         }];
         [dataArray addObject:cellModel];
     }

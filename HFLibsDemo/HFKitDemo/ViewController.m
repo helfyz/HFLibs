@@ -40,7 +40,7 @@
     HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
     sectionObj.headTitle = @"列表模式";
-    HFTableViewCellModel*cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+    HFTableViewCellModel*cellModel = [HFTableViewCellModel new];;
     [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
         cell.textLabel.text = @"列表模式";
     }];
@@ -55,7 +55,7 @@
     HFTableViewSectionModel *settingSectionObj = [[HFTableViewSectionModel alloc] init];
     settingSectionObj.headHeigth = 30;
     settingSectionObj.headTitle = @"表单模式";
-    cellModel = [HFTableViewCellModel cellModelForCellClassName:@"UITableViewCell"];
+    cellModel = [HFTableViewCellModel new];
     [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
         cell.textLabel.text = @"表单模式";
     }];

@@ -12,6 +12,7 @@
 #import "HFTableViewManger+Form.h"
 #import "HFButton.h"
 #import "HFPickerView.h"
+#import "NSString+Regex.h"
 @interface HFDFormViewController ()
 
 @end
@@ -78,7 +79,7 @@
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
     cellModel.cellFormKey = @"phone";
     cellModel.cellName = @"电话号码";
-    cellModel.cellRegular =  @"^1\\d{10}";
+    cellModel.cellRegex = [NSString phoneNumberRegex];
     cellModel.cellData = @"您的电话号码";
     [section2 addCellModel:cellModel];
     
@@ -86,14 +87,17 @@
     cellModel.cellFormKey = @"email";
     cellModel.cellName = @"邮箱";
     cellModel.cellData = @"您的邮箱地址";
+    cellModel.cellRegex =  [NSString emailRegex];
     [section2 addCellModel:cellModel];
     
     HFTableViewSectionModel *section3 = [[HFTableViewSectionModel alloc] init];
     section3.headTitle = @"其它信息";
-    cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
+    cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDChooseTableViewCell"];
     cellModel.cellFormKey = @"city";
     cellModel.cellName = @"城市";
     cellModel.cellData = @"您所在的城市";
+    cellModel.cellAction = @selector(chooseCity:);
+
     [section3 addCellModel:cellModel];
     
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
@@ -144,6 +148,18 @@
     [self.hft_tableViewManger scrollerToCellEditForCellModel:cellModel];
     HFPickerView *picker = [[HFPickerView alloc] initWithType:HFPickerViewTypeCustomData];
     picker.dataSourceArrry = @[@"男",@"女",@"保密"];
+    picker.defaultValue =  cellModel.cellFormValue;
+    [picker setChangeBlock:^(id value) {
+        cellModel.cellFormValue = value;
+        [self.hft_tableViewManger reloadCellForCellModel:cellModel withRowAnimation:UITableViewRowAnimationNone];
+    }];
+    [picker showInView:self.view];
+}
+-(void)chooseCity:(HFTableViewCellFormModel *)cellModel
+{
+    [self.hft_tableViewManger scrollerToCellEditForCellModel:cellModel];
+    HFPickerView *picker = [[HFPickerView alloc] initWithType:HFPickerViewTypeCustomData];
+    picker.dataSourceArrry = @[@"北京",@"上海",@"成都"];
     picker.defaultValue =  cellModel.cellFormValue;
     [picker setChangeBlock:^(id value) {
         cellModel.cellFormValue = value;
