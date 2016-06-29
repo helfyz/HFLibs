@@ -10,13 +10,30 @@
 #import <UIKit/UIKit.h>
 #import "UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h"
 
+@implementation HFTableView
+-(void)setDataSource:(id<UITableViewDataSource>)dataSource
+{
+    if([dataSource isKindOfClass:[HFTableViewManger class]])
+    {
+        [super setDataSource:dataSource];
+    }
+}
+-(void)setDelegate:(id<UITableViewDelegate>)delegate
+{
+    if([delegate isKindOfClass:[HFTableViewManger class]])
+    {
+        [super setDelegate:delegate];
+    }
+}
+@end
+
 @implementation HFTableViewManger
 
 
 +(instancetype)mangerForTableViewStyle:(UITableViewStyle)style
 {
     HFTableViewManger *tableViewManger = [[HFTableViewManger alloc] init];
-    tableViewManger.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
+    [tableViewManger setupViewWithStyle:style];
     return tableViewManger;
 }
 
@@ -25,13 +42,19 @@
     self = [super init];
     if(self)
     {
-        [self setup];
+        [self setupData];
     }
     return self;
 }
--(void)setup
+-(void)setupData
 {
     _dataSourceModels = [NSMutableArray array];
+}
+
+-(void)setupViewWithStyle:(UITableViewStyle)style
+{
+    _tableView = [[HFTableView alloc] initWithFrame:CGRectZero style:style];
+    
 }
 #pragma mark getter & setter
 //必须要设置一下，tableView应该是一开始在respondsToSelector 做了缓存。如果不设置，自身的转发机制将不能被触发
@@ -72,15 +95,21 @@
 
 -(void)registercellModel:(HFTableViewCellModel *)cellModel
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:cellModel.tablViewCellClassName ofType:@"nib"];
-    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+    if(cellModel.cellNib)
     {
-        UINib *nib = [UINib nibWithNibName:cellModel.tablViewCellClassName bundle:nil];
-        [self.tableView registerNib:nib forCellReuseIdentifier:cellModel.cellIdentifier];
+        [self.tableView registerNib:cellModel.cellNib forCellReuseIdentifier:cellModel.cellIdentifier];
     }
-    else
-    {
-        [self.tableView registerClass:NSClassFromString(cellModel.tablViewCellClassName) forCellReuseIdentifier:cellModel.cellIdentifier];
+    else{
+        NSString *path = [[NSBundle mainBundle] pathForResource:cellModel.tablViewCellClassName ofType:@"nib"];
+        if([[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+            UINib *nib = [UINib nibWithNibName:cellModel.tablViewCellClassName bundle:nil];
+            [self.tableView registerNib:nib forCellReuseIdentifier:cellModel.cellIdentifier];
+        }
+        else
+        {
+            [self.tableView registerClass:NSClassFromString(cellModel.tablViewCellClassName) forCellReuseIdentifier:cellModel.cellIdentifier];
+        }
     }
 }
 

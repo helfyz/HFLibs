@@ -12,6 +12,10 @@
 #import "HFTableViewSectionModel.h"
 #import "HFTableViewCell.h"
 
+@interface HFTableView:UITableView
+
+@end
+
 /**
  *  manger 主要用户tableView delegate & dataSource 的管理 ，主要解决
  *  1.目前使用tableView 设置过于繁琐，
@@ -19,12 +23,13 @@
  */
 @interface HFTableViewManger : NSObject <UITableViewDataSource,UITableViewDelegate>
 
-
-
 +(instancetype)mangerForTableViewStyle:(UITableViewStyle)style;
 
 
-@property (nonatomic,strong) UITableView *tableView; //请勿直接设置tablView代理。
+
+-(void)setupViewWithStyle:(UITableViewStyle)style;
+
+@property (nonatomic,readonly,strong) UITableView *tableView; //请勿直接设置tablView代理。设置了也没用
 
 @property (nonatomic,assign) id<UITableViewDelegate> delegate;
 @property (nonatomic,assign) id<UITableViewDataSource> dataSource;
@@ -50,13 +55,10 @@
  */
 -(void)setupDataSourceModels:(NSArray *)dataModels  isAddmore:(BOOL)addMore;
 
-
-
 /**
  *  通过cellModel 获取到indexPath
  *
  *  @param cellModel cellModel
- *
  *  @return NSIndexPath
  */
 -(NSIndexPath *)cellIndexForCellModel:(HFTableViewCellModel *)cellModel;

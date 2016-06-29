@@ -27,6 +27,8 @@
 
 @property (nonatomic,strong) NSString *cellIdentifier;  //默认是cell的className，处理重用设置
 
+@property (nonatomic,strong) UINib *cellNib;  //不设置则默认为以className为nib
+
 @property (nonatomic,assign) float cellHeigth;  //行高  如不设置。会根据约束自行计算
 
 //cell 的数据 类型自定

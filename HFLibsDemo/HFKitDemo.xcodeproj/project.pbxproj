@@ -16,6 +16,7 @@
 		A85F9DEA1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */; };
 		A85F9DEB1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */; };
 		A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE0071D236580008F9024 /* NSString+Regex.m */; };
+		A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE00A1D23B38F008F9024 /* NSObject+Observers.m */; };
 		A8AA14481C98F5AE0064AE64 /* HFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141A1C98F5AE0064AE64 /* HFButton.m */; };
 		A8AA14491C98F5AE0064AE64 /* HFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141D1C98F5AE0064AE64 /* HFCollectionReusableView.m */; };
 		A8AA144A1C98F5AE0064AE64 /* HFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AA141F1C98F5AE0064AE64 /* HFCollectionViewCell.m */; };
@@ -75,6 +76,8 @@
 		A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDCustomInputTableViewCell.xib; sourceTree = "<group>"; };
 		A86BE0061D236580008F9024 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		A86BE0071D236580008F9024 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
+		A86BE0091D23B38F008F9024 /* NSObject+Observers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observers.h"; sourceTree = "<group>"; };
+		A86BE00A1D23B38F008F9024 /* NSObject+Observers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Observers.m"; sourceTree = "<group>"; };
 		A8AA14161C98F5AE0064AE64 /* HFLibs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLibs.h; sourceTree = "<group>"; };
 		A8AA14191C98F5AE0064AE64 /* HFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFButton.h; sourceTree = "<group>"; };
 		A8AA141A1C98F5AE0064AE64 /* HFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFButton.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 			children = (
 				A86BE0061D236580008F9024 /* NSString+Regex.h */,
 				A86BE0071D236580008F9024 /* NSString+Regex.m */,
+				A86BE0091D23B38F008F9024 /* NSObject+Observers.h */,
+				A86BE00A1D23B38F008F9024 /* NSObject+Observers.m */,
 			);
 			path = HFAdditions;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				A8E40F171D210FD800EACE94 /* UIViewController+HFExtend.m in Sources */,
 				A8E40F271D211D9400EACE94 /* UIViewController+HFExtend.m in Sources */,
 				A8AA14551C98F5AE0064AE64 /* HFTableViewSectionModel.m in Sources */,
+				A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */,
 				A8E40F331D22227000EACE94 /* HFTableViewManger+Form.m in Sources */,
 				A8AA145A1C98F5AE0064AE64 /* UIViewController+HFCollectionView.m in Sources */,
 				A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */,
