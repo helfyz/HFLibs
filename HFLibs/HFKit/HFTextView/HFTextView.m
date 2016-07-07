@@ -9,7 +9,7 @@
 #import "HFTextView.h"
 
 @implementation HFTextView
--(id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -17,7 +17,7 @@
     }
     return self;
 }
--(id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -25,21 +25,21 @@
     }
     return self;
 }
--(void)dealloc
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
 #pragma mark setupView
--(void)setupView
+- (void)setupView
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:UITextViewTextDidChangeNotification object:nil];
     self.placeholderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
     self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 }
 
--(void)setText:(NSString *)text
+- (void)setText:(NSString *)text
 {
     [super setText:text];
     [self setNeedsDisplay];

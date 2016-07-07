@@ -13,11 +13,9 @@
 #pragma getter & setter
 
 - (void)setHft_tableViewManger:(HFTableViewManger *)hft_tableViewManger{
-    [self willChangeValueForKey:@"hft_tableViewManger"];
     objc_setAssociatedObject(self, @selector(hft_tableViewManger),
                              hft_tableViewManger,
                              OBJC_ASSOCIATION_RETAIN);
-    [self didChangeValueForKey:@"hft_tableViewManger"];
 }
 
 - (HFTableViewManger *)hft_tableViewManger

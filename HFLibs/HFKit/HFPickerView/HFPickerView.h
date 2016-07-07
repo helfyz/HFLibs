@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef  NS_ENUM(NSInteger, HFPickerViewType) {
-    HFPickerViewTypeDate =0,
+    HFPickerViewTypeDate = 0,
     HFPickerViewTypeTime ,
     HFPickerViewTypeDateAndTime ,
     HFPickerViewTypeCustomData ,
@@ -33,8 +33,8 @@ typedef  NS_ENUM(NSInteger, HFPickerViewType) {
  *
  *  @return 实例对象
  */
--(instancetype)initWithType:(HFPickerViewType)type;
+- (instancetype)initWithType:(HFPickerViewType)type;
 
--(void)showInView:(UIView *)view;
+- (void)showInView:(UIView *)view;
 
 @end

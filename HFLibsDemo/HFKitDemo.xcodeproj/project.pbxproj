@@ -34,15 +34,15 @@
 		A8E40F1B1D21121600EACE94 /* HFDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E40F1A1D21121600EACE94 /* HFDListViewController.m */; };
 		A8E40F1E1D211ACA00EACE94 /* HFDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E40F1D1D211ACA00EACE94 /* HFDSettingViewController.m */; };
 		A8E40F2D1D211FEC00EACE94 /* HFDFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E40F2C1D211FEC00EACE94 /* HFDFormViewController.m */; };
+		A8EF2BA61D2DE9BF0047DB8B /* HFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2B9F1D2DE9BF0047DB8B /* HFTableViewCell.m */; };
+		A8EF2BA71D2DE9BF0047DB8B /* HFTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2BA11D2DE9BF0047DB8B /* HFTableViewCellModel.m */; };
+		A8EF2BA81D2DE9BF0047DB8B /* HFTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2BA31D2DE9BF0047DB8B /* HFTableViewManger.m */; };
+		A8EF2BA91D2DE9BF0047DB8B /* HFTableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2BA51D2DE9BF0047DB8B /* HFTableViewSectionModel.m */; };
+		A8EF2BAF1D2DE9D90047DB8B /* HFTableViewCellFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2BAC1D2DE9D90047DB8B /* HFTableViewCellFormModel.m */; };
+		A8EF2BB01D2DE9D90047DB8B /* HFTableViewManger+Form.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EF2BAE1D2DE9D90047DB8B /* HFTableViewManger+Form.m */; };
 		A8F71D121D2B953D004BF6F8 /* HFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CEF1D2B953D004BF6F8 /* HFButton.m */; };
 		A8F71D131D2B953D004BF6F8 /* HFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CF41D2B953D004BF6F8 /* HFLabel.m */; };
 		A8F71D141D2B953D004BF6F8 /* HFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CF71D2B953D004BF6F8 /* HFPickerView.m */; };
-		A8F71D151D2B953D004BF6F8 /* HFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CFB1D2B953D004BF6F8 /* HFTableViewCell.m */; };
-		A8F71D161D2B953D004BF6F8 /* HFTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CFD1D2B953D004BF6F8 /* HFTableViewCellModel.m */; };
-		A8F71D171D2B953D004BF6F8 /* HFTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71CFF1D2B953D004BF6F8 /* HFTableViewManger.m */; };
-		A8F71D181D2B953D004BF6F8 /* HFTableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D011D2B953D004BF6F8 /* HFTableViewSectionModel.m */; };
-		A8F71D191D2B953D004BF6F8 /* HFTableViewCellFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D041D2B953D004BF6F8 /* HFTableViewCellFormModel.m */; };
-		A8F71D1A1D2B953D004BF6F8 /* HFTableViewManger+Form.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D061D2B953D004BF6F8 /* HFTableViewManger+Form.m */; };
 		A8F71D1B1D2B953D004BF6F8 /* HFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D091D2B953D004BF6F8 /* HFTextField.m */; };
 		A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D0C1D2B953D004BF6F8 /* HFTextView.m */; };
 		A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */; };
@@ -110,6 +110,18 @@
 		A8E40F1D1D211ACA00EACE94 /* HFDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDSettingViewController.m; sourceTree = "<group>"; };
 		A8E40F2B1D211FEC00EACE94 /* HFDFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDFormViewController.h; sourceTree = "<group>"; };
 		A8E40F2C1D211FEC00EACE94 /* HFDFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDFormViewController.m; sourceTree = "<group>"; };
+		A8EF2B9E1D2DE9BF0047DB8B /* HFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCell.h; sourceTree = "<group>"; };
+		A8EF2B9F1D2DE9BF0047DB8B /* HFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCell.m; sourceTree = "<group>"; };
+		A8EF2BA01D2DE9BF0047DB8B /* HFTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCellModel.h; sourceTree = "<group>"; };
+		A8EF2BA11D2DE9BF0047DB8B /* HFTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCellModel.m; sourceTree = "<group>"; };
+		A8EF2BA21D2DE9BF0047DB8B /* HFTableViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewManger.h; sourceTree = "<group>"; };
+		A8EF2BA31D2DE9BF0047DB8B /* HFTableViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewManger.m; sourceTree = "<group>"; };
+		A8EF2BA41D2DE9BF0047DB8B /* HFTableViewSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewSectionModel.h; sourceTree = "<group>"; };
+		A8EF2BA51D2DE9BF0047DB8B /* HFTableViewSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewSectionModel.m; sourceTree = "<group>"; };
+		A8EF2BAB1D2DE9D90047DB8B /* HFTableViewCellFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCellFormModel.h; sourceTree = "<group>"; };
+		A8EF2BAC1D2DE9D90047DB8B /* HFTableViewCellFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCellFormModel.m; sourceTree = "<group>"; };
+		A8EF2BAD1D2DE9D90047DB8B /* HFTableViewManger+Form.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HFTableViewManger+Form.h"; sourceTree = "<group>"; };
+		A8EF2BAE1D2DE9D90047DB8B /* HFTableViewManger+Form.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HFTableViewManger+Form.m"; sourceTree = "<group>"; };
 		A8F71CEE1D2B953D004BF6F8 /* HFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFButton.h; sourceTree = "<group>"; };
 		A8F71CEF1D2B953D004BF6F8 /* HFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFButton.m; sourceTree = "<group>"; };
 		A8F71CF11D2B953D004BF6F8 /* HFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFKit.h; sourceTree = "<group>"; };
@@ -117,18 +129,6 @@
 		A8F71CF41D2B953D004BF6F8 /* HFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLabel.m; sourceTree = "<group>"; };
 		A8F71CF61D2B953D004BF6F8 /* HFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFPickerView.h; sourceTree = "<group>"; };
 		A8F71CF71D2B953D004BF6F8 /* HFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFPickerView.m; sourceTree = "<group>"; };
-		A8F71CFA1D2B953D004BF6F8 /* HFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCell.h; sourceTree = "<group>"; };
-		A8F71CFB1D2B953D004BF6F8 /* HFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCell.m; sourceTree = "<group>"; };
-		A8F71CFC1D2B953D004BF6F8 /* HFTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCellModel.h; sourceTree = "<group>"; };
-		A8F71CFD1D2B953D004BF6F8 /* HFTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCellModel.m; sourceTree = "<group>"; };
-		A8F71CFE1D2B953D004BF6F8 /* HFTableViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewManger.h; sourceTree = "<group>"; };
-		A8F71CFF1D2B953D004BF6F8 /* HFTableViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewManger.m; sourceTree = "<group>"; };
-		A8F71D001D2B953D004BF6F8 /* HFTableViewSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewSectionModel.h; sourceTree = "<group>"; };
-		A8F71D011D2B953D004BF6F8 /* HFTableViewSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewSectionModel.m; sourceTree = "<group>"; };
-		A8F71D031D2B953D004BF6F8 /* HFTableViewCellFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTableViewCellFormModel.h; sourceTree = "<group>"; };
-		A8F71D041D2B953D004BF6F8 /* HFTableViewCellFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTableViewCellFormModel.m; sourceTree = "<group>"; };
-		A8F71D051D2B953D004BF6F8 /* HFTableViewManger+Form.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HFTableViewManger+Form.h"; sourceTree = "<group>"; };
-		A8F71D061D2B953D004BF6F8 /* HFTableViewManger+Form.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HFTableViewManger+Form.m"; sourceTree = "<group>"; };
 		A8F71D081D2B953D004BF6F8 /* HFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTextField.h; sourceTree = "<group>"; };
 		A8F71D091D2B953D004BF6F8 /* HFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTextField.m; sourceTree = "<group>"; };
 		A8F71D0B1D2B953D004BF6F8 /* HFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTextView.h; sourceTree = "<group>"; };
@@ -315,15 +315,41 @@
 			path = subViewContrellers;
 			sourceTree = "<group>";
 		};
+		A8EF2B9D1D2DE9BF0047DB8B /* HFTableViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF2B9E1D2DE9BF0047DB8B /* HFTableViewCell.h */,
+				A8EF2B9F1D2DE9BF0047DB8B /* HFTableViewCell.m */,
+				A8EF2BA01D2DE9BF0047DB8B /* HFTableViewCellModel.h */,
+				A8EF2BA11D2DE9BF0047DB8B /* HFTableViewCellModel.m */,
+				A8EF2BA21D2DE9BF0047DB8B /* HFTableViewManger.h */,
+				A8EF2BA31D2DE9BF0047DB8B /* HFTableViewManger.m */,
+				A8EF2BA41D2DE9BF0047DB8B /* HFTableViewSectionModel.h */,
+				A8EF2BA51D2DE9BF0047DB8B /* HFTableViewSectionModel.m */,
+				A8EF2BAA1D2DE9D90047DB8B /* HFTableView+Form */,
+			);
+			path = HFTableViewManger;
+			sourceTree = "<group>";
+		};
+		A8EF2BAA1D2DE9D90047DB8B /* HFTableView+Form */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF2BAB1D2DE9D90047DB8B /* HFTableViewCellFormModel.h */,
+				A8EF2BAC1D2DE9D90047DB8B /* HFTableViewCellFormModel.m */,
+				A8EF2BAD1D2DE9D90047DB8B /* HFTableViewManger+Form.h */,
+				A8EF2BAE1D2DE9D90047DB8B /* HFTableViewManger+Form.m */,
+			);
+			path = "HFTableView+Form";
+			sourceTree = "<group>";
+		};
 		A8F71CEC1D2B953D004BF6F8 /* HFKit */ = {
 			isa = PBXGroup;
 			children = (
+				A8EF2B9D1D2DE9BF0047DB8B /* HFTableViewManger */,
 				A8F71CF11D2B953D004BF6F8 /* HFKit.h */,
 				A8F71CED1D2B953D004BF6F8 /* HFButton */,
 				A8F71CF21D2B953D004BF6F8 /* HFLabel */,
 				A8F71CF51D2B953D004BF6F8 /* HFPickerView */,
-				A8F71CF91D2B953D004BF6F8 /* HFTableView */,
-				A8F71D021D2B953D004BF6F8 /* HFTableView+Form */,
 				A8F71D071D2B953D004BF6F8 /* HFTextFiled */,
 				A8F71D0A1D2B953D004BF6F8 /* HFTextView */,
 				A8F71D0D1D2B953D004BF6F8 /* UIViewController+HF */,
@@ -354,42 +380,8 @@
 			children = (
 				A8F71CF61D2B953D004BF6F8 /* HFPickerView.h */,
 				A8F71CF71D2B953D004BF6F8 /* HFPickerView.m */,
-				A8F71CF81D2B953D004BF6F8 /* HFTableView+form */,
 			);
 			path = HFPickerView;
-			sourceTree = "<group>";
-		};
-		A8F71CF81D2B953D004BF6F8 /* HFTableView+form */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "HFTableView+form";
-			sourceTree = "<group>";
-		};
-		A8F71CF91D2B953D004BF6F8 /* HFTableView */ = {
-			isa = PBXGroup;
-			children = (
-				A8F71CFA1D2B953D004BF6F8 /* HFTableViewCell.h */,
-				A8F71CFB1D2B953D004BF6F8 /* HFTableViewCell.m */,
-				A8F71CFC1D2B953D004BF6F8 /* HFTableViewCellModel.h */,
-				A8F71CFD1D2B953D004BF6F8 /* HFTableViewCellModel.m */,
-				A8F71CFE1D2B953D004BF6F8 /* HFTableViewManger.h */,
-				A8F71CFF1D2B953D004BF6F8 /* HFTableViewManger.m */,
-				A8F71D001D2B953D004BF6F8 /* HFTableViewSectionModel.h */,
-				A8F71D011D2B953D004BF6F8 /* HFTableViewSectionModel.m */,
-			);
-			path = HFTableView;
-			sourceTree = "<group>";
-		};
-		A8F71D021D2B953D004BF6F8 /* HFTableView+Form */ = {
-			isa = PBXGroup;
-			children = (
-				A8F71D031D2B953D004BF6F8 /* HFTableViewCellFormModel.h */,
-				A8F71D041D2B953D004BF6F8 /* HFTableViewCellFormModel.m */,
-				A8F71D051D2B953D004BF6F8 /* HFTableViewManger+Form.h */,
-				A8F71D061D2B953D004BF6F8 /* HFTableViewManger+Form.m */,
-			);
-			path = "HFTableView+Form";
 			sourceTree = "<group>";
 		};
 		A8F71D071D2B953D004BF6F8 /* HFTextFiled */ = {
@@ -574,7 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F71D141D2B953D004BF6F8 /* HFPickerView.m in Sources */,
-				A8F71D161D2B953D004BF6F8 /* HFTableViewCellModel.m in Sources */,
+                A8F71D161D2B953D004BF6F8 /* HFTableViewCellModel.m in Sources */,
 				A8F71D191D2B953D004BF6F8 /* HFTableViewCellFormModel.m in Sources */,
 				A861B39A1D3091AE00253B67 /* UIViewController+HFExtend.m in Sources */,
 				A861B3901D308E2000253B67 /* UIColor+HFUtils.m in Sources */,
@@ -582,14 +574,14 @@
 				A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */,
 				A861B3971D308ECC00253B67 /* UIView+UserInfo.m in Sources */,
 				A8F71D1B1D2B953D004BF6F8 /* HFTextField.m in Sources */,
-				A8F71D151D2B953D004BF6F8 /* HFTableViewCell.m in Sources */,
-				A8F71D171D2B953D004BF6F8 /* HFTableViewManger.m in Sources */,
+				A8EF2BA91D2DE9BF0047DB8B /* HFTableViewSectionModel.m in Sources */,
 				A8BDB5491B8198190002F60F /* AppDelegate.m in Sources */,
+				A8EF2BAF1D2DE9D90047DB8B /* HFTableViewCellFormModel.m in Sources */,
 				A8BDB5461B8198190002F60F /* main.m in Sources */,
 				A845EF171D2271F50017F017 /* HFDChooseTableViewCell.m in Sources */,
-				A8F71D1A1D2B953D004BF6F8 /* HFTableViewManger+Form.m in Sources */,
+                A8F71D1A1D2B953D004BF6F8 /* HFTableViewManger+Form.m in Sources */,
+				A8F71D231D2B95AD004BF6F8 /* UIView+CGRect.m in Sources */,
 				A8E40F2D1D211FEC00EACE94 /* HFDFormViewController.m in Sources */,
-				A8F71D181D2B953D004BF6F8 /* HFTableViewSectionModel.m in Sources */,
 				A8E40F1E1D211ACA00EACE94 /* HFDSettingViewController.m in Sources */,
 				A861B3961D308ECC00253B67 /* UIView+CGRect.m in Sources */,
 				A8E40F1B1D21121600EACE94 /* HFDListViewController.m in Sources */,
@@ -600,10 +592,16 @@
 				A8F71D121D2B953D004BF6F8 /* HFButton.m in Sources */,
 				A861B38E1D308E2000253B67 /* NSObject+HFUtils.m in Sources */,
 				A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */,
+				A8F71D1D1D2B953D004BF6F8 /* UIViewController+HFExtend.m in Sources */,
+				A8EF2BA61D2DE9BF0047DB8B /* HFTableViewCell.m in Sources */,
+				A8EF2BA71D2DE9BF0047DB8B /* HFTableViewCellModel.m in Sources */,
 				A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */,
 				A8F71D131D2B953D004BF6F8 /* HFLabel.m in Sources */,
+				A8EF2BA81D2DE9BF0047DB8B /* HFTableViewManger.m in Sources */,
 				A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */,
-				A861B38D1D308E2000253B67 /* NSDate+HFUtils.m in Sources */,
+                A861B38D1D308E2000253B67 /* NSDate+HFUtils.m in Sources */,
+				A8F71D241D2B95AD004BF6F8 /* UIView+UserInfo.m in Sources */,
+				A8EF2BB01D2DE9D90047DB8B /* HFTableViewManger+Form.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

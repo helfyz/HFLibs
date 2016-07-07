@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, HFLabelVerticalAligment) { //纵向排版 系统lable 默认是纵向剧中
-    HFLabelVerticalAligmentCenter =0,  //默认
+typedef NS_ENUM (NSInteger, HFLabelVerticalAligment) { //纵向排版 系统lable 默认是纵向剧中
+    HFLabelVerticalAligmentCenter = 0,  //默认
     HFLabelVerticalAligmentTop ,
     HFLabelVerticalAligmentBottom,
 };

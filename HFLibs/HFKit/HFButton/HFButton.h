@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, HFButtonImageContentMode) {
+typedef NS_ENUM (NSInteger, HFButtonImageContentMode) {
     HFButtonImageContentModeBackgroud = 0,  //作为背景
     HFButtonImageContentModeTop,            //图片在文字上面
     HFButtonImageContentModeBottom,

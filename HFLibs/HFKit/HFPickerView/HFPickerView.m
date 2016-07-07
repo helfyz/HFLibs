@@ -20,7 +20,7 @@
 
 @implementation HFPickerView
 
--(id)initWithType:(HFPickerViewType)type
+- (id)initWithType:(HFPickerViewType)type
 {
     self = [super init];
     if(self)
@@ -59,7 +59,7 @@
     return self;
 }
 
--(void)setupPickerView
+- (void)setupPickerView
 {
     
     switch (self.pickerType) {
@@ -147,7 +147,7 @@
     }
 }
 
--(void)done
+- (void)done
 {
     if(self.changeBlock)
     {
@@ -179,7 +179,7 @@
     [self cancel];
 }
 
--(void)cancel
+- (void)cancel
 {
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(kContentHeight));
@@ -196,7 +196,7 @@
 }
 
 
--(void)showInView:(UIView *)view
+- (void)showInView:(UIView *)view
 {
     [self setupPickerView];
     [self.contentView addSubview:self.picker];
