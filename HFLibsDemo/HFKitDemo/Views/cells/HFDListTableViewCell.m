@@ -19,6 +19,7 @@
 -(void)bindData:(HFTableViewCellModel *)cellModel
 {
     //根据 valueData 绑定数据
+    [super bindData:cellModel];
     
     NSString *contentText = cellModel.cellData;
     self.contentLabel.text = contentText;

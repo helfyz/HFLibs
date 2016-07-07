@@ -9,20 +9,9 @@
 #ifndef HFKitDemo_HFKit_h
 #define HFKitDemo_HFKit_h
 
+#ifdef HFKit_h
+#import "HFKit.h"
+#endif
 
-#import "HFButton.h"
-#import "HFTextView.h"
-#import "HFTextField.h"
-#import "HFLabel.h"
-#import "HFPickerView.h"
-
-
-
-#import "UIView+UserInfo.h"
-#import "UIView+CGRect.h"
-
-
-
-#import "HFTableView.h"
 
 #endif
