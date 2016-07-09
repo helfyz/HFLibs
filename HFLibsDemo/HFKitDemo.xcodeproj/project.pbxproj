@@ -14,6 +14,13 @@
 		A845EF181D2271F50017F017 /* HFDChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A845EF161D2271F50017F017 /* HFDChooseTableViewCell.xib */; };
 		A85F9DEA1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */; };
 		A85F9DEB1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */; };
+		A861B38D1D308E2000253B67 /* NSDate+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3841D308E2000253B67 /* NSDate+HFUtils.m */; };
+		A861B38E1D308E2000253B67 /* NSObject+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3861D308E2000253B67 /* NSObject+HFUtils.m */; };
+		A861B38F1D308E2000253B67 /* NSString+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3881D308E2000253B67 /* NSString+HFUtils.m */; };
+		A861B3901D308E2000253B67 /* UIColor+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B38A1D308E2000253B67 /* UIColor+HFUtils.m */; };
+		A861B3911D308E2000253B67 /* UIImage+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B38C1D308E2000253B67 /* UIImage+HFUtils.m */; };
+		A861B3961D308ECC00253B67 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3931D308ECC00253B67 /* UIView+CGRect.m */; };
+		A861B3971D308ECC00253B67 /* UIView+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3951D308ECC00253B67 /* UIView+UserInfo.m */; };
 		A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE0071D236580008F9024 /* NSString+Regex.m */; };
 		A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE00A1D23B38F008F9024 /* NSObject+Observers.m */; };
 		A8BDB5461B8198190002F60F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BDB5451B8198190002F60F /* main.m */; };
@@ -39,8 +46,6 @@
 		A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D0C1D2B953D004BF6F8 /* HFTextView.m */; };
 		A8F71D1D1D2B953D004BF6F8 /* UIViewController+HFExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D0F1D2B953D004BF6F8 /* UIViewController+HFExtend.m */; };
 		A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */; };
-		A8F71D231D2B95AD004BF6F8 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D201D2B95AD004BF6F8 /* UIView+CGRect.m */; };
-		A8F71D241D2B95AD004BF6F8 /* UIView+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D221D2B95AD004BF6F8 /* UIView+UserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,20 @@
 		A85F9DE71C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDCustomInputTableViewCell.h; sourceTree = "<group>"; };
 		A85F9DE81C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDCustomInputTableViewCell.m; sourceTree = "<group>"; };
 		A85F9DE91C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HFDCustomInputTableViewCell.xib; sourceTree = "<group>"; };
+		A861B3831D308E2000253B67 /* NSDate+HFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFUtils.h"; sourceTree = "<group>"; };
+		A861B3841D308E2000253B67 /* NSDate+HFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HFUtils.m"; sourceTree = "<group>"; };
+		A861B3851D308E2000253B67 /* NSObject+HFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HFUtils.h"; sourceTree = "<group>"; };
+		A861B3861D308E2000253B67 /* NSObject+HFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HFUtils.m"; sourceTree = "<group>"; };
+		A861B3871D308E2000253B67 /* NSString+HFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HFUtils.h"; sourceTree = "<group>"; };
+		A861B3881D308E2000253B67 /* NSString+HFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HFUtils.m"; sourceTree = "<group>"; };
+		A861B3891D308E2000253B67 /* UIColor+HFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HFUtils.h"; sourceTree = "<group>"; };
+		A861B38A1D308E2000253B67 /* UIColor+HFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HFUtils.m"; sourceTree = "<group>"; };
+		A861B38B1D308E2000253B67 /* UIImage+HFUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HFUtils.h"; sourceTree = "<group>"; };
+		A861B38C1D308E2000253B67 /* UIImage+HFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HFUtils.m"; sourceTree = "<group>"; };
+		A861B3921D308ECC00253B67 /* UIView+CGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGRect.h"; sourceTree = "<group>"; };
+		A861B3931D308ECC00253B67 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
+		A861B3941D308ECC00253B67 /* UIView+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UserInfo.h"; sourceTree = "<group>"; };
+		A861B3951D308ECC00253B67 /* UIView+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UserInfo.m"; sourceTree = "<group>"; };
 		A86BE0061D236580008F9024 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		A86BE0071D236580008F9024 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		A86BE0091D23B38F008F9024 /* NSObject+Observers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observers.h"; sourceTree = "<group>"; };
@@ -115,10 +134,6 @@
 		A8F71D0F1D2B953D004BF6F8 /* UIViewController+HFExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HFExtend.m"; sourceTree = "<group>"; };
 		A8F71D101D2B953D004BF6F8 /* UIViewController+HFTableViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HFTableViewManger.h"; sourceTree = "<group>"; };
 		A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HFTableViewManger.m"; sourceTree = "<group>"; };
-		A8F71D1F1D2B95AD004BF6F8 /* UIView+CGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGRect.h"; sourceTree = "<group>"; };
-		A8F71D201D2B95AD004BF6F8 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
-		A8F71D211D2B95AD004BF6F8 /* UIView+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UserInfo.h"; sourceTree = "<group>"; };
-		A8F71D221D2B95AD004BF6F8 /* UIView+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UserInfo.m"; sourceTree = "<group>"; };
 		C65D1C999896C836ED7197AC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0675CAAD6AB685AEFCA06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,10 +201,20 @@
 		A86BE0051D23643D008F9024 /* HFAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				A8F71D1F1D2B95AD004BF6F8 /* UIView+CGRect.h */,
-				A8F71D201D2B95AD004BF6F8 /* UIView+CGRect.m */,
-				A8F71D211D2B95AD004BF6F8 /* UIView+UserInfo.h */,
-				A8F71D221D2B95AD004BF6F8 /* UIView+UserInfo.m */,
+				A861B3921D308ECC00253B67 /* UIView+CGRect.h */,
+				A861B3931D308ECC00253B67 /* UIView+CGRect.m */,
+				A861B3941D308ECC00253B67 /* UIView+UserInfo.h */,
+				A861B3951D308ECC00253B67 /* UIView+UserInfo.m */,
+				A861B3831D308E2000253B67 /* NSDate+HFUtils.h */,
+				A861B3841D308E2000253B67 /* NSDate+HFUtils.m */,
+				A861B3851D308E2000253B67 /* NSObject+HFUtils.h */,
+				A861B3861D308E2000253B67 /* NSObject+HFUtils.m */,
+				A861B3871D308E2000253B67 /* NSString+HFUtils.h */,
+				A861B3881D308E2000253B67 /* NSString+HFUtils.m */,
+				A861B3891D308E2000253B67 /* UIColor+HFUtils.h */,
+				A861B38A1D308E2000253B67 /* UIColor+HFUtils.m */,
+				A861B38B1D308E2000253B67 /* UIImage+HFUtils.h */,
+				A861B38C1D308E2000253B67 /* UIImage+HFUtils.m */,
 				A86BE0061D236580008F9024 /* NSString+Regex.h */,
 				A86BE0071D236580008F9024 /* NSString+Regex.m */,
 				A86BE0091D23B38F008F9024 /* NSObject+Observers.h */,
@@ -549,29 +574,34 @@
 				A8F71D141D2B953D004BF6F8 /* HFPickerView.m in Sources */,
 				A8F71D161D2B953D004BF6F8 /* HFTableViewCellModel.m in Sources */,
 				A8F71D191D2B953D004BF6F8 /* HFTableViewCellFormModel.m in Sources */,
+				A861B3901D308E2000253B67 /* UIColor+HFUtils.m in Sources */,
 				A8BDB54C1B8198190002F60F /* ViewController.m in Sources */,
 				A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */,
+				A861B3971D308ECC00253B67 /* UIView+UserInfo.m in Sources */,
 				A8F71D1B1D2B953D004BF6F8 /* HFTextField.m in Sources */,
 				A8F71D151D2B953D004BF6F8 /* HFTableViewCell.m in Sources */,
 				A8F71D171D2B953D004BF6F8 /* HFTableViewManger.m in Sources */,
 				A8BDB5491B8198190002F60F /* AppDelegate.m in Sources */,
 				A8BDB5461B8198190002F60F /* main.m in Sources */,
 				A845EF171D2271F50017F017 /* HFDChooseTableViewCell.m in Sources */,
-				A8F71D231D2B95AD004BF6F8 /* UIView+CGRect.m in Sources */,
 				A8F71D1A1D2B953D004BF6F8 /* HFTableViewManger+Form.m in Sources */,
 				A8E40F2D1D211FEC00EACE94 /* HFDFormViewController.m in Sources */,
 				A8F71D181D2B953D004BF6F8 /* HFTableViewSectionModel.m in Sources */,
 				A8E40F1E1D211ACA00EACE94 /* HFDSettingViewController.m in Sources */,
+				A861B3961D308ECC00253B67 /* UIView+CGRect.m in Sources */,
 				A8E40F1B1D21121600EACE94 /* HFDListViewController.m in Sources */,
+				A861B3911D308E2000253B67 /* UIImage+HFUtils.m in Sources */,
 				A810BCF41C9AA5D600A94D68 /* HFDListTableViewCell.m in Sources */,
+				A861B38F1D308E2000253B67 /* NSString+HFUtils.m in Sources */,
 				A85F9DEA1C9FCFB500CBCB01 /* HFDCustomInputTableViewCell.m in Sources */,
 				A8F71D121D2B953D004BF6F8 /* HFButton.m in Sources */,
+				A861B38E1D308E2000253B67 /* NSObject+HFUtils.m in Sources */,
 				A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */,
 				A8F71D1D1D2B953D004BF6F8 /* UIViewController+HFExtend.m in Sources */,
 				A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */,
 				A8F71D131D2B953D004BF6F8 /* HFLabel.m in Sources */,
 				A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */,
-				A8F71D241D2B95AD004BF6F8 /* UIView+UserInfo.m in Sources */,
+				A861B38D1D308E2000253B67 /* NSDate+HFUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

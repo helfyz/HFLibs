@@ -11,5 +11,4 @@
 #import <objc/message.h>
 @implementation NSObject (Observers)
 
-
 @end
