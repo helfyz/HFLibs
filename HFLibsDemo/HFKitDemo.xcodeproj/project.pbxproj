@@ -21,6 +21,7 @@
 		A861B3911D308E2000253B67 /* UIImage+HFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B38C1D308E2000253B67 /* UIImage+HFUtils.m */; };
 		A861B3961D308ECC00253B67 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3931D308ECC00253B67 /* UIView+CGRect.m */; };
 		A861B3971D308ECC00253B67 /* UIView+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3951D308ECC00253B67 /* UIView+UserInfo.m */; };
+		A861B39A1D3091AE00253B67 /* UIViewController+HFExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A861B3991D3091AE00253B67 /* UIViewController+HFExtend.m */; };
 		A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE0071D236580008F9024 /* NSString+Regex.m */; };
 		A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */ = {isa = PBXBuildFile; fileRef = A86BE00A1D23B38F008F9024 /* NSObject+Observers.m */; };
 		A8BDB5461B8198190002F60F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BDB5451B8198190002F60F /* main.m */; };
@@ -44,7 +45,6 @@
 		A8F71D1A1D2B953D004BF6F8 /* HFTableViewManger+Form.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D061D2B953D004BF6F8 /* HFTableViewManger+Form.m */; };
 		A8F71D1B1D2B953D004BF6F8 /* HFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D091D2B953D004BF6F8 /* HFTextField.m */; };
 		A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D0C1D2B953D004BF6F8 /* HFTextView.m */; };
-		A8F71D1D1D2B953D004BF6F8 /* UIViewController+HFExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D0F1D2B953D004BF6F8 /* UIViewController+HFExtend.m */; };
 		A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +83,9 @@
 		A861B3931D308ECC00253B67 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
 		A861B3941D308ECC00253B67 /* UIView+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UserInfo.h"; sourceTree = "<group>"; };
 		A861B3951D308ECC00253B67 /* UIView+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UserInfo.m"; sourceTree = "<group>"; };
+		A861B3981D3091AE00253B67 /* UIViewController+HFExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HFExtend.h"; sourceTree = "<group>"; };
+		A861B3991D3091AE00253B67 /* UIViewController+HFExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HFExtend.m"; sourceTree = "<group>"; };
+		A861B39B1D3091C600253B67 /* HFAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFAdditions.h; sourceTree = "<group>"; };
 		A86BE0061D236580008F9024 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		A86BE0071D236580008F9024 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		A86BE0091D23B38F008F9024 /* NSObject+Observers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observers.h"; sourceTree = "<group>"; };
@@ -130,8 +133,6 @@
 		A8F71D091D2B953D004BF6F8 /* HFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTextField.m; sourceTree = "<group>"; };
 		A8F71D0B1D2B953D004BF6F8 /* HFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTextView.h; sourceTree = "<group>"; };
 		A8F71D0C1D2B953D004BF6F8 /* HFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTextView.m; sourceTree = "<group>"; };
-		A8F71D0E1D2B953D004BF6F8 /* UIViewController+HFExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HFExtend.h"; sourceTree = "<group>"; };
-		A8F71D0F1D2B953D004BF6F8 /* UIViewController+HFExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HFExtend.m"; sourceTree = "<group>"; };
 		A8F71D101D2B953D004BF6F8 /* UIViewController+HFTableViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HFTableViewManger.h"; sourceTree = "<group>"; };
 		A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HFTableViewManger.m"; sourceTree = "<group>"; };
 		C65D1C999896C836ED7197AC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +202,9 @@
 		A86BE0051D23643D008F9024 /* HFAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				A861B39B1D3091C600253B67 /* HFAdditions.h */,
+				A861B3981D3091AE00253B67 /* UIViewController+HFExtend.h */,
+				A861B3991D3091AE00253B67 /* UIViewController+HFExtend.m */,
 				A861B3921D308ECC00253B67 /* UIView+CGRect.h */,
 				A861B3931D308ECC00253B67 /* UIView+CGRect.m */,
 				A861B3941D308ECC00253B67 /* UIView+UserInfo.h */,
@@ -409,8 +413,6 @@
 		A8F71D0D1D2B953D004BF6F8 /* UIViewController+HF */ = {
 			isa = PBXGroup;
 			children = (
-				A8F71D0E1D2B953D004BF6F8 /* UIViewController+HFExtend.h */,
-				A8F71D0F1D2B953D004BF6F8 /* UIViewController+HFExtend.m */,
 				A8F71D101D2B953D004BF6F8 /* UIViewController+HFTableViewManger.h */,
 				A8F71D111D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m */,
 			);
@@ -574,6 +576,7 @@
 				A8F71D141D2B953D004BF6F8 /* HFPickerView.m in Sources */,
 				A8F71D161D2B953D004BF6F8 /* HFTableViewCellModel.m in Sources */,
 				A8F71D191D2B953D004BF6F8 /* HFTableViewCellFormModel.m in Sources */,
+				A861B39A1D3091AE00253B67 /* UIViewController+HFExtend.m in Sources */,
 				A861B3901D308E2000253B67 /* UIColor+HFUtils.m in Sources */,
 				A8BDB54C1B8198190002F60F /* ViewController.m in Sources */,
 				A8F71D1E1D2B953D004BF6F8 /* UIViewController+HFTableViewManger.m in Sources */,
@@ -597,7 +600,6 @@
 				A8F71D121D2B953D004BF6F8 /* HFButton.m in Sources */,
 				A861B38E1D308E2000253B67 /* NSObject+HFUtils.m in Sources */,
 				A86BE00B1D23B38F008F9024 /* NSObject+Observers.m in Sources */,
-				A8F71D1D1D2B953D004BF6F8 /* UIViewController+HFExtend.m in Sources */,
 				A8F71D1C1D2B953D004BF6F8 /* HFTextView.m in Sources */,
 				A8F71D131D2B953D004BF6F8 /* HFLabel.m in Sources */,
 				A86BE0081D236580008F9024 /* NSString+Regex.m in Sources */,
