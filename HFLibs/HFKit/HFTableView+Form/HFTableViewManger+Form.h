@@ -19,7 +19,6 @@
  *
  *  @return cellmodel
  */
-- (HFTableViewCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath;
 - (HFTableViewCellModel *)cellModelForModelKey:(NSString *)modelKey;  //推荐使用key来获取。
 
 

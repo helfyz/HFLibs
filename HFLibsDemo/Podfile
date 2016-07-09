@@ -1,2 +1,2 @@
 platform :ios, '7.0'
-pod 'HFLibs', '~> 0.6.1'
+pod 'HFLibs', '~> 1.0.0'

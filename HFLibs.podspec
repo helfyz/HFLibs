@@ -25,11 +25,11 @@ ss.public_header_files = "HFLibs/HFAdditions/HFAdditions.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 end
 
-s.subspec 'HFViews' do |ss|
+s.subspec 'HFKit' do |ss|
 ss.source_files        = "HFLibs/HFKit/**/*.{h,m}"
 ss.public_header_files = "HFLibs/HFKit/HFKit.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
-ss.dependency 'HFLibs/UIViewAdditions'
+ss.dependency 'HFLibs/HFAdditions'
 
 s.dependency "Masonry", '~> 0.6.1'
 s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'

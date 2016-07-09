@@ -26,18 +26,6 @@ static char scrollerToEndEditString;
     return  [objc_getAssociatedObject(self, &scrollerToEndEditString) boolValue];
 }
 
-- (HFTableViewCellModel *)cellModelForIndexPath:(NSIndexPath *)indexPath
-{
-    HFTableViewCellModel *cellModel = nil;
-    if (self.isMutableSection) {
-        cellModel = ((HFTableViewSectionModel *)self.dataSourceModels[indexPath.section]).cellModels[indexPath.row];
-    }
-    else{
-        cellModel =self.dataSourceModels[indexPath.row];
-    }
-    return cellModel;
-}
-
 - (HFTableViewCellModel *)cellModelForModelKey:(NSString *)modelKey
 {
     HFTableViewCellModel *cellModel = nil;
