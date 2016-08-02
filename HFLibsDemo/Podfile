@@ -1,2 +1,5 @@
+
 platform :ios, '7.0'
-pod 'HFLibs', '~> 1.0.0'
+
+    pod "Masonry", '~> 0.6.1'
+    pod "UITableView+FDTemplateLayoutCell", '~> 1.3'

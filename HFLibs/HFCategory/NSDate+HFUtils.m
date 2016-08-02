@@ -10,12 +10,10 @@
 
 @implementation NSDate (HFUtils)
 
-- (NSString *)stringWithDateFormatString:(NSString *)formateString
-{
+- (NSString *)hf_stringWithDateFormatString:(NSString *)formateString {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    NSLocale * locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-    [formatter setLocale:locale];
     [formatter setDateFormat:formateString];
     return [formatter stringFromDate:self];
 }
+
 @end

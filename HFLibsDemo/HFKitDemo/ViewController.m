@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIViewController+HFTableViewManger.h"
 #import "UIViewController+HFExtend.h"
+#import "NSNull+HFSafe.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +23,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self setupTableView];
     [self setupData];
+    
+    id null = [NSNull null];
+    NSLog(@"null:%lu--%lu",(unsigned long)[null length],(unsigned long)[null count]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

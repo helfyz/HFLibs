@@ -8,19 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString(Regex)
+@interface NSString (Regex)
 
 //用户名 6到20个字符
-+(NSString *)userNameRegex;
++(NSString *)hf_UserNameRegex;
 //密码 6到20个字符
-+(NSString *)passWordRegex;
++(NSString *)hf_PassWordRegex;
 //邮箱地址
-+(NSString *)emailRegex;
++(NSString *)hf_EmailRegex;
 //电话号码 1开头的11位数字
-+(NSString *)phoneNumberRegex;
++(NSString *)hf_PhoneNumberRegex;
 //车牌号
-+(NSString *)carNoRegex;
-
++(NSString *)hf_CarNoRegex;
 //身份证
-+(NSString *)identityCardPredicate;
++(NSString *)hf_IdentityCardPredicate;
 @end

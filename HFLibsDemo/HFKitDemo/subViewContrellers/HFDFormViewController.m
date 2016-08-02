@@ -12,7 +12,7 @@
 #import "HFTableViewManger+Form.h"
 #import "HFButton.h"
 #import "HFPickerView.h"
-#import "NSString+Regex.h"
+#import "NSString+HFRegex.h"
 @interface HFDFormViewController ()
 
 @end
@@ -64,7 +64,6 @@
     cellModel.cellData = @"您的昵称";
     cellModel.isRequired = YES;
     [section1 addCellModel:cellModel];
-    
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDChooseTableViewCell"];
     cellModel.cellFormKey = @"sex";
     cellModel.cellName = @"性别";
@@ -73,21 +72,19 @@
     cellModel.cellAction = @selector(chooseSex:);
     [section1 addCellModel:cellModel];
     
-    
     HFTableViewSectionModel *section2 = [[HFTableViewSectionModel alloc] init];
     section2.headTitle = @"联系方式";
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
     cellModel.cellFormKey = @"phone";
     cellModel.cellName = @"电话号码";
-    cellModel.cellRegex = [NSString phoneNumberRegex];
+    cellModel.cellRegex = [NSString hf_PhoneNumberRegex];
     cellModel.cellData = @"您的电话号码";
     [section2 addCellModel:cellModel];
-    
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
     cellModel.cellFormKey = @"email";
     cellModel.cellName = @"邮箱";
     cellModel.cellData = @"您的邮箱地址";
-    cellModel.cellRegex =  [NSString emailRegex];
+    cellModel.cellRegex =  [NSString hf_EmailRegex];
     [section2 addCellModel:cellModel];
     
     HFTableViewSectionModel *section3 = [[HFTableViewSectionModel alloc] init];
@@ -97,36 +94,30 @@
     cellModel.cellName = @"城市";
     cellModel.cellData = @"您所在的城市";
     cellModel.cellAction = @selector(chooseCity:);
-
     [section3 addCellModel:cellModel];
-    
     cellModel = [HFTableViewCellFormModel cellModelForCellClassName:@"HFDCustomInputTableViewCell"];
     cellModel.cellFormKey = @"hobby";
     cellModel.cellName = @"爱好";
     cellModel.cellData = @"您的爱好";
     [section3 addCellModel:cellModel];
-    [self.hft_tableViewManger setupDataSourceModels:@[section1,section2,section3] isAddmore:NO];
     
+    [self.hft_tableViewManger setupDataSourceModels:@[section1,section2,section3] isAddmore:NO];
 }
 - (void)setupFooter {
     
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 84)];
-    
     HFButton *button = [[HFButton alloc] init];
     [button setTitile:@"确定" textColor:[UIColor whiteColor]];
     [button setNormalBgColor:[UIColor orangeColor] highlightedBgColor:[UIColor grayColor]];
     [button addTarget:self action:@selector(submit)];
     button.layer.cornerRadius = 5;
- 
     [footer addSubview:button];
-    
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@20);
         make.leading.equalTo(@10);
         make.trailing.equalTo(@(-10));
         make.height.equalTo(@44);
     }];
-    
     self.hft_tableViewManger.tableView.tableFooterView = footer;
 }
 #pragma mark -- respone

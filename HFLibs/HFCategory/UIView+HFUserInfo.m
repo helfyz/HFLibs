@@ -6,19 +6,19 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "UIView+UserInfo.h"
+#import "UIView+HFUserInfo.h"
 #import <objc/runtime.h>
 static char UIViewUserInfo;
-@implementation UIView (UserInfo)
-- (void)setUserInfo:(id )userInfo {
-    [self willChangeValueForKey:@"UIViewUserInfo"];
+
+@implementation UIView (HFUserInfo)
+
+- (void)setHf_UserInfo:(id )userInfo {
     objc_setAssociatedObject(self, &UIViewUserInfo,
                              userInfo,
                              OBJC_ASSOCIATION_RETAIN);
-    [self didChangeValueForKey:@"UIViewUserInfo"];
 }
 
--(id)userInfo
+- (id)hf_UserInfo
 {
  return  objc_getAssociatedObject(self, &UIViewUserInfo);
 

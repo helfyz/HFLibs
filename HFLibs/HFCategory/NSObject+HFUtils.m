@@ -8,9 +8,9 @@
 
 #import "NSObject+HFUtils.h"
 
-@implementation NSObject(HFUtils)
-- (BOOL)isNull
-{
+@implementation NSObject (HFUtils)
+
+- (BOOL)hf_IsNull {
     if(!self || [[NSNull null] isEqual:self] || [self isEqual:Nil] || [self isEqual:NULL]) {
         return YES;
     }

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject(HFUtils)
+@interface NSObject (HFUtils)
 
-- (BOOL)isNull;
+- (BOOL)hf_IsNull;
 @end

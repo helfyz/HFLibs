@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage(HFUtils)
-+ (UIImage *)imageWithColor:(UIColor *)color;
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
++ (UIImage *)hf_ImageWithColor:(UIColor *)color;
++ (UIImage *)hf_ImageWithColor:(UIColor *)color size:(CGSize)size;
 
 @end

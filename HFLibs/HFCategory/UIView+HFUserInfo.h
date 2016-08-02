@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface UIView (UserInfo)
-@property (nonatomic, strong) id userInfo;
+@interface UIView (HFUserInfo)
+@property (nonatomic, strong) id hf_UserInfo;
 @end

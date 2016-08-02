@@ -6,32 +6,31 @@
 //  Copyright © 2016年 helfy. All rights reserved.
 //
 
-#import "NSString+Regex.h"
+#import "NSString+HFRegex.h"
 
-@implementation NSString(Regex)
+@implementation NSString (Regex)
 
-+ (NSString *)userNameRegex
-{
++ (NSString *)hf_UserNameRegex {
     return @"^[A-Za-z0-9]{6,20}+$";
 }
-+ (NSString *)passWordRegex
-{
+
++ (NSString *)hf_PassWordRegex {
     return @"^[a-zA-Z0-9]{6,20}+$";
 }
-+ (NSString *)emailRegex
-{
+
++ (NSString *)hf_EmailRegex {
     return  @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 }
-+ (NSString *)phoneNumberRegex
-{
+
++ (NSString *)hf_PhoneNumberRegex {
     return  @"^1\\d{10}";
 }
-+ (NSString *)carNoRegex
-{
+
++ (NSString *)hf_CarNoRegex {
     return  @"^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fa5]$";
 }
-+ (NSString *)identityCardPredicate
-{
+
++ (NSString *)hf_IdentityCardPredicate {
     return @"^(\\d{14}|\\d{17})(\\d|[xX])$";
 }
 

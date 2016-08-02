@@ -14,9 +14,7 @@
 + (instancetype)sectionModelWithCellModels:(NSMutableArray *)cellModels;
 
 @property (nonatomic,strong) NSMutableArray *cellModels;  //section 下的cellModels
-
 @property (nonatomic,copy) NSString *sectionKey;   //对section 的标识。用户获取section。如果不设置，不能通过key 获取或者reload该section
-
 //header
 @property (nonatomic,copy) NSString *headTitle;    //默认nil
 @property (nonatomic,assign) CGFloat headHeigth;   // 默认40

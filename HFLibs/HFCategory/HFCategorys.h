@@ -10,8 +10,8 @@
 #define HFAdditions_h
 
 #import "UIViewController+HFExtend.h"
-#import "UIView+CGRect.h"
-#import "UIView+UserInfo.h"
+#import "UIView+HFCGRect.h"
+#import "UIView+HFUserInfo.h"
 #import "NSDate+HFUtils.h"
 #import "NSObject+HFUtils.h"
 #import "NSString+HFUtils.h"
@@ -19,7 +19,6 @@
 #import "UIColor+HFUtils.h"
 #import "UIColor+HFUtils.h"
 #import "UIImage+HFUtils.h"
-#import "NSString+Regex.h"
-#import "NSObject+Observers.h"
+#import "NSString+HFRegex.h"
 
 #endif /* HFAdditions_h */

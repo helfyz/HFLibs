@@ -6,38 +6,33 @@
 //  Copyright (c) 2015年 helfy. All rights reserved.
 //
 
-#import "UIView+CGRect.h"
+#import "UIView+HFCGRect.h"
 
-@implementation UIView (CGRect)
+@implementation UIView (HFCGRect)
 
--(CGPoint)frameOrigin
-{
+-(CGPoint)hf_FrameOrigin {
     return self.frame.origin;
 }
-- (void)setFrameOrigin:(CGPoint)frameOrigin {
+- (void)setHf_FrameOrigin:(CGPoint)hf_frameOrigin {
 
     CGRect frame = self.frame;
-    frame.origin = frameOrigin;
+    frame.origin = hf_frameOrigin;
     self.frame   = frame;
 }
 
--(CGSize)frameSize
-{
+-(CGSize)hf_FrameSize {
    return self.frame.size;
 }
--(void)setFrameSize:(CGSize)frameSize
-{
+-(void)setHf_FrameSize:(CGSize)frameSize {
     CGRect frame = self.frame;
     frame.size   = frameSize;
     self.frame   = frame;
 }
 
--(CGFloat)originX
-{
-    return self.frameOrigin.x;
+-(CGFloat)hf_OriginX {
+    return self.hf_FrameOrigin.x;
 }
--(void)setOriginX:(CGFloat)originX
-{
+-(void)setHf_OriginX:(CGFloat)originX {
     CGRect frame   = self.frame;
     CGPoint origin = frame.origin;
     origin.x       = originX;
@@ -45,12 +40,10 @@
     self.frame     = frame;
 }
 
--(CGFloat)originY
-{
-    return self.frameOrigin.y;
+-(CGFloat)hf_OriginY {
+    return self.hf_FrameOrigin.y;
 }
--(void)setOriginY:(CGFloat)originY
-{
+-(void)setHf_OriginY:(CGFloat)originY {
     CGRect frame   = self.frame;
     CGPoint origin = frame.origin;
     origin.y       = originY;
@@ -58,12 +51,10 @@
     self.frame     = frame;
 }
 
--(CGFloat)sizeWidth
-{
-     return self.frameSize.width;
+-(CGFloat)hf_SizeWidth {
+     return self.hf_FrameSize.width;
 }
--(void)setSizeWidth:(CGFloat)sizeWidth
-{
+-(void)setHf_SizeWidth:(CGFloat)sizeWidth {
     CGRect frame = self.frame;
     CGSize size  = frame.size;
     size.width   = sizeWidth;
@@ -72,12 +63,10 @@
 }
 
 
--(CGFloat)sizeHeight
-{
-    return self.frameSize.height;
+-(CGFloat)hf_SizeHeight {
+    return self.hf_FrameSize.height;
 }
--(void)setSizeHeight:(CGFloat)sizeHeight
-{
+-(void)setHf_SizeHeight:(CGFloat)sizeHeight {
     CGRect frame = self.frame;
     CGSize size  = frame.size;
     size.height  = sizeHeight;

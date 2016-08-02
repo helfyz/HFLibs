@@ -10,9 +10,8 @@
 
 @interface UIColor (HFUtils)
 
-
 #pragma mark Hex Color
-+ (UIColor *) colorWithHex:(NSInteger)rgbHexValue;
-+ (UIColor *) colorWithHex:(NSInteger)rgbHexValue alpha:(CGFloat)alpha;
++ (UIColor *)hf_ColorWithHex:(NSInteger)rgbHexValue;
++ (UIColor *)hf_ColorWithHex:(NSInteger)rgbHexValue alpha:(CGFloat)alpha;
 
 @end

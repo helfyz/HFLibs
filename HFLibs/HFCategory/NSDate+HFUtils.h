@@ -10,5 +10,6 @@
 
 @interface NSDate (HFUtils)
 
-- (NSString *)stringWithDateFormatString:(NSString *)formateString;
+- (NSString *)hf_stringWithDateFormatString:(NSString *)formateString;
+
 @end

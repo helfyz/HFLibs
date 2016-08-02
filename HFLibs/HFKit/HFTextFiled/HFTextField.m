@@ -7,7 +7,7 @@
 //
 
 #import "HFTextField.h"
-#import "UIView+CGRect.h"
+#import "UIView+HFCGRect.h"
 @implementation HFTextField
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -68,7 +68,7 @@
   
     //计算placeHolder 所绘位置   不知道为什么。这个地方的高度会比设置的少1
     CGSize szie = [self.placeholder sizeWithAttributes:attributes];
-    rect.origin.y = (self.sizeHeight - szie.height)/2-1;
+    rect.origin.y = (self.hf_SizeHeight - szie.height)/2-1;
 
     [self.placeholderColor set];
 

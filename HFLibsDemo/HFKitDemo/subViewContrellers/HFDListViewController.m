@@ -42,8 +42,6 @@
         [dataArray addObject:@(index).stringValue];
     }
     [self.hft_tableViewManger setupDataSourceModelsForData:dataArray cellClassName:@"HFDListTableViewCell" isAddmore:NO];
-    
-    
     //混点 UITableViewCell
     [dataArray removeAllObjects];
     for (int index = 0; index < 10; index ++) {
