@@ -10,14 +10,12 @@
 
 @implementation HFTableViewCell
 
--(void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self setupView];
 }
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self setupView];
@@ -25,13 +23,11 @@
     return self;
 }
 
--(void)setupView
-{
+- (void)setupView {
     //TODO
 }
 
--(void)bindData:(HFTableViewCellModel *)cellModel
-{
+- (void)bindData:(HFTableViewCellModel *)cellModel {
     _cellModel = cellModel;
     
     //TODO:

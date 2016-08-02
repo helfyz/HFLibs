@@ -9,17 +9,15 @@
 #import "HFTableViewManger.h"
 #import <UIKit/UIKit.h>
 #import "UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h"
-
+#import <objc/message.h>
 @implementation HFTableView
-- (void)setDataSource:(id<UITableViewDataSource>)dataSource
-{
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource {
     if([dataSource isKindOfClass:[HFTableViewManger class]])
     {
         [super setDataSource:dataSource];
     }
 }
-- (void)setDelegate:(id<UITableViewDelegate>)delegate
-{
+- (void)setDelegate:(id<UITableViewDelegate>)delegate {
     if([delegate isKindOfClass:[HFTableViewManger class]])
     {
         [super setDelegate:delegate];
@@ -42,7 +40,11 @@
     self = [super init];
     if(self)
     {
-        [self setupData];
+//        [self setupData];
+        
+        //。。。单纯的想试试
+        id (*typed_msgSend)(id, SEL) = (void *)objc_msgSend;
+        typed_msgSend(self, sel_registerName("setupData"));;
     }
     return self;
 }

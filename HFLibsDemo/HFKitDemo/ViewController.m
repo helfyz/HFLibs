@@ -23,20 +23,14 @@
     [self setupTableView];
     [self setupData];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)setupTableView
-{
+- (void)setupTableView {
     [self hft_setupGroupedTableViw];
 }
-
-
--(void)setupData
-{
+- (void)setupData {
     HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
     sectionObj.headTitle = @"列表模式";
@@ -67,6 +61,5 @@
     [self.hft_tableViewManger setupDataSourceModels:@[sectionObj,settingSectionObj] isAddmore:NO];
     
 }
-
 
 @end

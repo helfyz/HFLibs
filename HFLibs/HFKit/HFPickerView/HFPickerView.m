@@ -8,10 +8,10 @@
 
 #import "HFPickerView.h"
 #import "Masonry/Masonry.h"
+
 #define kContentHeight 261  //216 + 45
+
 @interface HFPickerView()
-
-
 @property(nonatomic,strong) UIView *picker;
 @property(nonatomic,assign) HFPickerViewType pickerType;
 @property(nonatomic,assign) NSInteger chooseIndex;
@@ -20,8 +20,7 @@
 
 @implementation HFPickerView
 
-- (id)initWithType:(HFPickerViewType)type
-{
+- (id)initWithType:(HFPickerViewType)type {
     self = [super init];
     if(self)
     {
@@ -59,8 +58,7 @@
     return self;
 }
 
-- (void)setupPickerView
-{
+- (void)setupPickerView {
     
     switch (self.pickerType) {
         case HFPickerViewTypeDate:
@@ -147,8 +145,7 @@
     }
 }
 
-- (void)done
-{
+- (void)done {
     if(self.changeBlock)
     {
         
@@ -179,8 +176,7 @@
     [self cancel];
 }
 
-- (void)cancel
-{
+- (void)cancel {
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(kContentHeight));
         make.bottom.equalTo(self).offset(kContentHeight);
@@ -195,9 +191,7 @@
     }];
 }
 
-
-- (void)showInView:(UIView *)view
-{
+- (void)showInView:(UIView *)view {
     [self setupPickerView];
     [self.contentView addSubview:self.picker];
     self.picker.backgroundColor = [UIColor clearColor];
@@ -225,33 +219,32 @@
     [UIView commitAnimations];
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if (CGRectContainsPoint(self.contentView.frame, [touch locationInView:self.contentView])) {
         return NO;
     }
     return YES;
 }
+
 #pragma mark -
 // returns the number of 'columns' to display.
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return  1;
 }
 
 // returns the # of rows in each component..
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return  self.dataSourceArrry.count;
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     return self.dataSourceArrry[row];
     
 }
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.chooseIndex = (int)row;
 }
-
 
 @end

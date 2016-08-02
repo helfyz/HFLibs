@@ -10,26 +10,24 @@
 #import "UIView+CGRect.h"
 @implementation HFTextField
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    if(self)
-    {
+    if(self) {
         [self setupView];
     }
     
     return self;
 }
-- (id)init
-{
+
+- (id)init {
     self = [super init];
     if (self) {
         [self setupView];
     }
     return self;
 }
-- (id)initWithFrame:(CGRect)frame
-{
+
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
@@ -37,34 +35,29 @@
     return self;
 }
 #pragma mark setupView
-- (void)setupView
-{
+- (void)setupView {
     self.textOffset =5;
     self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     self.placeholderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
-
 }
 
-- (CGRect)placeholderRectForBounds:(CGRect)bounds
-{
+- (CGRect)placeholderRectForBounds:(CGRect)bounds {
     CGRect rect= [super placeholderRectForBounds:bounds];
     return CGRectInset(rect, self.textOffset, 0);
-    
 }
-- (CGRect)textRectForBounds:(CGRect)bounds
-{
+
+- (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect rect= [super textRectForBounds:bounds];
     return CGRectInset(rect, self.textOffset, 0);
 }
-- (CGRect)editingRectForBounds:(CGRect)bounds
-{
+
+- (CGRect)editingRectForBounds:(CGRect)bounds {
     CGRect rect= [super editingRectForBounds:bounds];
     return CGRectInset(rect, self.textOffset, 0);
 }
 
 //控制placeHolder的颜色、字体
-- (void)drawPlaceholderInRect:(CGRect)rect
-{
+- (void)drawPlaceholderInRect:(CGRect)rect {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingMiddle;
    paragraphStyle.alignment = self.textAlignment;

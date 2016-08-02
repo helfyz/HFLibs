@@ -10,21 +10,18 @@
 
 @implementation HFTableViewCellModel
 
-+(instancetype)cellModelForCellClassName:(NSString *)cellClassName
-{
++ (instancetype)cellModelForCellClassName:(NSString *)cellClassName {
     HFTableViewCellModel *cellModel = [[[self class] alloc] init];
     cellModel.tablViewCellClassName = cellClassName;
     return cellModel;
 }
-+(instancetype)cellModelForCellClassName:(NSString *)cellClassName cellData:(id)cellData
-{
++ (instancetype)cellModelForCellClassName:(NSString *)cellClassName cellData:(id)cellData {
     HFTableViewCellModel *cellModel =  [self cellModelForCellClassName:cellClassName];
     cellModel.cellData = cellData;
     return cellModel;
 }
 
--(id)init
-{
+- (instancetype)init {
     self = [super init];
     if(self){
         [self setupDefauleValues];
@@ -32,21 +29,16 @@
     return self;
 }
 
--(void)setupDefauleValues
-{
+- (void)setupDefauleValues {
     self.tablViewCellClassName = @"UITableViewCell";
 }
 
-
--(NSString *)cellIdentifier
-{
+- (NSString *)cellIdentifier {
     if(_cellIdentifier)
     {
         return _cellIdentifier;
     }
- 
     return self.tablViewCellClassName;
 }
-
 
 @end

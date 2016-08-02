@@ -16,8 +16,7 @@
 
 @implementation HFButton
 #define mark - init
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self)
     {
@@ -25,8 +24,7 @@
     }
     return self;
 }
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if(self)
     {
@@ -36,55 +34,50 @@
 }
 
 #pragma mark setup
-- (void)setupView
-{
+- (void)setupView {
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font          = [UIFont systemFontOfSize:16.0];
     self.space                      = 5;
 }
 // 快捷设置
 
-- (void)setTitile:(NSString *)title
-{
+- (void)setTitile:(NSString *)title {
     [self setTitle:title forState:UIControlStateNormal];
 }
-- (void)setTitile:(NSString *)title textColor:(UIColor *)textColor  // 默认状态:UIControlStateNormal
-{
+
+// 默认状态:UIControlStateNormal
+- (void)setTitile:(NSString *)title textColor:(UIColor *)textColor {
     [self setTitile:title];
     [self setTitleColor:textColor forState:UIControlStateNormal];
 }
-- (void)addTarget:(id)target action:(SEL)action                     // 默认事件:UIControlEventTouchUpInside
-{
+// 默认事件:UIControlEventTouchUpInside
+- (void)addTarget:(id)target action:(SEL)action {
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 //设置默认背景色 & 高亮背景色
-- (void)setNormalBgColor:(UIColor *)normalColor highlightedBgColor:(UIColor *)highlightedColor
-{
+- (void)setNormalBgColor:(UIColor *)normalColor highlightedBgColor:(UIColor *)highlightedColor {
     self.normallColor = normalColor;
     self.highlightedColor = highlightedColor;
     [self setCustomHighligth:self.highlighted];
     
 }
 
-
-- (void)setImage:(UIImage *)image
-{
+- (void)setImage:(UIImage *)image {
     [self setImage:image forState:UIControlStateNormal];
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 
 }
-- (void)setImageSize:(CGSize)imagSize
-{
+
+- (void)setImageSize:(CGSize)imagSize {
     _imageSize = imagSize;
 }
-- (void)setImage:(UIImage *)image imagesize:(CGSize)imageSize
-{
+
+- (void)setImage:(UIImage *)image imagesize:(CGSize)imageSize {
     self.imageSize = imageSize;
     [self setImage:image];
 }
 
--(void)setCustomHighligth:(BOOL)highlight
-{
+-(void)setCustomHighligth:(BOOL)highlight {
     if(!(self.normallColor &&  self.highlightedColor))return;
     if(highlight)
     {
@@ -95,37 +88,27 @@
     }
 }
 
--(void)setHighlighted:(BOOL)highlighted
-{
+-(void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
     [self setCustomHighligth:highlighted];
 }
 
 #pragma mark 重写父类UIButton的方法
-
 //根据button的rect设定并返回文本label的rect
-- (CGRect)titleRectForContentRect:(CGRect)contentRect
-{
-//    if(CGSizeEqualToSize(self.imageSize, CGSizeZero))
-//    {//如果未设置
-//        self.imageSize = contentRect.size;
-//    }
+- (CGRect)titleRectForContentRect:(CGRect)contentRect {
+
     contentRect = UIEdgeInsetsInsetRect(contentRect, self.contentInsets);
     
     NSString *titleStr = [self titleForState:self.state];
     UIFont *textFont =  [UIFont systemFontOfSize:16];//self.titleLabel.font;
     
     switch (self.imageContentMode) {
-        case HFButtonImageContentModeBackgroud:
-        {
+        case HFButtonImageContentModeBackgroud: {
 //            contentRect = contentRect;
             break;
         }
-        case HFButtonImageContentModeTop:
-        {
+        case HFButtonImageContentModeTop: {
             contentRect.size.width = contentRect.size.width;
-            
-           
             CGSize textSize = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                             textFont, NSFontAttributeName,
                                                             nil]];
@@ -135,8 +118,7 @@
             contentRect.origin.x   = (self.sizeWidth-textSize.width)/2.0;
             break;
         }
-        case HFButtonImageContentModeBottom:
-        {
+        case HFButtonImageContentModeBottom: {
             contentRect.size.width = contentRect.size.width;
            CGSize textSize = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                             textFont, NSFontAttributeName,
@@ -145,11 +127,9 @@
             contentRect.size = textSize;
             contentRect.origin.y = (self.sizeHeight-(textSize.height+ self.imageSize.height+self.space))/2.0;
             contentRect.origin.x   = (self.sizeWidth-textSize.width)/2.0;
-            
             break;
         }
-        case HFButtonImageContentModeLeft:
-        {
+        case HFButtonImageContentModeLeft: {
             contentRect.size.width = contentRect.size.width - self.imageSize.width;
             NSString *titleStr     = [self titleForState:self.state];
             CGSize textSize        = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -161,8 +141,7 @@
             contentRect.origin.y = (self.sizeHeight-textSize.height)/2.0;
             break;
         }
-        case HFButtonImageContentModeRight:
-        {
+        case HFButtonImageContentModeRight: {
             contentRect.size.width = contentRect.size.width - self.imageSize.width;
             NSString *titleStr     = [self titleForState:self.state];
             CGSize textSize        = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -172,43 +151,35 @@
             contentRect.size       = textSize;
             contentRect.origin.x   = (self.sizeWidth-(textSize.width+self.imageSize.width + self.space))/2.0;
             contentRect.origin.y = (self.sizeHeight-textSize.height)/2.0;
-            
             break;
         }
-        default:
-        {
+        default: {
             break;
         }
     }
- 
     return contentRect;
 }
 
 //根据根据button的rect设定并返回UIImageView的rect
-- (CGRect)imageRectForContentRect:(CGRect)contentRect
-{
-    
+- (CGRect)imageRectForContentRect:(CGRect)contentRect {
+
     //iOS 7 会出现多个imageView
     double version = [[UIDevice currentDevice].systemVersion doubleValue];
-    if(version>=7.0 && version <8.0)
-    {
+    if(version >= 7.0 && version < 8.0) {
         NSMutableArray *imageViews = [NSMutableArray array];
         for (UIView *view in self.subviews) {
-            if([view isKindOfClass:[UIImageView class]])
-            {
+            if([view isKindOfClass:[UIImageView class]]) {
                 [imageViews addObject:view];
             }
         }
-        for (int index =1; index<imageViews.count; index++) {
+        for (int index = 1; index < imageViews.count; index++) {
             UIImageView *imageView = imageViews[index];
             [imageView removeFromSuperview];
         }
     }
     
-    
     contentRect = UIEdgeInsetsInsetRect(contentRect, self.contentInsets);
-    if(CGSizeEqualToSize(self.imageSize, CGSizeZero))
-    {//如果未设置
+    if(CGSizeEqualToSize(self.imageSize, CGSizeZero)) {//如果未设置
         self.imageSize = contentRect.size;
     }
     switch (self.imageContentMode) {
@@ -220,44 +191,33 @@
             break;
         }
         case HFButtonImageContentModeTop: {
-      
-            CGFloat imageX = (self.sizeWidth-self.imageSize.width)/2.0;
-            
-            CGFloat imageY = (self.sizeHeight-(self.titleLabel.sizeHeight+ self.imageSize.height +self.space))/2.0;
-            contentRect = (CGRect){{imageX,imageY},self.imageSize};
+            CGFloat imageX = (self.sizeWidth - self.imageSize.width)/2.0;
+            CGFloat imageY = (self.sizeHeight - (self.titleLabel.sizeHeight + self.imageSize.height + self.space))/2.0;
+            contentRect = (CGRect){{imageX, imageY}, self.imageSize};
             break;
         }
         case HFButtonImageContentModeBottom: {
-            
-            CGFloat imageX = (self.sizeWidth-self.imageSize.width)/2.0 ;
-
-            CGFloat imageY = (self.sizeHeight-(self.titleLabel.sizeHeight+ self.imageSize.height +self.space))/2.0  + + self.titleLabel.sizeHeight+self.space;
-            
+            CGFloat imageX = (self.sizeWidth - self.imageSize.width)/2.0 ;
+            CGFloat imageY = (self.sizeHeight - (self.titleLabel.sizeHeight + self.imageSize.height + self.space))/2.0 + self.titleLabel.sizeHeight+self.space;
             contentRect = (CGRect){{imageX,imageY},self.imageSize};
             break;
         }
         case HFButtonImageContentModeLeft: {
-            CGFloat imageX = (self.sizeWidth-(self.titleLabel.sizeWidth+self.imageSize.width+self.space))/2.0;
-            
-            CGFloat imageY = (self.sizeHeight-self.imageSize.height )/2.0;
-            
-            contentRect = (CGRect){{imageX,imageY},self.imageSize};
+            CGFloat imageX = (self.sizeWidth - (self.titleLabel.sizeWidth + self.imageSize.width + self.space))/2.0;
+            CGFloat imageY = (self.sizeHeight - self.imageSize.height)/2.0;
+            contentRect = (CGRect){{imageX,imageY}, self.imageSize};
             break;
         }
         case HFButtonImageContentModeRight: {
-            CGFloat imageX = (self.sizeWidth-(self.titleLabel.sizeWidth+self.imageSize.width+self.space))/2.0+self.titleLabel.sizeWidth+self.space;
-            
-            CGFloat imageY = (self.sizeHeight-self.imageSize.height )/2.0;
-            
-            contentRect = (CGRect){{imageX,imageY},self.imageSize};
+            CGFloat imageX = (self.sizeWidth - (self.titleLabel.sizeWidth + self.imageSize.width+self.space))/2.0 + self.titleLabel.sizeWidth + self.space;
+            CGFloat imageY = (self.sizeHeight - self.imageSize.height )/2.0;
+            contentRect = (CGRect){{imageX,imageY}, self.imageSize};
             break;
         }
         default: {
             break;
         }
     }
-    
-
     
     return contentRect;
 }

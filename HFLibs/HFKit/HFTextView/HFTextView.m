@@ -9,44 +9,44 @@
 #import "HFTextView.h"
 
 @implementation HFTextView
-- (instancetype)init
-{
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        [self setupView];
+    }
+    return self;
+}
+
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self setupView];
     }
     return self;
 }
-- (instancetype)initWithFrame:(CGRect)frame
-{
+
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
     }
     return self;
 }
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 #pragma mark setupView
-- (void)setupView
-{
+- (void)setupView {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNeedsDisplay) name:UITextViewTextDidChangeNotification object:nil];
     self.placeholderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
     self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 }
 
-- (void)setText:(NSString *)text
-{
+- (void)setText:(NSString *)text {
     [super setText:text];
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     if(self.font == nil){
         self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
@@ -71,6 +71,8 @@
 }
 
 
-
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

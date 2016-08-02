@@ -14,16 +14,13 @@
  */
 @interface HFTableViewCell : UITableViewCell
 
-
 @property (nonatomic,readonly) HFTableViewCellModel*cellModel;
-
 
 /**
  *  重载该函数来设置你的UI
  */
-- (void)setupView;
+- (void)setupView; 
 
-
-- (void)bindData:(HFTableViewCellModel *)cellModel  __attribute__((objc_requires_super));
+- (void)bindData:(HFTableViewCellModel *)cellModel NS_REQUIRES_SUPER;
 
 @end

@@ -10,16 +10,13 @@
 
 @implementation HFTableViewSectionModel
 
-
-+ (instancetype)sectionModelWithCellModels:(NSMutableArray *)cellModels
-{
++ (instancetype)sectionModelWithCellModels:(NSMutableArray *)cellModels {
     HFTableViewSectionModel *sectionModel = [[HFTableViewSectionModel alloc] init];
     sectionModel.cellModels = cellModels;
     return sectionModel;
 }
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if(self)
     {
@@ -28,16 +25,15 @@
     return self;
 }
 
-- (void)setupDefault
-{
+- (void)setupDefault {
     self.cellModels = [NSMutableArray array];
     self.headHeigth = 40;
     self.footerHeigth = 0.000001f;
 
 }
 
-- (void)addCellModel:(HFTableViewCellModel *)model
-{
+- (void)addCellModel:(HFTableViewCellModel *)model {
     [self.cellModels addObject:model];
 }
+
 @end

@@ -14,8 +14,7 @@
     _verticalAligment = verticalAlignment;
     [self setNeedsDisplay];
 }
-- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines
-{
+- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
     CGRect textRect = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
     switch (self.verticalAligment) {
             
@@ -43,4 +42,5 @@
     CGRect actualRect = [self textRectForBounds:requestedRect limitedToNumberOfLines:self.numberOfLines];
     [super drawTextInRect:actualRect];
 }
+
 @end
