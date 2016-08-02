@@ -8,7 +8,6 @@
 
 #import "UIView+UserInfo.h"
 #import <objc/runtime.h>
-
 static char UIViewUserInfo;
 @implementation UIView (UserInfo)
 - (void)setUserInfo:(id )userInfo {
@@ -21,7 +20,8 @@ static char UIViewUserInfo;
 
 -(id)userInfo
 {
-    return  objc_getAssociatedObject(self, &UIViewUserInfo);
+ return  objc_getAssociatedObject(self, &UIViewUserInfo);
+
 }
 
 @end
