@@ -33,7 +33,7 @@ ss.dependency 'HFLibs/HFAdditions'
 
 s.dependency "Masonry", '~> 0.6.1'
 s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
-s.dependency "HFCategory"
+s.dependency "HFLibs/HFCategory"
 end
 
 
