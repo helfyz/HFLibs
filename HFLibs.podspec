@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name                  = "HFLibs"
   s.version               = "1.0.0"
-  s.summary               = "主要收录了一些 在自己项目中做的东西，目前包括对UIView 的一些简化设置&扩展"
+  s.summary               = "主要收录了一些自己做外包的东西，目前包括对UIView 的一些简化设置&扩展,性能方面待优化"
 
   s.description           = <<-DESC
                     主要收录了一些 在自己项目中做的东西，目前包括对UIView 的一些简化设置&扩展
@@ -19,21 +19,21 @@ Pod::Spec.new do |s|
   s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
   s.requires_arc          = true
 
-s.subspec 'HFAdditions' do |ss|
-ss.source_files        = "HFLibs/HFAdditions/*.{h,m}"
-ss.public_header_files = "HFLibs/HFAdditions/HFAdditions.h"
+s.subspec 'HFCategory' do |ss|
+ss.source_files        = "HFLibs/HFCategory/**/*.{h,m}"
+ss.public_header_files = "HFLibs/HFCategory/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 end
 
 s.subspec 'HFKit' do |ss|
 ss.source_files        = "HFLibs/HFKit/**/*.{h,m}"
-ss.public_header_files = "HFLibs/HFKit/HFKit.h"
+ss.public_header_files = "HFLibs/HFKit/**/*.h"
 s.frameworks            = 'Foundation', 'CoreGraphics', 'UIKit'
 ss.dependency 'HFLibs/HFAdditions'
 
 s.dependency "Masonry", '~> 0.6.1'
 s.dependency "UITableView+FDTemplateLayoutCell", '~> 1.3'
-
+s.dependency "HFCategory"
 end
 
 
