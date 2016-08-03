@@ -10,11 +10,11 @@
 #define HFKitDemo_HFKit_h
 
 #ifdef HFKit_h
-#import "HFKit.h"
+#import <HFKit.h>
 #endif
 
-#ifdef HFAdditions_h
-#import "HFCategorys.h"
+#ifdef HFCategorys_h
+#import <HFCategorys.h>
 #endif
 
 #endif

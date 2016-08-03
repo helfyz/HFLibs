@@ -6,8 +6,8 @@
 //  Copyright © 2016年 helfy. All rights reserved.
 //
 
-#ifndef HFAdditions_h
-#define HFAdditions_h
+#ifndef HFCategorys_h
+#define HFCategorys_h
 
 #import "UIViewController+HFExtend.h"
 #import "UIView+HFCGRect.h"
@@ -21,4 +21,4 @@
 #import "UIImage+HFUtils.h"
 #import "NSString+HFRegex.h"
 
-#endif /* HFAdditions_h */
+#endif /* HFCategorys_h */
