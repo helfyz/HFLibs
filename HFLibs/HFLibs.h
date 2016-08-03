@@ -9,11 +9,11 @@
 #ifndef HFKitDemo_HFKit_h
 #define HFKitDemo_HFKit_h
 
-#ifdef HFKit_h
-#import <HFKit.h>
+#if __has_include (<HFLibs/HFKit.h>)
+#import <HFLibs/HFKit.h>
 #endif
 
-#ifdef HFCategorys_h
+#if __has_include (<HFLibs/HFCategorys.h>)
 #import <HFCategorys.h>
 #endif
 
