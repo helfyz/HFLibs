@@ -7,7 +7,6 @@
 //
 
 #import "HFButton.h"
-#import "UIView+HFCGRect.h"
 @interface HFButton ()
 @property (nonatomic, strong) UIColor *normallColor;
 @property (nonatomic, strong) UIColor *highlightedColor;
@@ -112,8 +111,8 @@
                                                             nil]];
             textSize.width =MIN(contentRect.size.width, textSize.width);
             contentRect.size = textSize;
-            contentRect.origin.y =self.imageSize.height + self.space + (self.hf_SizeHeight - (textSize.height+ self.imageSize.height+self.space))/2.0;
-            contentRect.origin.x   = (self.hf_SizeWidth-textSize.width)/2.0;
+            contentRect.origin.y = self.imageSize.height + self.space + (CGRectGetHeight(self.frame) - (textSize.height + self.imageSize.height + self.space))/2.0;
+            contentRect.origin.x  = (CGRectGetWidth(self.frame) - textSize.width) / 2.0;
             break;
         }
         case HFButtonImageContentModeBottom: {
@@ -121,10 +120,10 @@
            CGSize textSize = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                             textFont, NSFontAttributeName,
                                                             nil]];
-            textSize.width =MIN(contentRect.size.width, textSize.width);
+            textSize.width = MIN(contentRect.size.width, textSize.width);
             contentRect.size = textSize;
-            contentRect.origin.y = (self.hf_SizeHeight-(textSize.height+ self.imageSize.height+self.space))/2.0;
-            contentRect.origin.x   = (self.hf_SizeWidth-textSize.width)/2.0;
+            contentRect.origin.y = (CGRectGetHeight(self.frame) - (textSize.height+ self.imageSize.height + self.space)) / 2.0;
+            contentRect.origin.x = (CGRectGetWidth(self.frame) - textSize.width)/2.0;
             break;
         }
         case HFButtonImageContentModeLeft: {
@@ -135,8 +134,8 @@
                                                             nil]];
             textSize.width         = MIN(contentRect.size.width-self.imageSize.width, textSize.width);
             contentRect.size       = textSize;
-            contentRect.origin.x   = self.space + (self.hf_SizeWidth-(textSize.width+self.imageSize.width + self.space))/2.0+ self.imageSize.width;
-            contentRect.origin.y = (self.hf_SizeHeight-textSize.height)/2.0;
+            contentRect.origin.x   = self.space + (CGRectGetWidth(self.frame) - (textSize.width + self.imageSize.width + self.space))/2.0 + self.imageSize.width;
+            contentRect.origin.y = (CGRectGetHeight(self.frame) - textSize.height) / 2.0;
             break;
         }
         case HFButtonImageContentModeRight: {
@@ -147,8 +146,8 @@
                                                             nil]];
             textSize.width         = MIN(contentRect.size.width-self.imageSize.width, textSize.width);
             contentRect.size       = textSize;
-            contentRect.origin.x   = (self.hf_SizeWidth-(textSize.width+self.imageSize.width + self.space))/2.0;
-            contentRect.origin.y = (self.hf_SizeHeight-textSize.height)/2.0;
+            contentRect.origin.x   = (CGRectGetWidth(self.frame) - (textSize.width + self.imageSize.width + self.space)) / 2.0;
+            contentRect.origin.y = ( CGRectGetHeight(self.frame) - textSize.height) / 2.0;
             break;
         }
         default: {
@@ -182,33 +181,33 @@
     }
     switch (self.imageContentMode) {
         case HFButtonImageContentModeBackgroud: {
-            contentRect.origin.x    = (int)(contentRect.size.width - self.imageSize.width )/2;
-            contentRect.origin.y    = (int)(contentRect.size.height - self.imageSize.height )/2;
+            contentRect.origin.x    = (int)(contentRect.size.width - self.imageSize.width ) / 2;
+            contentRect.origin.y    = (int)(contentRect.size.height - self.imageSize.height ) / 2;
             contentRect.size.width  = self.imageSize.width;
             contentRect.size.height = self.imageSize.height;
             break;
         }
         case HFButtonImageContentModeTop: {
-            CGFloat imageX = (self.hf_SizeWidth - self.imageSize.width)/2.0;
-            CGFloat imageY = (self.hf_SizeHeight - (self.titleLabel.hf_SizeHeight + self.imageSize.height + self.space))/2.0;
+            CGFloat imageX = (CGRectGetWidth(self.frame) - self.imageSize.width) / 2.0;
+            CGFloat imageY = (CGRectGetHeight(self.frame) - (CGRectGetHeight(self.titleLabel.frame) + self.imageSize.height + self.space)) / 2.0;
             contentRect = (CGRect){{imageX, imageY}, self.imageSize};
             break;
         }
         case HFButtonImageContentModeBottom: {
-            CGFloat imageX = (self.hf_SizeWidth - self.imageSize.width)/2.0 ;
-            CGFloat imageY = (self.hf_SizeHeight - (self.titleLabel.hf_SizeHeight + self.imageSize.height + self.space))/2.0 + self.titleLabel.hf_SizeHeight+self.space;
+            CGFloat imageX = (CGRectGetWidth(self.frame) - self.imageSize.width) / 2.0;
+            CGFloat imageY = (CGRectGetHeight(self.frame) - (CGRectGetHeight(self.titleLabel.frame) + self.imageSize.height + self.space)) / 2.0 + CGRectGetHeight(self.titleLabel.frame) + self.space;
             contentRect = (CGRect){{imageX,imageY},self.imageSize};
             break;
         }
         case HFButtonImageContentModeLeft: {
-            CGFloat imageX = (self.hf_SizeWidth - (self.titleLabel.hf_SizeWidth + self.imageSize.width + self.space))/2.0;
-            CGFloat imageY = (self.hf_SizeHeight - self.imageSize.height)/2.0;
+            CGFloat imageX = (CGRectGetWidth(self.frame) - (CGRectGetWidth(self.titleLabel.frame) + self.imageSize.width + self.space))/2.0;
+            CGFloat imageY = (CGRectGetHeight(self.frame) - self.imageSize.height)/2.0;
             contentRect = (CGRect){{imageX,imageY}, self.imageSize};
             break;
         }
         case HFButtonImageContentModeRight: {
-            CGFloat imageX = (self.hf_SizeWidth - (self.titleLabel.hf_SizeWidth + self.imageSize.width+self.space))/2.0 + self.titleLabel.hf_SizeWidth + self.space;
-            CGFloat imageY = (self.hf_SizeHeight - self.imageSize.height )/2.0;
+            CGFloat imageX = (CGRectGetWidth(self.frame) - (CGRectGetWidth(self.titleLabel.frame)+ self.imageSize.width+self.space))/2.0 + CGRectGetWidth(self.titleLabel.frame) + self.space;
+            CGFloat imageY = (CGRectGetHeight(self.frame) - self.imageSize.height )/2.0;
             contentRect = (CGRect){{imageX,imageY}, self.imageSize};
             break;
         }
