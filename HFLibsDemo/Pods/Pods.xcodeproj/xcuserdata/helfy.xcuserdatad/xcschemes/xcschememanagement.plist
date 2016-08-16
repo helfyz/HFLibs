@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HFTableViewManger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0DF52FB22141B40D09B26FCA103E8C12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1ACE7FA4D15C14485B6AF5864F82300C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B936B4055FAF5385D4D9D321E6052D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E51A2052F132D99436A1AE242075C58D</key>
+		<key>EACDD58AF3254897430762D44C5F8BCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

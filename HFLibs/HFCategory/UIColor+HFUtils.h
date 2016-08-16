@@ -14,4 +14,6 @@
 + (UIColor *)hf_ColorWithHex:(NSInteger)rgbHexValue;
 + (UIColor *)hf_ColorWithHex:(NSInteger)rgbHexValue alpha:(CGFloat)alpha;
 
++ (UIColor *)hf_colorWithHexString:(NSString *)hexString;
++ (UIColor *)hf_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 @end

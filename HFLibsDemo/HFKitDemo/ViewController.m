@@ -35,14 +35,20 @@
     [self hft_setupGroupedTableViw];
 }
 - (void)setupData {
+    
+    
+    void (^configCellBlock)(UITableViewCell *cell, HFTableViewCellModel *cellModel) = ^(UITableViewCell *cell,HFTableViewCellModel *model) {
+        cell.textLabel.text = model.cellData;
+    };
+    
     HFTableViewSectionModel *sectionObj = [[HFTableViewSectionModel alloc] init];
     sectionObj.headHeigth = 30;
     sectionObj.headTitle = @"列表模式";
-    HFTableViewCellModel*cellModel = [HFTableViewCellModel new];;
-    [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
-        cell.textLabel.text = @"列表模式";
-    }];
+    HFTableViewCellModel*cellModel = [HFTableViewCellModel new];
+    cellModel.cellData = @"列表模式";
+    [cellModel setConfigCellBlock:configCellBlock];
     __weak ViewController *ws = self;
+    
     [cellModel setCellDidSelectBlock:^(UITableViewCell *cell, HFTableViewCellModel *cellModel) {
         [ws hf_pushToViewControllerForName:@"HFDListViewController"];
     }];
@@ -54,9 +60,9 @@
     settingSectionObj.headHeigth = 30;
     settingSectionObj.headTitle = @"表单模式";
     cellModel = [HFTableViewCellModel new];
-    [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
-        cell.textLabel.text = @"表单模式";
-    }];
+    cellModel.cellData = @"表单模式";
+    
+    [cellModel setConfigCellBlock:configCellBlock];
     [cellModel setCellDidSelectBlock:^(UITableViewCell *cell, HFTableViewCellModel *cellModel) {
         [ws hf_pushToViewControllerForName:@"HFDFormViewController"];
     }];

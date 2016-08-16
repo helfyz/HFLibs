@@ -47,9 +47,9 @@
     for (int index = 0; index < 10; index ++) {
         HFTableViewCellModel*cellModel = [HFTableViewCellModel new];
         cellModel.cellHeigth = 44;
-        [cellModel setConfigCellBlock:^(UITableViewCell *cell) {
-            cell.textLabel.text = [NSString stringWithFormat:@"%@-%i",[cell class],index];
-
+        cellModel.cellData = @(index).stringValue;
+        [cellModel setConfigCellBlock:^(UITableViewCell *cell, HFTableViewCellModel *cellModel) {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@-%@",[cell class],cellModel.cellData];
         }];
         [dataArray addObject:cellModel];
     }
